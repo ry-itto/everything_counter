@@ -37,7 +37,6 @@ final class CounterCellReactor: Reactor {
     func mutate(action: CounterCellReactor.Action) -> Observable<CounterCellReactor.Mutation> {
         switch action {
         case .increase:
-            print("increase")
             return .just(.increaseValue)
         case .decrease:
             return .just(.decreaseValue)
