@@ -15,6 +15,12 @@
 		BF6BA4E822655F1C00D28D79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6BA4E622655F1C00D28D79 /* LaunchScreen.storyboard */; };
 		BF6BA4F322655F1C00D28D79 /* EverythingCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6BA4F222655F1C00D28D79 /* EverythingCounterTests.swift */; };
 		BF6BA4FE22655F1C00D28D79 /* EverythingCounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6BA4FD22655F1C00D28D79 /* EverythingCounterUITests.swift */; };
+		BFCD4B9D228F34B2006EDBA5 /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD4B9B228F34B2006EDBA5 /* CounterViewController.swift */; };
+		BFCD4B9E228F34B2006EDBA5 /* CounterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFCD4B9C228F34B2006EDBA5 /* CounterViewController.xib */; };
+		BFCD4BA5228F3804006EDBA5 /* CounterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD4BA3228F3804006EDBA5 /* CounterCell.swift */; };
+		BFCD4BA6228F3804006EDBA5 /* CounterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFCD4BA4228F3804006EDBA5 /* CounterCell.xib */; };
+		BFCD4BA8228F381C006EDBA5 /* CounterCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD4BA7228F381C006EDBA5 /* CounterCellReactor.swift */; };
+		BFCD4BAA228F44FE006EDBA5 /* CounterViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD4BA9228F44FE006EDBA5 /* CounterViewReactor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,12 @@
 		BF6BA4F922655F1C00D28D79 /* EverythingCounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EverythingCounterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6BA4FD22655F1C00D28D79 /* EverythingCounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingCounterUITests.swift; sourceTree = "<group>"; };
 		BF6BA4FF22655F1C00D28D79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFCD4B9B228F34B2006EDBA5 /* CounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
+		BFCD4B9C228F34B2006EDBA5 /* CounterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CounterViewController.xib; sourceTree = "<group>"; };
+		BFCD4BA3228F3804006EDBA5 /* CounterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterCell.swift; sourceTree = "<group>"; };
+		BFCD4BA4228F3804006EDBA5 /* CounterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CounterCell.xib; sourceTree = "<group>"; };
+		BFCD4BA7228F381C006EDBA5 /* CounterCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterCellReactor.swift; sourceTree = "<group>"; };
+		BFCD4BA9228F44FE006EDBA5 /* CounterViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewReactor.swift; sourceTree = "<group>"; };
 		E96E7FF9BAF6CD69471379E7 /* Pods_EverythingCounter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverythingCounter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9F90FF12909BA2F540A248D /* Pods-EverythingCounterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounterTests.release.xcconfig"; path = "Target Support Files/Pods-EverythingCounterTests/Pods-EverythingCounterTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,7 +107,6 @@
 				4515400A32F6207A93A1B4E5 /* Pods-EverythingCounterUITests.debug.xcconfig */,
 				153D94E246900FC6356C5268 /* Pods-EverythingCounterUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -136,8 +147,10 @@
 			children = (
 				BF6BA4DD22655F1B00D28D79 /* AppDelegate.swift */,
 				BF6BA4E422655F1C00D28D79 /* Assets.xcassets */,
-				BF6BA4E622655F1C00D28D79 /* LaunchScreen.storyboard */,
 				BF6BA4E922655F1C00D28D79 /* Info.plist */,
+				BF6BA4E622655F1C00D28D79 /* LaunchScreen.storyboard */,
+				BFCD4B9A228E82BF006EDBA5 /* Models */,
+				BFCD4B99228E82B8006EDBA5 /* Views */,
 			);
 			path = EverythingCounter;
 			sourceTree = "<group>";
@@ -158,6 +171,34 @@
 				BF6BA4FF22655F1C00D28D79 /* Info.plist */,
 			);
 			path = EverythingCounterUITests;
+			sourceTree = "<group>";
+		};
+		BFCD4B99228E82B8006EDBA5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BFCD4BA2228F37E6006EDBA5 /* Cells */,
+				BFCD4B9B228F34B2006EDBA5 /* CounterViewController.swift */,
+				BFCD4B9C228F34B2006EDBA5 /* CounterViewController.xib */,
+				BFCD4BA9228F44FE006EDBA5 /* CounterViewReactor.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BFCD4B9A228E82BF006EDBA5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BFCD4BA2228F37E6006EDBA5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BFCD4BA3228F3804006EDBA5 /* CounterCell.swift */,
+				BFCD4BA4228F3804006EDBA5 /* CounterCell.xib */,
+				BFCD4BA7228F381C006EDBA5 /* CounterCellReactor.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +309,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFCD4BA6228F3804006EDBA5 /* CounterCell.xib in Resources */,
+				BFCD4B9E228F34B2006EDBA5 /* CounterViewController.xib in Resources */,
 				BF6BA4E822655F1C00D28D79 /* LaunchScreen.storyboard in Resources */,
 				BF6BA4E522655F1C00D28D79 /* Assets.xcassets in Resources */,
 			);
@@ -366,7 +409,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-EverythingCounter/Pods-EverythingCounter-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ReactorKit/ReactorKit.framework",
-				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -374,7 +417,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactorKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,7 +432,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFCD4BA5228F3804006EDBA5 /* CounterCell.swift in Sources */,
+				BFCD4BAA228F44FE006EDBA5 /* CounterViewReactor.swift in Sources */,
 				BF6BA4DE22655F1B00D28D79 /* AppDelegate.swift in Sources */,
+				BFCD4B9D228F34B2006EDBA5 /* CounterViewController.swift in Sources */,
+				BFCD4BA8228F381C006EDBA5 /* CounterCellReactor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

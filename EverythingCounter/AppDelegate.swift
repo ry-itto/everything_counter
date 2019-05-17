@@ -15,8 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        // TODO:- メインのビューを宣言
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        let counterVC = CounterViewController()
+        counterVC.reactor = CounterViewReactor()
+        window.rootViewController = counterVC
+        self.window = window
+        self.window?.makeKeyAndVisible()
         return true
     }
 
