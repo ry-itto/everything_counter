@@ -17,6 +17,7 @@ final class CounterViewController: UIViewController, StoryboardView {
         didSet {
             tableView.register(UINib(nibName: "CounterCell", bundle: nil), forCellReuseIdentifier: CounterCell.cellIdentifier)
             tableView.rowHeight = CounterCell.rowHeight
+            tableView.tableFooterView = UIView()
         }
     }
     var disposeBag = DisposeBag()
