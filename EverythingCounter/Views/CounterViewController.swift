@@ -21,7 +21,8 @@ final class CounterViewController: UIViewController, StoryboardView {
     }
     var disposeBag = DisposeBag()
     
-    func bind(reactor: CounterViewReactor) {    
+    //MARK:- reactorがセットされたタイミングで呼ばれる
+    func bind(reactor: CounterViewReactor) {
         
         reactor.state
             .map { $0.counterNames }

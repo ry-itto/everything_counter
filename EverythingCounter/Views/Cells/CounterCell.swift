@@ -22,6 +22,7 @@ class CounterCell: UITableViewCell, View {
     @IBOutlet weak var increaseButton: UIButton!
     @IBOutlet weak var valueLabel: UILabel!
     
+    //MARK:- reactorがセットされたタイミングで呼ばれる
     func bind(reactor: CounterCellReactor) {
         // Action
         increaseButton.rx.tap
