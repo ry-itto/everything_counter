@@ -8,6 +8,7 @@ target 'EverythingCounter' do
   # Pods for EverythingCounter
   pod 'ReactorKit'
   pod 'RxCocoa', '~> 4.0'
+  pod 'RxRealm'
 
   target 'EverythingCounterTests' do
     inherit! :search_paths

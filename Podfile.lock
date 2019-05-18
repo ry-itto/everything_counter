@@ -1,25 +1,40 @@
 PODS:
   - ReactorKit (1.2.1):
     - RxSwift (>= 4.0.0)
+  - Realm (3.15.0):
+    - Realm/Headers (= 3.15.0)
+  - Realm/Headers (3.15.0)
+  - RealmSwift (3.15.0):
+    - Realm (= 3.15.0)
   - RxCocoa (4.5.0):
     - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxRealm (0.7.6):
+    - RealmSwift (~> 3.0)
+    - RxSwift (~> 4.0)
   - RxSwift (4.5.0)
 
 DEPENDENCIES:
   - ReactorKit
   - RxCocoa (~> 4.0)
+  - RxRealm
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - ReactorKit
+    - Realm
+    - RealmSwift
     - RxCocoa
+    - RxRealm
     - RxSwift
 
 SPEC CHECKSUMS:
   ReactorKit: 8be57f0527ad1ac2963cd5c338274a46a01e57a3
+  Realm: 9b834e1be6062f544805252c812348872dc5d4ed
+  RealmSwift: 8a41886f8ab6efef9eb8df97de2f2bb911561a79
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
+  RxRealm: 5379eddd74f8d617ca7681d1f8d144af25b432b0
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
 
-PODFILE CHECKSUM: 30a76f38641e0d07c1dc2d7a079cd689a3a60165
+PODFILE CHECKSUM: 5c7b212fd96cfb689f7c194942a96ca14f942d3d
 
-COCOAPODS: 1.6.0.beta.2
+COCOAPODS: 1.7.0.rc.2
