@@ -33,7 +33,7 @@ final class CounterCellReactor: Reactor {
     }
     
     init(_ service: CounterServiceProtocol = CounterService(), counter: Counter) {
-        self.initialState = State(value: 0)
+        self.initialState = State(value: counter.value)
         self.service = service
         self.counter = counter
     }
