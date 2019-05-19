@@ -24,16 +24,17 @@ final class CounterCellReactor: Reactor {
     /// アクションによる変更内容
     enum Mutation {
         case increaseValue(_ updated: Counter)
-        case decreaseValue
+        case decreaseValue(_ updated: Counter)
     }
     
     /// Viewの状態
     struct State {
+        var title: String
         var value: Int
     }
     
     init(_ service: CounterServiceProtocol = CounterService(), counter: Counter) {
-        self.initialState = State(value: counter.value)
+        self.initialState = State(title: counter.title, value: counter.value)
         self.service = service
         self.counter = counter
     }
@@ -45,7 +46,8 @@ final class CounterCellReactor: Reactor {
             let updated = service.update(counter, title: nil, value: counter.value + 1)
             return .just(.increaseValue(updated))
         case .decrease:
-            return .just(.decreaseValue)
+            let updated = service.update(counter, title: nil, value: counter.value - 1)
+            return .just(.decreaseValue(updated))
         }
     }
     
@@ -56,8 +58,8 @@ final class CounterCellReactor: Reactor {
         case .increaseValue(let updated):
             state.value = updated.value
             return state
-        case .decreaseValue:
-            state.value -= 1
+        case .decreaseValue(let updated):
+            state.value = updated.value
             return state
         }
     }

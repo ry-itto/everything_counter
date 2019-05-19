@@ -36,6 +36,14 @@ class CounterCell: UITableViewCell, View {
             .disposed(by: disposeBag)
         
         // State
+        // title
+        reactor.state
+            .map { $0.title }
+            .distinctUntilChanged()
+            .bind(to: titleLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        // value
         reactor.state
             .map { $0.value }
             .distinctUntilChanged()
