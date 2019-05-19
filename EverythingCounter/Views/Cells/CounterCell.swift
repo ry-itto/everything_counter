@@ -43,8 +43,4 @@ class CounterCell: UITableViewCell, View {
             .bind(to: valueLabel.rx.text)
             .disposed(by: disposeBag)
     }
-    
-    func setTitle(title: String) {
-        self.titleLabel.text = title
-    }
 }

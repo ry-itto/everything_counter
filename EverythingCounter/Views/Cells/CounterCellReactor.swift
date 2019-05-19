@@ -10,6 +10,9 @@ import ReactorKit
 import RxSwift
 
 final class CounterCellReactor: Reactor {
+    private let service: CounterServiceProtocol
+    private let counter: Counter
+    
     let initialState: CounterCellReactor.State
     
     /// Viewが起こすアクション
@@ -20,7 +23,7 @@ final class CounterCellReactor: Reactor {
     
     /// アクションによる変更内容
     enum Mutation {
-        case increaseValue
+        case increaseValue(_ updated: Counter)
         case decreaseValue
     }
     
@@ -29,15 +32,18 @@ final class CounterCellReactor: Reactor {
         var value: Int
     }
     
-    init() {
+    init(_ service: CounterServiceProtocol = CounterService(), counter: Counter) {
         self.initialState = State(value: 0)
+        self.service = service
+        self.counter = counter
     }
     
     /// アクションを受け取ってMutationを生成する
     func mutate(action: CounterCellReactor.Action) -> Observable<CounterCellReactor.Mutation> {
         switch action {
         case .increase:
-            return .just(.increaseValue)
+            let updated = service.update(counter, title: nil, value: counter.value + 1)
+            return .just(.increaseValue(updated))
         case .decrease:
             return .just(.decreaseValue)
         }
@@ -47,8 +53,8 @@ final class CounterCellReactor: Reactor {
     func reduce(state: CounterCellReactor.State, mutation: CounterCellReactor.Mutation) -> CounterCellReactor.State {
         var state = state
         switch mutation {
-        case .increaseValue:
-            state.value += 1
+        case .increaseValue(let updated):
+            state.value = updated.value
             return state
         case .decreaseValue:
             state.value -= 1

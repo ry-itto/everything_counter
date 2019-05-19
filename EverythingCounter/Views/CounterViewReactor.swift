@@ -10,6 +10,9 @@ import RxSwift
 import ReactorKit
 
 final class CounterViewReactor: Reactor {
+    
+    private let service: CounterServiceProtocol
+    
     var initialState: CounterViewReactor.State
     
     enum Action {
@@ -18,36 +21,33 @@ final class CounterViewReactor: Reactor {
     }
     
     enum Mutation {
-        case addCounter(title: String)
-        case deleteCounter(title: String)
+        case reloadData
     }
     
     struct State {
-        var counterNames: [String]
+        var counters: [Counter]
     }
     
-    init() {
-        self.initialState = State(counterNames: ["心理学欠席回数", "寝た回数", "お金もらった回数"])
+    init(_ service: CounterServiceProtocol = CounterService()) {
+        self.initialState = State(counters: service.findAll())
+        self.service = service
     }
     
     func mutate(action: CounterViewReactor.Action) -> Observable<CounterViewReactor.Mutation> {
         switch action {
         case .addCounter(let title):
-            return .just(.addCounter(title: title))
+            service.addCounter(title: title)
+            return .just(.reloadData)
         case .deleteCounter(let title):
-            return .just(.deleteCounter(title: title))
+            return .just(.reloadData)
         }
     }
     
     func reduce(state: CounterViewReactor.State, mutation: CounterViewReactor.Mutation) -> CounterViewReactor.State {
         var state = state
         switch mutation {
-        case .addCounter(let title):
-            state.counterNames.append(title)
-            return state
-        case .deleteCounter(let title):
-            guard let index = state.counterNames.firstIndex(of: title) else { return state }
-            state.counterNames.remove(at: index)
+        case .reloadData:
+            state.counters = service.findAll()
             return state
         }
     }

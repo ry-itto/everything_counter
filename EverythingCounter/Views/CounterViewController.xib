@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CounterViewController" customModule="EverythingCounter" customModuleProvider="target">
             <connections>
+                <outlet property="addCounterButton" destination="qCH-c2-Zhr" id="tWy-Ml-1sU"/>
                 <outlet property="tableView" destination="1DQ-ZQ-naN" id="QXJ-bD-bp2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -25,13 +26,27 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCH-c2-Zhr">
+                    <rect key="frame" x="324" y="772" width="60" height="60"/>
+                    <color key="backgroundColor" red="0.472487092" green="0.83425885440000003" blue="0.29319655900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="qCH-c2-Zhr" secondAttribute="height" multiplier="1:1" id="S08-tl-HlT"/>
+                        <constraint firstAttribute="width" constant="60" id="Te6-qf-geL"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                    <state key="normal" title="+">
+                        <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="1DQ-ZQ-naN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3iX-5r-yHA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qCH-c2-Zhr" secondAttribute="trailing" constant="30" id="7Uf-Xa-YJP"/>
                 <constraint firstAttribute="bottom" secondItem="1DQ-ZQ-naN" secondAttribute="bottom" id="DyM-3s-0kB"/>
                 <constraint firstItem="1DQ-ZQ-naN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="RkQ-L1-TJ0"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1DQ-ZQ-naN" secondAttribute="trailing" id="bPJ-jr-DJM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="qCH-c2-Zhr" secondAttribute="bottom" constant="30" id="eNS-oh-8kx"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>

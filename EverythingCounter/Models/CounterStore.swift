@@ -6,13 +6,18 @@
 //  Copyright © 2019 ry-itto. All rights reserved.
 //
 
-import RealmSwift
-
 /// CounterのDB情報にアクセス, 操作するクラス
 final class CounterStore {
     
     static let shared = CounterStore()
     private let realm = RealmManager.shared.realm
+    
+    /// DB上のCounterを全て取得
+    ///
+    /// - Returns: 全てのCounter
+    func findAll() -> [Counter] {
+        return Array(realm.objects(Counter.self))
+    }
     
     /// 新規にCounterを作成
     ///
@@ -37,27 +42,15 @@ final class CounterStore {
     ///   - counter: 更新対象のCounter
     ///   - title: タイトル
     /// - Returns: 更新後のCounter
-    func updateTitle(counter: Counter, title: String) -> Counter {
+    func update(counter: Counter, title: String?, value: Int?) -> Counter {
         do {
             try realm.write {
-                counter.title = title
-            }
-        } catch (let e) {
-            print("\(#file)#\(#line) \"\(e.localizedDescription)\"")
-        }
-        return counter
-    }
-    
-    /// Counterの値を更新
-    ///
-    /// - Parameters:
-    ///   - counter: 更新対象のCounter
-    ///   - newValue: 更新したい値
-    /// - Returns: 更新後のCounter
-    func updateValue(counter: Counter, newValue: Int) -> Counter {
-        do {
-            try realm.write {
-                counter.value = newValue
+                if let title = title {
+                    counter.title = title
+                }
+                if let value = value {
+                    counter.value = value
+                }
             }
         } catch (let e) {
             print("\(#file)#\(#line) \"\(e.localizedDescription)\"")
