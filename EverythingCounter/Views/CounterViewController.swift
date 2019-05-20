@@ -12,7 +12,7 @@ import RxCocoa
 import ReactorKit
 
 final class CounterViewController: UIViewController, StoryboardView {
-
+    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.register(UINib(nibName: "CounterCell", bundle: nil), forCellReuseIdentifier: CounterCell.cellIdentifier)
@@ -22,10 +22,6 @@ final class CounterViewController: UIViewController, StoryboardView {
     }
     @IBOutlet weak var addCounterButton: UIButton!
     var disposeBag = DisposeBag()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     
     //MARK:- reactorがセットされたタイミングで呼ばれる
     func bind(reactor: CounterViewReactor) {
@@ -38,8 +34,10 @@ final class CounterViewController: UIViewController, StoryboardView {
             }.disposed(by: disposeBag)
         
         addCounterButton.rx.tap
-            .map { Reactor.Action.addCounter(title: "task") }
-            .bind(to: reactor.action)
-            .disposed(by: disposeBag)
+            .bind(to: Binder(self) { me, _ in
+                let createCounterVC = CreateCounterViewController()
+                createCounterVC.reactor = CreateCounterViewReactor()
+                me.presentSemiModal(createCounterVC, animated: true, completion: nil)
+            }).disposed(by: disposeBag)
     }
 }
