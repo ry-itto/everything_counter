@@ -20,7 +20,11 @@ final class CreateCounterViewController: UIViewController, StoryboardView {
     
     weak var semiModalPresentationController: SemiModalPresentationController?
     
-    @IBOutlet weak var inputTitleField: UITextField!
+    @IBOutlet weak var inputTitleField: UITextField! {
+        didSet {
+            inputTitleField.borderStyle = .none
+        }
+    }
     @IBOutlet weak var saveButton: UIButton!
     
     override func viewDidLoad() {

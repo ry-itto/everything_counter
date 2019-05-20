@@ -20,7 +20,12 @@ final class CounterViewController: UIViewController, StoryboardView {
             tableView.tableFooterView = UIView()
         }
     }
-    @IBOutlet weak var addCounterButton: UIButton!
+    @IBOutlet weak var addCounterButton: UIButton! {
+        didSet {
+            addCounterButton.layer.cornerRadius = addCounterButton.frame.height / 2
+            addCounterButton.clipsToBounds = true
+        }
+    }
     var disposeBag = DisposeBag()
     
     //MARK:- reactorがセットされたタイミングで呼ばれる
