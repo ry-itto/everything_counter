@@ -42,9 +42,10 @@ final class CounterViewDataSource: NSObject, UITableViewDataSource, RxTableViewD
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
+            let deleteItem = items[indexPath.row]
             items.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            Observable.just(CounterViewReactor.Action.deleteCounter(counter: items[indexPath.row]))
+            Observable.just(CounterViewReactor.Action.deleteCounter(counter: deleteItem))
                 .bind(to: reactor.action)
                 .disposed(by: disposeBag)
         default:
