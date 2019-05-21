@@ -18,6 +18,7 @@ final class CounterViewController: UIViewController, StoryboardView {
             tableView.register(UINib(nibName: "CounterCell", bundle: nil), forCellReuseIdentifier: CounterCell.cellIdentifier)
             tableView.rowHeight = CounterCell.rowHeight
             tableView.tableFooterView = UIView()
+            tableView.allowsSelection = false
         }
     }
     @IBOutlet weak var addCounterButton: UIButton! {
@@ -55,12 +56,6 @@ final class CounterViewController: UIViewController, StoryboardView {
                         .disposed(by: createCounterVC.disposeBag)
                 }
                 me.presentSemiModal(createCounterVC, animated: true, completion: nil)
-            }).disposed(by: disposeBag)
-        
-        // table view
-        tableView.rx.itemSelected
-            .bind(to: Binder(self) { me, indexPath in
-                me.tableView.deselectRow(at: indexPath, animated: true)
             }).disposed(by: disposeBag)
     }
 }
