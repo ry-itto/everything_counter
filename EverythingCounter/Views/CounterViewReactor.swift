@@ -16,7 +16,7 @@ final class CounterViewReactor: Reactor {
     var initialState: CounterViewReactor.State
     
     enum Action {
-        case addCounter(title: String)
+        case reloadData
         case deleteCounter(title: String)
     }
     
@@ -35,8 +35,7 @@ final class CounterViewReactor: Reactor {
     
     func mutate(action: CounterViewReactor.Action) -> Observable<CounterViewReactor.Mutation> {
         switch action {
-        case .addCounter(let title):
-            service.addCounter(title: title)
+        case .reloadData:
             return .just(.reloadData)
         case .deleteCounter(let title):
             return .just(.reloadData)

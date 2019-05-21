@@ -42,6 +42,11 @@ final class CounterViewController: UIViewController, StoryboardView {
             .bind(to: Binder(self) { me, _ in
                 let createCounterVC = CreateCounterViewController()
                 createCounterVC.reactor = CreateCounterViewReactor()
+                createCounterVC.onDismissed = {
+                    Observable.just(Reactor.Action.reloadData)
+                        .bind(to: reactor.action)
+                        .disposed(by: createCounterVC.disposeBag)
+                }
                 me.presentSemiModal(createCounterVC, animated: true, completion: nil)
             }).disposed(by: disposeBag)
     }

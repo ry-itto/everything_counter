@@ -16,8 +16,6 @@ final class CreateCounterViewController: UIViewController, StoryboardView {
     
     private let viewMargin: CGFloat = 30
     
-    var disposeBag = DisposeBag()
-    
     weak var semiModalPresentationController: SemiModalPresentationController?
     
     @IBOutlet weak var inputTitleField: UITextField! {
@@ -27,6 +25,8 @@ final class CreateCounterViewController: UIViewController, StoryboardView {
         }
     }
     @IBOutlet weak var saveButton: UIButton!
+    var disposeBag = DisposeBag()
+    var onDismissed: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +46,20 @@ final class CreateCounterViewController: UIViewController, StoryboardView {
                     + me.saveButton.frame.height
                     + me.viewMargin
                 me.semiModalPresentationController?.setModalViewHeight(newHeight: height, animated: true)
+            }).disposed(by: disposeBag)
+        
+        saveButton.rx.tap
+            .flatMap { [weak self] in
+                self?.inputTitleField.text.map(Observable.just) ?? .empty()
+            }.map { Reactor.Action.create(counterName: $0) }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        // reactor state
+        reactor.state
+            .filter { $0.isCreated }
+            .bind(to: Binder(self) { me, _ in
+                me.presentingViewController?.dismiss(animated: true, completion: me.onDismissed)
             }).disposed(by: disposeBag)
     }
 }
