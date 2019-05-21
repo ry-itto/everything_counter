@@ -13,7 +13,7 @@ import RxCocoa
 
 class CounterCell: UITableViewCell, View {
     static let cellIdentifier = "CounterCell"
-    static let rowHeight: CGFloat = 50
+    static let rowHeight: CGFloat = 70
     
     var disposeBag = DisposeBag()
 

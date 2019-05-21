@@ -13,6 +13,15 @@ import ReactorKit
 
 final class CounterViewController: UIViewController, StoryboardView {
     
+    @IBOutlet weak var headerView: UIView! {
+        didSet {
+            // 影の設定
+            headerView.layer.shadowColor = UIColor.black.cgColor
+            headerView.layer.shadowOffset = CGSize(width: 0, height: 0.3)
+            headerView.layer.shadowOpacity = 0.05
+            headerView.layer.shadowRadius = 10
+        }
+    }
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.register(UINib(nibName: "CounterCell", bundle: nil), forCellReuseIdentifier: CounterCell.cellIdentifier)
