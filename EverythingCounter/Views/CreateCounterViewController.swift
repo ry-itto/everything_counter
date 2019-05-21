@@ -14,7 +14,7 @@ import ReactorKit
 
 final class CreateCounterViewController: UIViewController, StoryboardView {
     
-    private let viewMargin: CGFloat = 25
+    private let viewMargin: CGFloat = 30
     
     var disposeBag = DisposeBag()
     
@@ -23,6 +23,7 @@ final class CreateCounterViewController: UIViewController, StoryboardView {
     @IBOutlet weak var inputTitleField: UITextField! {
         didSet {
             inputTitleField.borderStyle = .none
+            inputTitleField.becomeFirstResponder()
         }
     }
     @IBOutlet weak var saveButton: UIButton!
