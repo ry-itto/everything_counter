@@ -25,6 +25,11 @@ protocol CounterServiceProtocol {
     ///   - value: 更新後の値(Optional)
     /// - Returns: 更新後のCounter
     func update(_ counter: Counter, title: String?, value: Int?) -> Counter
+    
+    /// Counterを削除
+    ///
+    /// - Parameter counter: 削除対象のCounter
+    func delete(_ counter: Counter)
 }
 
 final class CounterService: CounterServiceProtocol {
@@ -40,5 +45,9 @@ final class CounterService: CounterServiceProtocol {
     
     func update(_ counter: Counter, title: String?, value: Int?) -> Counter {
         return store.update(counter: counter, title: title, value: value)
+    }
+    
+    func delete(_ counter: Counter) {
+        store.delete(counter: counter)
     }
 }

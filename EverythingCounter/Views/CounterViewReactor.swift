@@ -17,7 +17,7 @@ final class CounterViewReactor: Reactor {
     
     enum Action {
         case reloadData
-        case deleteCounter(title: String)
+        case deleteCounter(counter: Counter)
     }
     
     enum Mutation {
@@ -37,8 +37,9 @@ final class CounterViewReactor: Reactor {
         switch action {
         case .reloadData:
             return .just(.reloadData)
-        case .deleteCounter(let title):
-            return .just(.reloadData)
+        case .deleteCounter(let counter):
+            service.delete(counter)
+            return .empty()
         }
     }
     

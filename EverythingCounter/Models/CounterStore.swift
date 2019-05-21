@@ -57,4 +57,17 @@ final class CounterStore {
         }
         return counter
     }
+    
+    /// Counterを削除
+    ///
+    /// - Parameter counter: 削除対象のCounter
+    func delete(counter: Counter) {
+        do {
+            try realm.write {
+                realm.delete(counter)
+            }
+        } catch (let e) {
+            print("\(#file)#\(#line) \"\(e.localizedDescription)\"")
+        }
+    }
 }

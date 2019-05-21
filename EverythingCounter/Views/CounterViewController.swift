@@ -31,13 +31,15 @@ final class CounterViewController: UIViewController, StoryboardView {
     //MARK:- reactorがセットされたタイミングで呼ばれる
     func bind(reactor: CounterViewReactor) {
         
+        let dataSource = CounterViewDataSource(reactor)
+        /// reactor.state
         reactor.state
             .map { $0.counters }
             .distinctUntilChanged()
-            .bind(to: tableView.rx.items(cellIdentifier: CounterCell.cellIdentifier, cellType: CounterCell.self)) { _, counter, cell in
-                cell.reactor = CounterCellReactor(counter: counter)
-            }.disposed(by: disposeBag)
+            .bind(to: tableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
         
+        /// bind this view
         addCounterButton.rx.tap
             .bind(to: Binder(self) { me, _ in
                 let createCounterVC = CreateCounterViewController()
@@ -48,6 +50,12 @@ final class CounterViewController: UIViewController, StoryboardView {
                         .disposed(by: createCounterVC.disposeBag)
                 }
                 me.presentSemiModal(createCounterVC, animated: true, completion: nil)
+            }).disposed(by: disposeBag)
+        
+        // table view
+        tableView.rx.itemSelected
+            .bind(to: Binder(self) { me, indexPath in
+                me.tableView.deselectRow(at: indexPath, animated: true)
             }).disposed(by: disposeBag)
     }
 }
