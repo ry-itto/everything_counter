@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1DQ-ZQ-naN">
-                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <rect key="frame" x="0.0" y="144" width="414" height="752"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCH-c2-Zhr">
@@ -38,17 +38,38 @@
                         <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ENZ-dp-ZJE">
+                    <rect key="frame" x="0.0" y="44" width="414" height="100"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カウンター一覧" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zlv-7k-I0s">
+                            <rect key="frame" x="20" y="26" width="282" height="48"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Zlv-7k-I0s" firstAttribute="centerY" secondItem="ENZ-dp-ZJE" secondAttribute="centerY" id="5F3-rH-XgW"/>
+                        <constraint firstItem="Zlv-7k-I0s" firstAttribute="leading" secondItem="ENZ-dp-ZJE" secondAttribute="leading" constant="20" id="JKd-uS-CT5"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="1DQ-ZQ-naN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3iX-5r-yHA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qCH-c2-Zhr" secondAttribute="trailing" constant="30" id="7Uf-Xa-YJP"/>
+                <constraint firstItem="ENZ-dp-ZJE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ASY-jv-6Xh"/>
                 <constraint firstAttribute="bottom" secondItem="1DQ-ZQ-naN" secondAttribute="bottom" id="DyM-3s-0kB"/>
-                <constraint firstItem="1DQ-ZQ-naN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="RkQ-L1-TJ0"/>
+                <constraint firstItem="ENZ-dp-ZJE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Rjo-1F-RW0"/>
+                <constraint firstItem="1DQ-ZQ-naN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="RkQ-L1-TJ0"/>
+                <constraint firstItem="1DQ-ZQ-naN" firstAttribute="top" secondItem="ENZ-dp-ZJE" secondAttribute="bottom" id="YNe-d8-xgr"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1DQ-ZQ-naN" secondAttribute="trailing" id="bPJ-jr-DJM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ENZ-dp-ZJE" secondAttribute="trailing" id="eGp-Gx-2vG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="qCH-c2-Zhr" secondAttribute="bottom" constant="30" id="eNS-oh-8kx"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="105.80357142857143"/>
         </view>
     </objects>
 </document>

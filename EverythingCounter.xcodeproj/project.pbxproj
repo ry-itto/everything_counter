@@ -16,6 +16,7 @@
 		BF501AE122928C8100727721 /* SemiModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF501AE022928C8100727721 /* SemiModalPresentationController.swift */; };
 		BF501AE42292A02100727721 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF501AE32292A02100727721 /* UIViewControllerExtension.swift */; };
 		BF501AE62293CA1F00727721 /* CounterViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF501AE52293CA1F00727721 /* CounterViewDataSource.swift */; };
+		BF501AE82294746900727721 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF501AE72294746900727721 /* UIColorExtension.swift */; };
 		BF6BA4DE22655F1B00D28D79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6BA4DD22655F1B00D28D79 /* AppDelegate.swift */; };
 		BF6BA4E522655F1C00D28D79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF6BA4E422655F1C00D28D79 /* Assets.xcassets */; };
 		BF6BA4E822655F1C00D28D79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6BA4E622655F1C00D28D79 /* LaunchScreen.storyboard */; };
@@ -64,6 +65,7 @@
 		BF501AE022928C8100727721 /* SemiModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalPresentationController.swift; sourceTree = "<group>"; };
 		BF501AE32292A02100727721 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		BF501AE52293CA1F00727721 /* CounterViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewDataSource.swift; sourceTree = "<group>"; };
+		BF501AE72294746900727721 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		BF6BA4DA22655F1B00D28D79 /* EverythingCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverythingCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6BA4DD22655F1B00D28D79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6BA4E422655F1C00D28D79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				BF501AE32292A02100727721 /* UIViewControllerExtension.swift */,
+				BF501AE72294746900727721 /* UIColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 			files = (
 				BF501ADD2292895900727721 /* CreateCounterViewReactor.swift in Sources */,
 				BFCD4BA5228F3804006EDBA5 /* CounterCell.swift in Sources */,
+				BF501AE82294746900727721 /* UIColorExtension.swift in Sources */,
 				BFCD4BAA228F44FE006EDBA5 /* CounterViewReactor.swift in Sources */,
 				BFCD4BB1228F93D1006EDBA5 /* CounterStore.swift in Sources */,
 				BFCD4BAC228F90DE006EDBA5 /* Counter.swift in Sources */,

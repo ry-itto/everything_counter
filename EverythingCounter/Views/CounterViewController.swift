@@ -22,8 +22,13 @@ final class CounterViewController: UIViewController, StoryboardView {
     }
     @IBOutlet weak var addCounterButton: UIButton! {
         didSet {
-            addCounterButton.layer.cornerRadius = addCounterButton.frame.height / 2
-            addCounterButton.clipsToBounds = true
+            addCounterButton.backgroundColor = UIColor(rgb: 0x23AC0E)
+            addCounterButton.layer.cornerRadius = addCounterButton.bounds.midY
+            // 影の設定
+            addCounterButton.layer.shadowColor = UIColor.black.cgColor
+            addCounterButton.layer.shadowOffset = CGSize(width: 0, height: 3)
+            addCounterButton.layer.shadowOpacity = 0.5
+            addCounterButton.layer.shadowRadius = 10
         }
     }
     var disposeBag = DisposeBag()
