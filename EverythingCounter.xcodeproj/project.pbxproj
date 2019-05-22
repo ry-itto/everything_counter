@@ -315,6 +315,7 @@
 				BF6BA4F522655F1C00D28D79 /* Sources */,
 				BF6BA4F622655F1C00D28D79 /* Frameworks */,
 				BF6BA4F722655F1C00D28D79 /* Resources */,
+				C04F8C288DDD597BF16EF4FB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -480,6 +481,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EverythingCounter/Pods-EverythingCounter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C04F8C288DDD597BF16EF4FB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EverythingCounterUITests/Pods-EverythingCounterUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EverythingCounterUITests/Pods-EverythingCounterUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EverythingCounterUITests/Pods-EverythingCounterUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
