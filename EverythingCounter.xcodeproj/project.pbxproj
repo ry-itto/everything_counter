@@ -17,6 +17,8 @@
 		BF501AE42292A02100727721 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF501AE32292A02100727721 /* UIViewControllerExtension.swift */; };
 		BF501AE62293CA1F00727721 /* CounterViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF501AE52293CA1F00727721 /* CounterViewDataSource.swift */; };
 		BF501AE82294746900727721 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF501AE72294746900727721 /* UIColorExtension.swift */; };
+		BF501AEE229642C400727721 /* CounterViewReactorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF501AED229642C400727721 /* CounterViewReactorTests.swift */; };
+		BF501AF022964AD100727721 /* CounterViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF501AEF22964AD100727721 /* CounterViewTests.swift */; };
 		BF6BA4DE22655F1B00D28D79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6BA4DD22655F1B00D28D79 /* AppDelegate.swift */; };
 		BF6BA4E522655F1C00D28D79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF6BA4E422655F1C00D28D79 /* Assets.xcassets */; };
 		BF6BA4E822655F1C00D28D79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6BA4E622655F1C00D28D79 /* LaunchScreen.storyboard */; };
@@ -66,6 +68,8 @@
 		BF501AE32292A02100727721 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		BF501AE52293CA1F00727721 /* CounterViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewDataSource.swift; sourceTree = "<group>"; };
 		BF501AE72294746900727721 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		BF501AED229642C400727721 /* CounterViewReactorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewReactorTests.swift; sourceTree = "<group>"; };
+		BF501AEF22964AD100727721 /* CounterViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewTests.swift; sourceTree = "<group>"; };
 		BF6BA4DA22655F1B00D28D79 /* EverythingCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverythingCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6BA4DD22655F1B00D28D79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6BA4E422655F1C00D28D79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 		BF6BA4F122655F1C00D28D79 /* EverythingCounterTests */ = {
 			isa = PBXGroup;
 			children = (
+				BF501AED229642C400727721 /* CounterViewReactorTests.swift */,
 				BF6BA4F222655F1C00D28D79 /* EverythingCounterTests.swift */,
 				BF6BA4F422655F1C00D28D79 /* Info.plist */,
 			);
@@ -217,6 +222,7 @@
 		BF6BA4FC22655F1C00D28D79 /* EverythingCounterUITests */ = {
 			isa = PBXGroup;
 			children = (
+				BF501AEF22964AD100727721 /* CounterViewTests.swift */,
 				BF6BA4FD22655F1C00D28D79 /* EverythingCounterUITests.swift */,
 				BF6BA4FF22655F1C00D28D79 /* Info.plist */,
 			);
@@ -529,6 +535,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF501AEE229642C400727721 /* CounterViewReactorTests.swift in Sources */,
 				BF6BA4F322655F1C00D28D79 /* EverythingCounterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,6 +545,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF6BA4FE22655F1C00D28D79 /* EverythingCounterUITests.swift in Sources */,
+				BF501AF022964AD100727721 /* CounterViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,6 +699,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DFY27HWN2G;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = EverythingCounter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -710,11 +719,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DFY27HWN2G;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = EverythingCounter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "ry-itto.EverythingCounter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

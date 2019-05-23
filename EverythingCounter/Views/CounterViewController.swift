@@ -13,6 +13,13 @@ import ReactorKit
 
 final class CounterViewController: UIViewController, StoryboardView {
     
+    weak var createCounterVC: CreateCounterViewController? = {
+        let createCounterVC = CreateCounterViewController()
+        createCounterVC.reactor = CreateCounterViewReactor()
+        return createCounterVC
+    }()
+
+    
     @IBOutlet weak var headerView: UIView! {
         didSet {
             // 影の設定
@@ -57,8 +64,7 @@ final class CounterViewController: UIViewController, StoryboardView {
         /// bind this view
         addCounterButton.rx.tap
             .bind(to: Binder(self) { me, _ in
-                let createCounterVC = CreateCounterViewController()
-                createCounterVC.reactor = CreateCounterViewReactor()
+                guard let createCounterVC = me.createCounterVC else { return }
                 createCounterVC.onDismissed = {
                     Observable.just(Reactor.Action.reloadData)
                         .bind(to: reactor.action)
