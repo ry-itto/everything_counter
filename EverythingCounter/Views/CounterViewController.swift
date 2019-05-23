@@ -47,7 +47,7 @@ final class CounterViewController: UIViewController, StoryboardView {
     func bind(reactor: CounterViewReactor) {
         
         let dataSource = CounterViewDataSource(reactor)
-        tableView.rx.setDelegate(dataSource)
+        _ = tableView.rx.setDelegate(dataSource)
         /// reactor.state
         reactor.state
             .map { $0.counters }
