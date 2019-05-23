@@ -9,7 +9,7 @@
 import RxSwift
 import RxCocoa
 
-final class CounterViewDataSource: NSObject, UITableViewDataSource, RxTableViewDataSourceType {
+final class CounterViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate, RxTableViewDataSourceType {
     
     private let disposeBag = DisposeBag()
     private let reactor: CounterViewReactor
@@ -51,6 +51,18 @@ final class CounterViewDataSource: NSObject, UITableViewDataSource, RxTableViewD
         default:
             break
         }
+    }
+
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let resetAction = UIContextualAction(style: .normal, title: "リセット") { [weak self] action, view, handler in
+            guard let self = self else { return }
+            Observable.just(CounterViewReactor.Action.resetCount(counter: self.items[indexPath.row]))
+                .bind(to: self.reactor.action)
+                .disposed(by: self.disposeBag)
+        }
+        resetAction.backgroundColor = .green
+        let configuration = UISwipeActionsConfiguration(actions: [resetAction])
+        return configuration
     }
     
     // MARK:- RxTableViewDataSourceType
