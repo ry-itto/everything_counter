@@ -54,10 +54,15 @@ final class CounterViewDataSource: NSObject, UITableViewDataSource, UITableViewD
     }
 
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        guard
+            let cell = tableView.cellForRow(at: indexPath) as? CounterCell,
+            let reactor = cell.reactor
+        else { return nil }
+        
         let resetAction = UIContextualAction(style: .normal, title: "リセット") { [weak self] action, view, handler in
             guard let self = self else { return }
-            Observable.just(CounterViewReactor.Action.resetCount(counter: self.items[indexPath.row]))
-                .bind(to: self.reactor.action)
+            Observable.just(CounterCellReactor.Action.reset)
+                .bind(to: reactor.action)
                 .disposed(by: self.disposeBag)
         }
         resetAction.backgroundColor = .green
