@@ -19,12 +19,12 @@ final class CounterCellReactor: Reactor {
     enum Action {
         case increase
         case decrease
+        case reset
     }
     
     /// アクションによる変更内容
     enum Mutation {
-        case increaseValue(_ updated: Counter)
-        case decreaseValue(_ updated: Counter)
+        case setValue(value: Int)
     }
     
     /// Viewの状態
@@ -44,10 +44,13 @@ final class CounterCellReactor: Reactor {
         switch action {
         case .increase:
             let updated = service.update(counter, title: nil, value: counter.value + 1)
-            return .just(.increaseValue(updated))
+            return .just(.setValue(value: updated.value))
         case .decrease:
             let updated = service.update(counter, title: nil, value: counter.value - 1)
-            return .just(.decreaseValue(updated))
+            return .just(.setValue(value: updated.value))
+        case .reset:
+            service.resetCount(counter)
+            return .just(.setValue(value: 0))
         }
     }
     
@@ -55,11 +58,8 @@ final class CounterCellReactor: Reactor {
     func reduce(state: CounterCellReactor.State, mutation: CounterCellReactor.Mutation) -> CounterCellReactor.State {
         var state = state
         switch mutation {
-        case .increaseValue(let updated):
-            state.value = updated.value
-            return state
-        case .decreaseValue(let updated):
-            state.value = updated.value
+        case .setValue(let value):
+            state.value = value
             return state
         }
     }
