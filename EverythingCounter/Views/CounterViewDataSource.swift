@@ -53,6 +53,7 @@ final class CounterViewDataSource: NSObject, UITableViewDataSource, UITableViewD
         }
     }
 
+    @available(iOS 11, *)
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         guard
             let cell = tableView.cellForRow(at: indexPath) as? CounterCell,
