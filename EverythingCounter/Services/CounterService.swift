@@ -57,6 +57,6 @@ final class CounterService: CounterServiceProtocol {
     }
     
     func resetCount(_ counter: Counter) {
-        
+        _ = store.update(counter: counter, title: nil, value: 0)
     }
 }
