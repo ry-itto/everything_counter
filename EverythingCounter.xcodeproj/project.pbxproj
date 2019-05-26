@@ -33,6 +33,7 @@
 		BFCD4BAF228F9275006EDBA5 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD4BAE228F9275006EDBA5 /* RealmManager.swift */; };
 		BFCD4BB1228F93D1006EDBA5 /* CounterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD4BB0228F93D1006EDBA5 /* CounterStore.swift */; };
 		BFF70768229AD96700F23E33 /* Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF70767229AD96700F23E33 /* Count.swift */; };
+		BFF7076A229B51E400F23E33 /* CountStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF70769229B51E400F23E33 /* CountStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		BFCD4BAE228F9275006EDBA5 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		BFCD4BB0228F93D1006EDBA5 /* CounterStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterStore.swift; sourceTree = "<group>"; };
 		BFF70767229AD96700F23E33 /* Count.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Count.swift; sourceTree = "<group>"; };
+		BFF70769229B51E400F23E33 /* CountStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountStore.swift; sourceTree = "<group>"; };
 		E96E7FF9BAF6CD69471379E7 /* Pods_EverythingCounter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverythingCounter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9F90FF12909BA2F540A248D /* Pods-EverythingCounterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounterTests.release.xcconfig"; path = "Target Support Files/Pods-EverythingCounterTests/Pods-EverythingCounterTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -246,6 +248,7 @@
 				BFF70767229AD96700F23E33 /* Count.swift */,
 				BFCD4BAB228F90DE006EDBA5 /* Counter.swift */,
 				BFCD4BB0228F93D1006EDBA5 /* CounterStore.swift */,
+				BFF70769229B51E400F23E33 /* CountStore.swift */,
 				BFCD4BAE228F9275006EDBA5 /* RealmManager.swift */,
 			);
 			path = Models;
@@ -510,6 +513,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFF7076A229B51E400F23E33 /* CountStore.swift in Sources */,
 				BF501ADD2292895900727721 /* CreateCounterViewReactor.swift in Sources */,
 				BFCD4BA5228F3804006EDBA5 /* CounterCell.swift in Sources */,
 				BF501AE82294746900727721 /* UIColorExtension.swift in Sources */,
