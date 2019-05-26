@@ -34,6 +34,7 @@
 		BFCD4BB1228F93D1006EDBA5 /* CounterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD4BB0228F93D1006EDBA5 /* CounterStore.swift */; };
 		BFF70768229AD96700F23E33 /* Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF70767229AD96700F23E33 /* Count.swift */; };
 		BFF7076A229B51E400F23E33 /* CountStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF70769229B51E400F23E33 /* CountStore.swift */; };
+		BFF70770229B579E00F23E33 /* RealmError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF7076F229B579E00F23E33 /* RealmError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		BFCD4BB0228F93D1006EDBA5 /* CounterStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterStore.swift; sourceTree = "<group>"; };
 		BFF70767229AD96700F23E33 /* Count.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Count.swift; sourceTree = "<group>"; };
 		BFF70769229B51E400F23E33 /* CountStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountStore.swift; sourceTree = "<group>"; };
+		BFF7076F229B579E00F23E33 /* RealmError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmError.swift; sourceTree = "<group>"; };
 		E96E7FF9BAF6CD69471379E7 /* Pods_EverythingCounter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverythingCounter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9F90FF12909BA2F540A248D /* Pods-EverythingCounterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounterTests.release.xcconfig"; path = "Target Support Files/Pods-EverythingCounterTests/Pods-EverythingCounterTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +151,7 @@
 		BF501ADE22928C3C00727721 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				BFF7076E229B578B00F23E33 /* Error */,
 				BF501ADF22928C4E00727721 /* SemiModal */,
 			);
 			path = Util;
@@ -230,14 +233,9 @@
 		BFCD4B99228E82B8006EDBA5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BFCD4BA2228F37E6006EDBA5 /* Cells */,
-				BFCD4B9B228F34B2006EDBA5 /* CounterViewController.swift */,
-				BFCD4B9C228F34B2006EDBA5 /* CounterViewController.xib */,
-				BF501AE52293CA1F00727721 /* CounterViewDataSource.swift */,
-				BFCD4BA9228F44FE006EDBA5 /* CounterViewReactor.swift */,
-				BF501AD8229285E500727721 /* CreateCounterViewController.swift */,
-				BF501AD9229285E500727721 /* CreateCounterViewController.xib */,
-				BF501ADC2292895900727721 /* CreateCounterViewReactor.swift */,
+				BFF7076D229B551800F23E33 /* Calendar */,
+				BFF7076B229B54E100F23E33 /* Counter */,
+				BFF7076C229B54EA00F23E33 /* CreateCounter */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -270,6 +268,43 @@
 				BFCADD4F229194DB00828A57 /* CounterService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		BFF7076B229B54E100F23E33 /* Counter */ = {
+			isa = PBXGroup;
+			children = (
+				BF501AD8229285E500727721 /* CreateCounterViewController.swift */,
+				BF501AD9229285E500727721 /* CreateCounterViewController.xib */,
+				BF501ADC2292895900727721 /* CreateCounterViewReactor.swift */,
+			);
+			path = Counter;
+			sourceTree = "<group>";
+		};
+		BFF7076C229B54EA00F23E33 /* CreateCounter */ = {
+			isa = PBXGroup;
+			children = (
+				BFCD4BA2228F37E6006EDBA5 /* Cells */,
+				BFCD4B9B228F34B2006EDBA5 /* CounterViewController.swift */,
+				BFCD4B9C228F34B2006EDBA5 /* CounterViewController.xib */,
+				BF501AE52293CA1F00727721 /* CounterViewDataSource.swift */,
+				BFCD4BA9228F44FE006EDBA5 /* CounterViewReactor.swift */,
+			);
+			path = CreateCounter;
+			sourceTree = "<group>";
+		};
+		BFF7076D229B551800F23E33 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		BFF7076E229B578B00F23E33 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				BFF7076F229B579E00F23E33 /* RealmError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -517,6 +552,7 @@
 				BF501ADD2292895900727721 /* CreateCounterViewReactor.swift in Sources */,
 				BFCD4BA5228F3804006EDBA5 /* CounterCell.swift in Sources */,
 				BF501AE82294746900727721 /* UIColorExtension.swift in Sources */,
+				BFF70770229B579E00F23E33 /* RealmError.swift in Sources */,
 				BFCD4BAA228F44FE006EDBA5 /* CounterViewReactor.swift in Sources */,
 				BFCD4BB1228F93D1006EDBA5 /* CounterStore.swift in Sources */,
 				BFCD4BAC228F90DE006EDBA5 /* Counter.swift in Sources */,

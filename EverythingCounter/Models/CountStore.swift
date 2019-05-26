@@ -37,7 +37,7 @@ final class CountStore {
     ///   - date: カウントのアクションを起こした日
     ///   - type: カウントのアクションのタイプ
     /// - Returns: 作成したCount
-    func create(counter: Counter, date: Date, type: CountType) -> Count {
+    func create(counter: Counter, date: Date, type: CountType) -> Result<Count, Error> {
         let count = Count()
         count.counterID = counter.id
         count.type = type.rawValue
@@ -48,7 +48,30 @@ final class CountStore {
             }
         } catch let e {
             print("\(#file)#\(#line) \"\(e.localizedDescription)\"")
+            return .failure(e)
         }
-        return count
+        return .success(count)
+    }
+    
+    /// CounterIDに紐づく最後に作成したモデルを削除
+    ///
+    /// - Parameter counterID: カウンターID
+    /// - Returns: 削除したCount
+    func deleteLast(counterID: String) -> Result<Count, Error> {
+        let objects: [Count] = realm.objects(Count.self).filter { count -> Bool in
+            return count.counterID == counterID
+        }
+        guard let deleteTarget = objects.last else {
+            return .failure(RealmError.notFound)
+        }
+        do {
+            try realm.write {
+                realm.delete(deleteTarget)
+            }
+        } catch let e {
+            print("\(#file)#\(#line) \"\(e.localizedDescription)\"")
+            return .failure(e)
+        }
+        return .success(deleteTarget)
     }
 }
