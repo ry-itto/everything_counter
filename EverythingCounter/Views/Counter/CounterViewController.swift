@@ -60,6 +60,7 @@ final class CounterViewController: UIViewController, StoryboardView {
                 let createCounterVC = CreateCounterViewController()
                 createCounterVC.reactor = CreateCounterViewReactor()
                 createCounterVC.onDismissed = {
+                    createCounterVC.resignFirstResponder()
                     Observable.just(Reactor.Action.reloadData)
                         .bind(to: reactor.action)
                         .disposed(by: createCounterVC.disposeBag)

@@ -31,6 +31,7 @@ final class CreateCounterViewController: UIViewController, StoryboardView {
     override func viewDidLoad() {
         super.viewDidLoad()
         semiModalPresentationController = self.presentationController as? SemiModalPresentationController
+        semiModalPresentationController?.onDismissed = onDismissed
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,6 +41,7 @@ final class CreateCounterViewController: UIViewController, StoryboardView {
     
     func bind(reactor: CreateCounterViewReactor) {
         RxKeyboard.instance.frame
+            .debug()
             .drive(Binder(self) { me, frame in
                 let height = frame.height
                     + me.inputTitleField.frame.height
