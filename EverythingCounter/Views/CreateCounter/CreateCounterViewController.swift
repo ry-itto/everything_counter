@@ -31,7 +31,6 @@ final class CreateCounterViewController: UIViewController, StoryboardView {
     override func viewDidLoad() {
         super.viewDidLoad()
         semiModalPresentationController = self.presentationController as? SemiModalPresentationController
-        semiModalPresentationController?.onDismissed = onDismissed
     }
     
     override func viewWillAppear(_ animated: Bool) {

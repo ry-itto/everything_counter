@@ -10,6 +10,7 @@
 		0000E4AF25D7F83B76E8F428 /* Pods_EverythingCounterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B271430EC4F2732BE6DBD07 /* Pods_EverythingCounterTests.framework */; };
 		174FAD1B804FCBD4782CD0E0 /* Pods_EverythingCounter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E7FF9BAF6CD69471379E7 /* Pods_EverythingCounter.framework */; };
 		5E5F77AB9BA4761D6788516D /* Pods_EverythingCounterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009C1D861BCF634512CB0015 /* Pods_EverythingCounterUITests.framework */; };
+		BF31D16E229CF6270023A7CD /* CalendarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF31D16D229CF6270023A7CD /* CalendarExtension.swift */; };
 		BF501ADA229285E500727721 /* CreateCounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF501AD8229285E500727721 /* CreateCounterViewController.swift */; };
 		BF501ADB229285E500727721 /* CreateCounterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF501AD9229285E500727721 /* CreateCounterViewController.xib */; };
 		BF501ADD2292895900727721 /* CreateCounterViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF501ADC2292895900727721 /* CreateCounterViewReactor.swift */; };
@@ -35,8 +36,8 @@
 		BFF70768229AD96700F23E33 /* Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF70767229AD96700F23E33 /* Count.swift */; };
 		BFF7076A229B51E400F23E33 /* CountStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF70769229B51E400F23E33 /* CountStore.swift */; };
 		BFF70770229B579E00F23E33 /* RealmError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF7076F229B579E00F23E33 /* RealmError.swift */; };
-		BFF70772229B5C9A00F23E33 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF70771229B5C9A00F23E33 /* CalendarView.swift */; };
-		BFF70774229B5CB100F23E33 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF70773229B5CB100F23E33 /* CalendarView.xib */; };
+		BFF70772229B5C9A00F23E33 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF70771229B5C9A00F23E33 /* CalendarViewController.swift */; };
+		BFF70774229B5CB100F23E33 /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF70773229B5CB100F23E33 /* CalendarViewController.xib */; };
 		BFF7077A229B5D3C00F23E33 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF70778229B5D3C00F23E33 /* CalendarCell.swift */; };
 		BFF7077B229B5D3C00F23E33 /* CalendarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF70779229B5D3C00F23E33 /* CalendarCell.xib */; };
 		BFF7077D229B619B00F23E33 /* CalendarDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF7077C229B619B00F23E33 /* CalendarDataSource.swift */; };
@@ -69,6 +70,7 @@
 		61A1B67667F1969062FD6526 /* Pods-EverythingCounter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounter.release.xcconfig"; path = "Target Support Files/Pods-EverythingCounter/Pods-EverythingCounter.release.xcconfig"; sourceTree = "<group>"; };
 		85C5DB91A597275D4ADD83E1 /* Pods-EverythingCounter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounter.debug.xcconfig"; path = "Target Support Files/Pods-EverythingCounter/Pods-EverythingCounter.debug.xcconfig"; sourceTree = "<group>"; };
 		8B271430EC4F2732BE6DBD07 /* Pods_EverythingCounterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverythingCounterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF31D16D229CF6270023A7CD /* CalendarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtension.swift; sourceTree = "<group>"; };
 		BF501AD8229285E500727721 /* CreateCounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCounterViewController.swift; sourceTree = "<group>"; };
 		BF501AD9229285E500727721 /* CreateCounterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCounterViewController.xib; sourceTree = "<group>"; };
 		BF501ADC2292895900727721 /* CreateCounterViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCounterViewReactor.swift; sourceTree = "<group>"; };
@@ -100,8 +102,8 @@
 		BFF70767229AD96700F23E33 /* Count.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Count.swift; sourceTree = "<group>"; };
 		BFF70769229B51E400F23E33 /* CountStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountStore.swift; sourceTree = "<group>"; };
 		BFF7076F229B579E00F23E33 /* RealmError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmError.swift; sourceTree = "<group>"; };
-		BFF70771229B5C9A00F23E33 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
-		BFF70773229B5CB100F23E33 /* CalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarView.xib; sourceTree = "<group>"; };
+		BFF70771229B5C9A00F23E33 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		BFF70773229B5CB100F23E33 /* CalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
 		BFF70778229B5D3C00F23E33 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		BFF70779229B5D3C00F23E33 /* CalendarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarCell.xib; sourceTree = "<group>"; };
 		BFF7077C229B619B00F23E33 /* CalendarDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDataSource.swift; sourceTree = "<group>"; };
@@ -182,8 +184,9 @@
 		BF501AE22292A00900727721 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				BF501AE32292A02100727721 /* UIViewControllerExtension.swift */,
+				BF31D16D229CF6270023A7CD /* CalendarExtension.swift */,
 				BF501AE72294746900727721 /* UIColorExtension.swift */,
+				BF501AE32292A02100727721 /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -248,8 +251,8 @@
 			isa = PBXGroup;
 			children = (
 				BFF7076D229B551800F23E33 /* Calendar */,
-				BFF7076B229B54E100F23E33 /* CreateCounter */,
 				BFF7076C229B54EA00F23E33 /* Counter */,
+				BFF7076B229B54E100F23E33 /* CreateCounter */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -312,8 +315,8 @@
 			children = (
 				BFF7077C229B619B00F23E33 /* CalendarDataSource.swift */,
 				BFF7077E229B630700F23E33 /* CalendarReactor.swift */,
-				BFF70771229B5C9A00F23E33 /* CalendarView.swift */,
-				BFF70773229B5CB100F23E33 /* CalendarView.xib */,
+				BFF70771229B5C9A00F23E33 /* CalendarViewController.swift */,
+				BFF70773229B5CB100F23E33 /* CalendarViewController.xib */,
 				BFF70775229B5D0100F23E33 /* Cells */,
 			);
 			path = Calendar;
@@ -445,7 +448,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFF70774229B5CB100F23E33 /* CalendarView.xib in Resources */,
+				BFF70774229B5CB100F23E33 /* CalendarViewController.xib in Resources */,
 				BF501ADB229285E500727721 /* CreateCounterViewController.xib in Resources */,
 				BFCD4BA6228F3804006EDBA5 /* CounterCell.xib in Resources */,
 				BFF7077B229B5D3C00F23E33 /* CalendarCell.xib in Resources */,
@@ -593,9 +596,10 @@
 				BFCADD50229194DB00828A57 /* CounterService.swift in Sources */,
 				BFCD4B9D228F34B2006EDBA5 /* CounterViewController.swift in Sources */,
 				BFCD4BAF228F9275006EDBA5 /* RealmManager.swift in Sources */,
-				BFF70772229B5C9A00F23E33 /* CalendarView.swift in Sources */,
+				BFF70772229B5C9A00F23E33 /* CalendarViewController.swift in Sources */,
 				BF501AE42292A02100727721 /* UIViewControllerExtension.swift in Sources */,
 				BF501AE62293CA1F00727721 /* CounterViewDataSource.swift in Sources */,
+				BF31D16E229CF6270023A7CD /* CalendarExtension.swift in Sources */,
 				BFCD4BA8228F381C006EDBA5 /* CounterCellReactor.swift in Sources */,
 				BF501ADA229285E500727721 /* CreateCounterViewController.swift in Sources */,
 				BFF7077D229B619B00F23E33 /* CalendarDataSource.swift in Sources */,
@@ -769,6 +773,7 @@
 			baseConfigurationReference = 85C5DB91A597275D4ADD83E1 /* Pods-EverythingCounter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DFY27HWN2G;
 				INFOPLIST_FILE = EverythingCounter/Info.plist;
@@ -778,6 +783,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ry-itto.EverythingCounter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -788,6 +794,7 @@
 			baseConfigurationReference = 61A1B67667F1969062FD6526 /* Pods-EverythingCounter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DFY27HWN2G;
 				INFOPLIST_FILE = EverythingCounter/Info.plist;
@@ -797,6 +804,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ry-itto.EverythingCounter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
