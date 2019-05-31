@@ -30,7 +30,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCJ-Yg-lBD">
                                 <rect key="frame" x="10" y="37" width="30" height="30"/>
-                                <color key="backgroundColor" red="0.9755004048" green="0.7737295032" blue="0.2762959599" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="pCJ-Yg-lBD" secondAttribute="height" multiplier="1:1" id="CvT-qJ-yp8"/>
                                     <constraint firstAttribute="width" constant="30" id="WfC-Wt-Czb"/>
@@ -42,7 +42,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFG-ob-LP2">
                                 <rect key="frame" x="160" y="37" width="30" height="30"/>
-                                <color key="backgroundColor" red="0.9755004048" green="0.7737295032" blue="0.2762959599" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="EFG-ob-LP2" secondAttribute="height" multiplier="1:1" id="DRq-h6-djE"/>
                                     <constraint firstAttribute="width" constant="30" id="LvP-CV-cBI"/>

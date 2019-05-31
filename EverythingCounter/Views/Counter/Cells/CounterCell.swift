@@ -20,6 +20,7 @@ class CounterCell: UITableViewCell, View {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var decreaseButton: UIButton! {
         didSet {
+            decreaseButton.backgroundColor = UIColor.Nippon.byakugun.color()
             decreaseButton.layer.cornerRadius = decreaseButton.frame.height / 2
             // 影の設定
             decreaseButton.layer.shadowOpacity = 0.5
@@ -30,6 +31,7 @@ class CounterCell: UITableViewCell, View {
     }
     @IBOutlet weak var increaseButton: UIButton! {
         didSet {
+            increaseButton.backgroundColor = UIColor.Nippon.byakugun.color()
             increaseButton.layer.cornerRadius = increaseButton.frame.height / 2
             // 影の設定
             increaseButton.layer.shadowOpacity = 0.5

@@ -24,4 +24,22 @@ extension UIColor {
         let a: CGFloat = CGFloat( rgba & 0x000000FF       ) / 255.0
         self.init(red: r, green: g, blue: b, alpha: a)
     }
+    
+    /// NipponColors.com の色格納列挙型
+    /// http://nipponcolors.com/
+    ///
+    /// - byakugun: 白群
+    enum Nippon {
+        case byakugun
+        case shinsyu
+        
+        func color() -> UIColor {
+            switch self {
+            case .byakugun:
+                return UIColor(rgb: 0x78C2C4)
+            case .shinsyu:
+                return UIColor(rgb: 0xAB3B3A)
+            }
+        }
+    }
 }

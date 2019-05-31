@@ -27,12 +27,12 @@ final class CounterViewController: UIViewController, StoryboardView {
             tableView.register(UINib(nibName: "CounterCell", bundle: nil), forCellReuseIdentifier: CounterCell.cellIdentifier)
             tableView.rowHeight = CounterCell.rowHeight
             tableView.tableFooterView = UIView()
-            tableView.allowsSelection = false
+//            tableView.allowsSelection = false
         }
     }
     @IBOutlet weak var addCounterButton: UIButton! {
         didSet {
-            addCounterButton.backgroundColor = UIColor(rgb: 0x23AC0E)
+            addCounterButton.backgroundColor = UIColor.Nippon.byakugun.color()
             addCounterButton.layer.cornerRadius = addCounterButton.bounds.midY
             // 影の設定
             addCounterButton.layer.shadowColor = UIColor.black.cgColor
@@ -61,11 +61,24 @@ final class CounterViewController: UIViewController, StoryboardView {
                 let createCounterVC = CreateCounterViewController()
                 createCounterVC.reactor = CreateCounterViewReactor()
                 createCounterVC.onDismissed = {
+                    createCounterVC.resignFirstResponder()
                     Observable.just(Reactor.Action.reloadData)
                         .bind(to: reactor.action)
                         .disposed(by: createCounterVC.disposeBag)
                 }
                 me.presentSemiModal(createCounterVC, animated: true, completion: nil)
+            }).disposed(by: disposeBag)
+        
+        tableView.rx.modelSelected(Counter.self)
+            .bind(to: Binder(self) { me, counter in
+                let vc = CalendarViewController()
+                vc.reactor = CalendarReactor(counterID: counter.id)
+                me.present(vc, animated: true)
+            }).disposed(by: disposeBag)
+        
+        tableView.rx.itemSelected
+            .bind(to: Binder(self) { me, indexPath in
+                me.tableView.deselectRow(at: indexPath, animated: true)
             }).disposed(by: disposeBag)
     }
 }
