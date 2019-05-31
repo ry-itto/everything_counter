@@ -19,17 +19,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JjW-ss-IBG">
-                        <rect key="frame" x="19.5" y="14.5" width="11" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JjW-ss-IBG">
+                        <rect key="frame" x="1" y="1" width="21" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="JjW-ss-IBG" secondAttribute="height" multiplier="1:1" id="MqV-Tb-fbI"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="JjW-ss-IBG" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Mf9-oX-fhb"/>
-                <constraint firstItem="JjW-ss-IBG" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="qpV-cB-jAF"/>
+                <constraint firstItem="JjW-ss-IBG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="2x6-Mh-pPD"/>
+                <constraint firstItem="JjW-ss-IBG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="1" id="3jW-WY-g26"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>

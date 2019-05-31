@@ -20,9 +20,10 @@ final class CalendarViewController: UIViewController, StoryboardView {
         didSet {
             collectionView.register(UINib(nibName: "CalendarCell", bundle: nil), forCellWithReuseIdentifier: "cell")
             let layout = UICollectionViewFlowLayout()
-            let screenBounds = UIScreen.main.bounds
-            layout.itemSize = CGSize(width: screenBounds.width / 7, height: screenBounds.width / 7)
+            let itemWidth = UIScreen.main.bounds.width / 7
+            layout.itemSize = CGSize(width: itemWidth, height: itemWidth * 1.5)
             layout.minimumInteritemSpacing = 0
+            layout.minimumLineSpacing = 0
             collectionView.collectionViewLayout = layout
         }
     }

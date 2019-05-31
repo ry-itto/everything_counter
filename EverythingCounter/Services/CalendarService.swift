@@ -9,9 +9,23 @@
 import Foundation
 
 struct Day {
+    let month: Int
     let dayOfWeek: Int
     let dayOfWeekStr: String
     let day: Int
+    
+    /// Dayが今日のものかどうか判定する
+    ///
+    /// - Returns: 真偽値
+    func isToday() -> Bool {
+        let month = Calendar.current.component(.month, from: Date())
+        if self.month != month {
+            return false
+        }
+        let today = Calendar.current.component(.month, from: Date())
+        
+        return today == day
+    }
 }
 
 protocol CalendarServiceProtocol {
@@ -36,7 +50,7 @@ final class CalendarService: CalendarServiceProtocol {
             defer {
                 weekDay += 1
             }
-            return Day(dayOfWeek: (weekDay - 1) % 7, dayOfWeekStr: dayOfWeekSymbols[(weekDay - 1) % 7], day: day)
+            return Day(month: month, dayOfWeek: (weekDay - 1) % 7, dayOfWeekStr: dayOfWeekSymbols[(weekDay - 1) % 7], day: day)
         }
     }
 }
