@@ -27,17 +27,24 @@ final class CalendarDataSource: UICollectionViewFlowLayout, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CalendarCell
+        let dayOfWeek = days[0].dayOfWeek
         
-        if indexPath.item == days[0].dayOfWeek {
+        if indexPath.item == dayOfWeek {
             showStarted = true
         } else if !showStarted {
             cell.dayLabel.text = ""
             return cell
         }
+        let dayModel = days[indexPath.row - dayOfWeek]
         
-        cell.dayLabel.text = "\(days[indexPath.row - days[0].dayOfWeek].day)"
-        cell.layer.borderWidth = 0.5
-        cell.layer.borderColor = UIColor.lightGray.cgColor
+        if dayModel.isToday() {
+            cell.dayLabel.backgroundColor = .orange
+            cell.dayLabel.textColor = .white
+            cell.dayLabel.clipsToBounds = true
+            cell.dayLabel.layer.cornerRadius = cell.dayLabel.frame.width / 2
+        }
+        cell.dayLabel.text = "\(dayModel.day)"
+        
         return cell
     }
     
