@@ -35,6 +35,11 @@ protocol CounterServiceProtocol {
     ///
     /// - Parameter counter: 削除対象のCounter
     func delete(_ counter: Counter)
+    
+    /// Counterのカウントをリセット
+    ///
+    /// - Parameter counter: リセット対象のCounter
+    func resetCount(_ counter: Counter)
 }
 
 final class CounterService: CounterServiceProtocol {
@@ -68,6 +73,11 @@ final class CounterService: CounterServiceProtocol {
     
     func delete(_ counter: Counter) {
         counterStore.delete(counter: counter)
+        _ = countStore.deleteAllByCounterID(counterID: counter.id)
+    }
+    
+    func resetCount(_ counter: Counter) {
+        _ = counterStore.update(counter: counter, title: nil, value: 0)
         _ = countStore.deleteAllByCounterID(counterID: counter.id)
     }
 }
