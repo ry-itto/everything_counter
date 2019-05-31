@@ -37,6 +37,7 @@ final class CalendarDataSource: UICollectionViewFlowLayout, UICollectionViewData
         }
         let dayModel = days[indexPath.row - dayOfWeek]
         
+        // 本日のセルだった場合日付の背景に色をつける
         if dayModel.isToday() {
             cell.dayLabel.backgroundColor = UIColor.Nippon.byakugun.color()
             cell.dayLabel.textColor = .white
@@ -44,9 +45,14 @@ final class CalendarDataSource: UICollectionViewFlowLayout, UICollectionViewData
             cell.dayLabel.layer.cornerRadius = cell.dayLabel.frame.width / 2
         }
         
+        // カウントされた日だった場合カウントしたことを示すビューを表示する
         if dayModel.isCountedDay {
-            cell.backgroundColor = .red
+            cell.countedView.isHidden = false
         }
+        
+        // セルに外枠をつける
+        cell.layer.borderColor = UIColor.lightGray.cgColor
+        cell.layer.borderWidth = 0.5
         
         cell.dayLabel.text = "\(dayModel.day)"
         

@@ -31,11 +31,14 @@ extension UIColor {
     /// - byakugun: 白群
     enum Nippon {
         case byakugun
+        case shinsyu
         
         func color() -> UIColor {
             switch self {
             case .byakugun:
                 return UIColor(rgb: 0x78C2C4)
+            case .shinsyu:
+                return UIColor(rgb: 0xAB3B3A)
             }
         }
     }

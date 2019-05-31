@@ -13,10 +13,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CalendarCell" customModule="EverythingCounter" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="97" height="142"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="97" height="142"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JjW-ss-IBG">
@@ -28,17 +28,30 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h8X-V9-39M">
+                        <rect key="frame" x="38.5" y="61" width="20" height="20"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="h8X-V9-39M" secondAttribute="height" multiplier="1:1" id="7db-Np-OMq"/>
+                            <constraint firstAttribute="width" constant="20" id="dXV-pI-iCT"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="JjW-ss-IBG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="2x6-Mh-pPD"/>
                 <constraint firstItem="JjW-ss-IBG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="1" id="3jW-WY-g26"/>
+                <constraint firstItem="h8X-V9-39M" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="4ln-hg-Fhw"/>
+                <constraint firstItem="h8X-V9-39M" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="zYe-CX-OLX"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="97" height="142"/>
             <connections>
+                <outlet property="countedView" destination="h8X-V9-39M" id="4LR-7C-RAx"/>
                 <outlet property="dayLabel" destination="JjW-ss-IBG" id="1MV-bC-tPY"/>
             </connections>
+            <point key="canvasLocation" x="192.0289855072464" y="66.294642857142861"/>
         </collectionViewCell>
     </objects>
 </document>
