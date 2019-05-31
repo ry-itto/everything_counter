@@ -40,7 +40,6 @@ final class CreateCounterViewController: UIViewController, StoryboardView {
     
     func bind(reactor: CreateCounterViewReactor) {
         RxKeyboard.instance.frame
-            .debug()
             .drive(Binder(self) { me, frame in
                 let height = frame.height
                     + me.inputTitleField.frame.height
