@@ -32,7 +32,7 @@ final class CounterViewController: UIViewController, StoryboardView {
     }
     @IBOutlet weak var addCounterButton: UIButton! {
         didSet {
-            addCounterButton.backgroundColor = UIColor(rgb: 0x23AC0E)
+            addCounterButton.backgroundColor = UIColor.Nippon.byakugun.color()
             addCounterButton.layer.cornerRadius = addCounterButton.bounds.midY
             // 影の設定
             addCounterButton.layer.shadowColor = UIColor.black.cgColor
@@ -69,10 +69,11 @@ final class CounterViewController: UIViewController, StoryboardView {
             }).disposed(by: disposeBag)
         
         tableView.rx.itemSelected
-            .bind(to: Binder(self) { me, _ in
+            .bind(to: Binder(self) { me, indexPath in
                 let vc = CalendarViewController()
                 vc.reactor = CalendarReactor()
-                me.present(vc, animated: true, completion: nil)
+                me.present(vc, animated: true)
+                me.tableView.deselectRow(at: indexPath, animated: true)
             }).disposed(by: disposeBag)
     }
 }

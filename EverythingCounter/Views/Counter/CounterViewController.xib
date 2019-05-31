@@ -29,7 +29,7 @@
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCH-c2-Zhr">
                     <rect key="frame" x="324" y="772" width="60" height="60"/>
-                    <color key="backgroundColor" red="0.472487092" green="0.83425885440000003" blue="0.29319655900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="qCH-c2-Zhr" secondAttribute="height" multiplier="1:1" id="S08-tl-HlT"/>
                         <constraint firstAttribute="width" constant="60" id="Te6-qf-geL"/>

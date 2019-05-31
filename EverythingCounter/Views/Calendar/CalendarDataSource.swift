@@ -38,7 +38,7 @@ final class CalendarDataSource: UICollectionViewFlowLayout, UICollectionViewData
         let dayModel = days[indexPath.row - dayOfWeek]
         
         if dayModel.isToday() {
-            cell.dayLabel.backgroundColor = .orange
+            cell.dayLabel.backgroundColor = UIColor.Nippon.byakugun.color()
             cell.dayLabel.textColor = .white
             cell.dayLabel.clipsToBounds = true
             cell.dayLabel.layer.cornerRadius = cell.dayLabel.frame.width / 2

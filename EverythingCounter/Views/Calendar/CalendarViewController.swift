@@ -8,14 +8,23 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 import ReactorKit
 
 final class CalendarViewController: UIViewController, StoryboardView {
     var disposeBag = DisposeBag()
 
     @IBOutlet weak var calendarNavigation: UINavigationItem!
-    @IBOutlet weak var previousMonthButton: UIBarButtonItem!
-    @IBOutlet weak var nextMonthButton: UIBarButtonItem!
+    @IBOutlet weak var previousMonthButton: UIBarButtonItem! {
+        didSet {
+            previousMonthButton.tintColor = UIColor.Nippon.byakugun.color()
+        }
+    }
+    @IBOutlet weak var nextMonthButton: UIBarButtonItem! {
+        didSet {
+            nextMonthButton.tintColor = UIColor.Nippon.byakugun.color()
+        }
+    }
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             collectionView.register(UINib(nibName: "CalendarCell", bundle: nil), forCellWithReuseIdentifier: "cell")
@@ -27,6 +36,7 @@ final class CalendarViewController: UIViewController, StoryboardView {
             collectionView.collectionViewLayout = layout
         }
     }
+    @IBOutlet weak var closeButton: UIButton!
     
     func bind(reactor: CalendarReactor) {
         reactor.state
@@ -40,5 +50,10 @@ final class CalendarViewController: UIViewController, StoryboardView {
             .debug()
             .bind(to: collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+        
+        closeButton.rx.tap
+            .bind(to: Binder(self) { me, _ in
+                me.presentingViewController?.dismiss(animated: true)
+            }).disposed(by: disposeBag)
     }
 }

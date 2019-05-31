@@ -14,6 +14,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarViewController" customModule="EverythingCounter" customModuleProvider="target">
             <connections>
                 <outlet property="calendarNavigation" destination="Abg-CQ-nXN" id="VIX-d6-Bgh"/>
+                <outlet property="closeButton" destination="TGR-A0-okK" id="bsU-Y3-JF9"/>
                 <outlet property="collectionView" destination="xa4-BJ-yYf" id="2uD-4t-J5l"/>
                 <outlet property="nextMonthButton" destination="DO3-Cj-QoS" id="w02-b6-b0e"/>
                 <outlet property="previousMonthButton" destination="Du4-Kw-sfo" id="Ijz-3j-ILA"/>
@@ -26,7 +27,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xa4-BJ-yYf">
-                    <rect key="frame" x="0.0" y="141" width="414" height="721"/>
+                    <rect key="frame" x="0.0" y="197" width="414" height="665"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eVV-gb-9YS">
                         <size key="itemSize" width="50" height="50"/>
@@ -36,7 +37,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLl-yo-hal">
-                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <rect key="frame" x="0.0" y="100" width="414" height="44"/>
                     <items>
                         <navigationItem title="2019年8月" id="Abg-CQ-nXN">
                             <barButtonItem key="leftBarButtonItem" title="先月" id="Du4-Kw-sfo">
@@ -49,7 +50,7 @@
                     </items>
                 </navigationBar>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QK4-A1-A9D">
-                    <rect key="frame" x="0.0" y="88" width="414" height="52.5"/>
+                    <rect key="frame" x="0.0" y="144" width="414" height="52.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1LG-Kz-mE8">
                             <rect key="frame" x="0.0" y="0.0" width="52.5" height="52.5"/>
@@ -117,20 +118,29 @@
                     </subviews>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z0T-Om-EF9">
-                    <rect key="frame" x="0.0" y="140.5" width="414" height="0.5"/>
+                    <rect key="frame" x="0.0" y="196.5" width="414" height="0.5"/>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="0.5" id="CAF-1h-EBm"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGR-A0-okK">
+                    <rect key="frame" x="20" y="54" width="36" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="36" id="azc-9w-bJ5"/>
+                        <constraint firstAttribute="width" secondItem="TGR-A0-okK" secondAttribute="height" multiplier="1:1" id="uZx-RP-gQt"/>
+                    </constraints>
+                    <state key="normal" image="close-icon"/>
+                </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.97256201505661011" green="0.97252553701400757" blue="0.97255033254623413" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
+                <constraint firstItem="mLl-yo-hal" firstAttribute="top" secondItem="TGR-A0-okK" secondAttribute="bottom" constant="10" id="0D8-g8-pGt"/>
                 <constraint firstItem="z0T-Om-EF9" firstAttribute="bottom" secondItem="xa4-BJ-yYf" secondAttribute="top" id="1mQ-T4-Myp"/>
                 <constraint firstItem="QK4-A1-A9D" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1vR-Er-GbC"/>
-                <constraint firstItem="mLl-yo-hal" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="3hk-zT-AyQ"/>
                 <constraint firstItem="QK4-A1-A9D" firstAttribute="top" secondItem="mLl-yo-hal" secondAttribute="bottom" id="D2i-O3-KEN"/>
                 <constraint firstItem="xa4-BJ-yYf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="GDC-yv-SAD"/>
+                <constraint firstItem="TGR-A0-okK" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="HG7-Ep-Q5R"/>
                 <constraint firstItem="z0T-Om-EF9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="KhK-mu-CLD"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="xa4-BJ-yYf" secondAttribute="bottom" id="R5N-bd-wNb"/>
                 <constraint firstItem="mLl-yo-hal" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="VrM-3B-qNB"/>
@@ -139,9 +149,13 @@
                 <constraint firstItem="z0T-Om-EF9" firstAttribute="top" secondItem="QK4-A1-A9D" secondAttribute="bottom" id="gCD-d0-Jih"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="xa4-BJ-yYf" secondAttribute="trailing" id="irK-qR-KFX"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="QK4-A1-A9D" secondAttribute="trailing" id="jBm-cm-ls5"/>
+                <constraint firstItem="TGR-A0-okK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="p7d-fd-YTm"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="105.79710144927537" y="35.491071428571423"/>
         </view>
     </objects>
+    <resources>
+        <image name="close-icon" width="24" height="24"/>
+    </resources>
 </document>
