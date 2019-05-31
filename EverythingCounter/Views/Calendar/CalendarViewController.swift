@@ -47,7 +47,6 @@ final class CalendarViewController: UIViewController, StoryboardView {
         let dataSource = CalendarDataSource()
         reactor.state
             .map { $0.days }
-            .debug()
             .bind(to: collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         

@@ -10,7 +10,7 @@ import Foundation
 
 /// CountモデルのCRUD処理を行うクラス
 final class CountStore {
-    static let shared = CounterStore()
+    static let shared = CountStore()
     private let realm = RealmManager.shared.realm
     
     /// DB上の全てのCountを取得
@@ -73,5 +73,24 @@ final class CountStore {
             return .failure(e)
         }
         return .success(deleteTarget)
+    }
+    
+    /// CounterIDに紐づく全てのCountモデルを削除
+    ///
+    /// - Parameter counterID: カウンターID
+    /// - Returns: 結果
+    func deleteAllByCounterID(counterID: String) -> Result<Void, Error> {
+        let objects: [Count] = realm.objects(Count.self).filter { count -> Bool in
+            return count.counterID == counterID
+        }
+        do {
+            try realm.write {
+                realm.delete(objects)
+            }
+        } catch let e {
+            print("\(#file)#\(#line) \"\(e.localizedDescription)\"")
+            return .failure(e)
+        }
+        return .success(())
     }
 }

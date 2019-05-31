@@ -68,11 +68,15 @@ final class CounterViewController: UIViewController, StoryboardView {
                 me.presentSemiModal(createCounterVC, animated: true, completion: nil)
             }).disposed(by: disposeBag)
         
+        tableView.rx.modelSelected(Counter.self)
+            .bind(to: Binder(self) { me, counter in
+                let vc = CalendarViewController()
+                vc.reactor = CalendarReactor(counterID: counter.id)
+                me.present(vc, animated: true)
+            }).disposed(by: disposeBag)
+        
         tableView.rx.itemSelected
             .bind(to: Binder(self) { me, indexPath in
-                let vc = CalendarViewController()
-                vc.reactor = CalendarReactor()
-                me.present(vc, animated: true)
                 me.tableView.deselectRow(at: indexPath, animated: true)
             }).disposed(by: disposeBag)
     }

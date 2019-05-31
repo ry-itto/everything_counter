@@ -22,19 +22,23 @@ final class CalendarReactor: Reactor {
     }
     
     struct State {
+        let counterID: String
         var currentYear: Int
         var currentMonth: Int
         var days: [Day]
     }
     
-    init(_ service: CalendarServiceProtocol = CalendarService()) {
+    init(_ service: CalendarServiceProtocol = CalendarService(),
+         counterID: String) {
         let today = Date()
         initialState = State(
+            counterID: counterID,
             currentYear: Calendar.current.component(.year, from: Date()),
             currentMonth: Calendar.current.component(.month, from: Date()),
             days: service.generateCalendar(
                 year: Calendar.current.component(.year, from: today),
-                month: Calendar.current.component(.month, from: today)))
+                month: Calendar.current.component(.month, from: today),
+                counterID: counterID))
         self.service = service
     }
     

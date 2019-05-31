@@ -43,10 +43,10 @@ final class CounterCellReactor: Reactor {
     func mutate(action: CounterCellReactor.Action) -> Observable<CounterCellReactor.Mutation> {
         switch action {
         case .increase:
-            let updated = service.update(counter, title: nil, value: counter.value + 1)
+            let updated = service.update(counter, title: nil, value: counter.value + 1, type: .increase)
             return .just(.increaseValue(updated))
         case .decrease:
-            let updated = service.update(counter, title: nil, value: counter.value - 1)
+            let updated = service.update(counter, title: nil, value: counter.value - 1, type: .decrease)
             return .just(.decreaseValue(updated))
         }
     }

@@ -17,5 +17,6 @@ final class RealmManager {
     
     private init() {
         self.realm = try! Realm()
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
 }

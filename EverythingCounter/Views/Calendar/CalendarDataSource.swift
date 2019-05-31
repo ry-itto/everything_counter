@@ -43,6 +43,11 @@ final class CalendarDataSource: UICollectionViewFlowLayout, UICollectionViewData
             cell.dayLabel.clipsToBounds = true
             cell.dayLabel.layer.cornerRadius = cell.dayLabel.frame.width / 2
         }
+        
+        if dayModel.isCountedDay {
+            cell.backgroundColor = .red
+        }
+        
         cell.dayLabel.text = "\(dayModel.day)"
         
         return cell

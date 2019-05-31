@@ -9,7 +9,7 @@
 import RxSwift
 import RxCocoa
 
-final class CounterViewDataSource: NSObject, UITableViewDataSource, RxTableViewDataSourceType {
+final class CounterViewDataSource: NSObject, UITableViewDataSource, RxTableViewDataSourceType, SectionedViewDataSourceType {
     
     private let disposeBag = DisposeBag()
     private let reactor: CounterViewReactor
@@ -59,5 +59,10 @@ final class CounterViewDataSource: NSObject, UITableViewDataSource, RxTableViewD
             me.items = element
             tableView.reloadData()
         }.on(observedEvent)
+    }
+    
+    // MARK:- SectionedViewDataSourceType
+    func model(at indexPath: IndexPath) throws -> Any {
+        return items[indexPath.row]
     }
 }
