@@ -61,8 +61,8 @@ final class CalendarService: CalendarServiceProtocol {
                 weekDay += 1
             }
             return Day(month: month,
-                       dayOfWeek: (weekDay - 1) % 7,
-                       dayOfWeekStr: dayOfWeekSymbols[(weekDay - 1) % 7],
+                       dayOfWeek: weekDay % 7,
+                       dayOfWeekStr: dayOfWeekSymbols[weekDay % 7],
                        day: day,
                        isCountedDay: countDays.contains(day))
         }

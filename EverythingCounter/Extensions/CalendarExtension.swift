@@ -20,6 +20,6 @@ extension Calendar {
     func firstWeekDayOfMonth(for date: Date) -> Int {
         var component = self.dateComponents(in: .current, from: date)
         component.day = 1
-        return component.weekOfMonth!
+        return component.weekday!
     }
 }
