@@ -46,9 +46,13 @@ final class CalendarService: CalendarServiceProtocol {
     func generateCalendar(year: Int, month: Int, counterID: String) -> [Day] {
         var calendar = Calendar.current
         let dayOfWeekSymbols = calendar.weekDaySymbolsJa()
+        /// 対象月を取得
+        let targetDate = calendar.date(from: DateComponents(year: year, month: month))!
         
-        guard let days = calendar.range(of: .day, in: .month, for: calendar.date(from: DateComponents(year: year, month: month))!) else { return [] }
-        let firstWeekDay = calendar.firstWeekDayOfMonth(for: Date()) - 1
+        /// 月の日数を取得
+        guard let days = calendar.range(of: .day, in: .month, for: targetDate) else { return [] }
+        
+        let firstWeekDay = calendar.firstWeekDayOfMonth(for: targetDate) - 1
         var weekDay = firstWeekDay
         /// カウントされた日付を取得.
         let countDays = findAllCounts(counterID: counterID)

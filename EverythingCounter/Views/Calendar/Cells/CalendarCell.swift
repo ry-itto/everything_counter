@@ -19,4 +19,14 @@ final class CalendarCell: UICollectionViewCell {
             countedView.isHidden = true
         }
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        // セル情報の初期化
+        dayLabel.text = ""
+        dayLabel.backgroundColor = .white
+        dayLabel.textColor = .darkGray
+        countedView.isHidden = true
+        self.layer.borderWidth = 0
+    }
 }

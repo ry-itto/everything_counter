@@ -15,7 +15,6 @@ final class CalendarDataSource: UICollectionViewFlowLayout, UICollectionViewData
     typealias Element = [Day]
     
     var days: Element = []
-    var showStarted: Bool = false
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -29,10 +28,7 @@ final class CalendarDataSource: UICollectionViewFlowLayout, UICollectionViewData
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CalendarCell
         let dayOfWeek = days[0].dayOfWeek
         
-        if indexPath.item == dayOfWeek {
-            showStarted = true
-        } else if !showStarted {
-            cell.dayLabel.text = ""
+        if indexPath.item < dayOfWeek {
             return cell
         }
         let dayModel = days[indexPath.row - dayOfWeek]

@@ -9,16 +9,22 @@
 import RxSwift
 import ReactorKit
 
+enum CalendarChangeType {
+    case next
+    case previous
+}
+
 final class CalendarReactor: Reactor {
     private let service: CalendarServiceProtocol
     var initialState: CalendarReactor.State
     
     enum Action {
-        case changeMonth(month: Int)
+        case changeToPreviousMonth
+        case changeToNextMonth
     }
     
     enum Mutation {
-        case updateCalendar(currentMonth: Int, days: [Day])
+        case updateCalendar(type: CalendarChangeType)
     }
     
     struct State {
@@ -44,17 +50,38 @@ final class CalendarReactor: Reactor {
     
     func mutate(action: CalendarReactor.Action) -> Observable<CalendarReactor.Mutation> {
         switch action {
-        case .changeMonth(let month):
-            return .just(.updateCalendar(currentMonth: month, days: []))
+        case .changeToPreviousMonth:
+            return .just(.updateCalendar(type: .previous))
+        case .changeToNextMonth:
+            return .just(.updateCalendar(type: .next))
         }
     }
     
     func reduce(state: CalendarReactor.State, mutation: CalendarReactor.Mutation) -> CalendarReactor.State {
         var state = state
         switch mutation {
-        case .updateCalendar(let month, let days):
-            state.currentMonth = month
-            state.days = days
+        case .updateCalendar(let type):
+            switch type {
+            case .next:
+                state.currentMonth += 1
+            case .previous:
+                state.currentMonth -= 1
+            }
+            
+            switch state.currentMonth{
+            case 0:
+                state.currentMonth = 12
+                state.currentYear -= 1
+            case 13:
+                state.currentMonth = 1
+                state.currentYear += 1
+            default:
+                break
+            }
+            state.days = service.generateCalendar(
+                year: state.currentYear,
+                month: state.currentMonth,
+                counterID: state.counterID)
         }
         return state
     }
