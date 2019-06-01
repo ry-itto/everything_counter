@@ -54,5 +54,15 @@ final class CalendarViewController: UIViewController, StoryboardView {
             .bind(to: Binder(self) { me, _ in
                 me.presentingViewController?.dismiss(animated: true)
             }).disposed(by: disposeBag)
+        
+        previousMonthButton.rx.tap
+            .map { Reactor.Action.changeToPreviousMonth }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        nextMonthButton.rx.tap
+            .map { Reactor.Action.changeToNextMonth }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
     }
 }
