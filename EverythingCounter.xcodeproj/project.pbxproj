@@ -10,6 +10,7 @@
 		0000E4AF25D7F83B76E8F428 /* Pods_EverythingCounterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B271430EC4F2732BE6DBD07 /* Pods_EverythingCounterTests.framework */; };
 		174FAD1B804FCBD4782CD0E0 /* Pods_EverythingCounter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E7FF9BAF6CD69471379E7 /* Pods_EverythingCounter.framework */; };
 		5E5F77AB9BA4761D6788516D /* Pods_EverythingCounterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009C1D861BCF634512CB0015 /* Pods_EverythingCounterUITests.framework */; };
+		BF2D37FE22A2D07F00C1E44B /* CalendarServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D37FD22A2D07F00C1E44B /* CalendarServiceTest.swift */; };
 		BF31D16E229CF6270023A7CD /* CalendarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF31D16D229CF6270023A7CD /* CalendarExtension.swift */; };
 		BF501ADA229285E500727721 /* CreateCounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF501AD8229285E500727721 /* CreateCounterViewController.swift */; };
 		BF501ADB229285E500727721 /* CreateCounterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF501AD9229285E500727721 /* CreateCounterViewController.xib */; };
@@ -70,6 +71,7 @@
 		61A1B67667F1969062FD6526 /* Pods-EverythingCounter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounter.release.xcconfig"; path = "Target Support Files/Pods-EverythingCounter/Pods-EverythingCounter.release.xcconfig"; sourceTree = "<group>"; };
 		85C5DB91A597275D4ADD83E1 /* Pods-EverythingCounter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounter.debug.xcconfig"; path = "Target Support Files/Pods-EverythingCounter/Pods-EverythingCounter.debug.xcconfig"; sourceTree = "<group>"; };
 		8B271430EC4F2732BE6DBD07 /* Pods_EverythingCounterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverythingCounterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF2D37FD22A2D07F00C1E44B /* CalendarServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarServiceTest.swift; sourceTree = "<group>"; };
 		BF31D16D229CF6270023A7CD /* CalendarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtension.swift; sourceTree = "<group>"; };
 		BF501AD8229285E500727721 /* CreateCounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCounterViewController.swift; sourceTree = "<group>"; };
 		BF501AD9229285E500727721 /* CreateCounterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCounterViewController.xib; sourceTree = "<group>"; };
@@ -164,6 +166,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BF2D37FC22A2D05E00C1E44B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BF2D37FD22A2D07F00C1E44B /* CalendarServiceTest.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BF2D37FF22A2D46300C1E44B /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
 		BF501ADE22928C3C00727721 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +251,8 @@
 			children = (
 				BF6BA4F222655F1C00D28D79 /* EverythingCounterTests.swift */,
 				BF6BA4F422655F1C00D28D79 /* Info.plist */,
+				BF2D37FC22A2D05E00C1E44B /* Services */,
+				BF2D37FF22A2D46300C1E44B /* Stubs */,
 			);
 			path = EverythingCounterTests;
 			sourceTree = "<group>";
@@ -614,6 +633,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF6BA4F322655F1C00D28D79 /* EverythingCounterTests.swift in Sources */,
+				BF2D37FE22A2D07F00C1E44B /* CalendarServiceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
