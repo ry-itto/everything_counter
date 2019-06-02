@@ -41,9 +41,9 @@ protocol CalendarServiceProtocol {
 
 final class CalendarService: CalendarServiceProtocol {
     
-    private let store: CountStore
+    private let store: CountStoreProtocol
     
-    init(_ store: CountStore = CountStore.shared) {
+    init(_ store: CountStoreProtocol = CountStore.shared) {
         self.store = store
     }
     
