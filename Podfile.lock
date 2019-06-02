@@ -1,4 +1,5 @@
 PODS:
+  - LicensePlist (2.5.0)
   - ReactorKit (1.2.1):
     - RxSwift (>= 4.0.0)
   - Realm (3.15.0):
@@ -17,6 +18,7 @@ PODS:
   - RxSwift (4.5.0)
 
 DEPENDENCIES:
+  - LicensePlist
   - ReactorKit
   - RxCocoa (~> 4.0)
   - RxKeyboard
@@ -24,6 +26,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - LicensePlist
     - ReactorKit
     - Realm
     - RealmSwift
@@ -33,6 +36,7 @@ SPEC REPOS:
     - RxSwift
 
 SPEC CHECKSUMS:
+  LicensePlist: e5f8f2e3465620e53ec4c669955a5a7d0692b9cb
   ReactorKit: 8be57f0527ad1ac2963cd5c338274a46a01e57a3
   Realm: 9b834e1be6062f544805252c812348872dc5d4ed
   RealmSwift: 8a41886f8ab6efef9eb8df97de2f2bb911561a79
@@ -41,6 +45,6 @@ SPEC CHECKSUMS:
   RxRealm: 5379eddd74f8d617ca7681d1f8d144af25b432b0
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
 
-PODFILE CHECKSUM: e0a6cc01cc441948861dca8002550a4f0b8b18a8
+PODFILE CHECKSUM: d102d6163f7ac1f933d21c4e1ec573c81cb81032
 
 COCOAPODS: 1.7.0.rc.2
