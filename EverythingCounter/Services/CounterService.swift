@@ -78,8 +78,8 @@ final class CounterService: CounterServiceProtocol {
     }
     
     func delete(_ counter: Counter) {
-        counterStore.delete(counter: counter)
         _ = countStore.deleteAllByCounterID(counterID: counter.id)
+        counterStore.delete(counter: counter)
     }
     
     func resetCount(_ counter: Counter) {
