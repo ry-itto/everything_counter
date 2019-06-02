@@ -10,6 +10,7 @@ target 'EverythingCounter' do
   pod 'RxCocoa', '~> 4.0'
   pod 'RxRealm'
   pod 'RxKeyboard'
+  pod 'LicensePlist'
 
   target 'EverythingCounterTests' do
     inherit! :search_paths
