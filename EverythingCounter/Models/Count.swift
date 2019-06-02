@@ -34,8 +34,4 @@ final class Count: Object {
     override static func primaryKey() -> String {
         return "id"
     }
-    
-    static func ==(lhs: Count, rhs: Count) -> Bool {
-        return lhs.id == rhs.id
-    }
 }
