@@ -43,8 +43,14 @@ protocol CounterServiceProtocol {
 }
 
 final class CounterService: CounterServiceProtocol {
-    private let counterStore = CounterStore.shared
-    private let countStore = CountStore.shared
+    private let counterStore: CounterStoreProtocol
+    private let countStore: CountStoreProtocol
+    
+    init(counterStore: CounterStoreProtocol = CounterStore.shared,
+         countStore: CountStoreProtocol = CountStore.shared) {
+        self.counterStore = counterStore
+        self.countStore = countStore
+    }
     
     func findAll() -> [Counter] {
         return counterStore.findAll()
