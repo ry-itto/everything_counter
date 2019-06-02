@@ -29,7 +29,7 @@ class CalendarServiceTest: XCTestCase {
         let counterID = UUID().uuidString
         
         // 実行
-        let service = CalendarService()
+        let service = CalendarService(CountStoreStub(counts: []))
         let result = service.generateCalendar(year: year, month: month, counterID: counterID)
         
         // 検証
@@ -48,15 +48,15 @@ class CalendarServiceTest: XCTestCase {
         let year = Calendar.current.component(.year, from: today)
         let month = Calendar.current.component(.month, from: today)
         let day = Calendar.current.component(.day, from: today)
-        
-        // カウンター登録
-        let counterService = CounterService()
-        counterService.addCounter(title: "Test")
-        let counter = counterService.update(counterService.findAll()[0], title: nil, value: 1, type: .increase)
+        let counterID = UUID().uuidString
+        let count = Count()
+        count.countDate = today
+        count.type = CountType.increase.rawValue
+        count.counterID = counterID
         
         // 実行
-        let service = CalendarService()
-        let result = service.generateCalendar(year: year, month: month, counterID: counter.id)
+        let service = CalendarService(CountStoreStub(counts: [count]))
+        let result = service.generateCalendar(year: year, month: month, counterID: counterID)
         
         // 検証
         XCTAssertTrue(result[day - 1].isCountedDay)
