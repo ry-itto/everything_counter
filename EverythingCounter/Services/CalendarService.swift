@@ -41,7 +41,11 @@ protocol CalendarServiceProtocol {
 
 final class CalendarService: CalendarServiceProtocol {
     
-    private let store = CountStore.shared
+    private let store: CountStoreProtocol
+    
+    init(_ store: CountStoreProtocol = CountStore.shared) {
+        self.store = store
+    }
     
     func generateCalendar(year: Int, month: Int, counterID: String) -> [Day] {
         var calendar = Calendar.current

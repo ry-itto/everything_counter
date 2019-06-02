@@ -8,27 +8,17 @@
 
 import Foundation
 
-/// CountモデルのCRUD処理を行うクラス
-final class CountStore {
-    static let shared = CountStore()
-    private let realm = RealmManager.shared.realm
-    
+protocol CountStoreProtocol {
     /// DB上の全てのCountを取得
     ///
     /// - Returns: DB上の全てのCount
-    func findAll() -> [Count] {
-        return Array(realm.objects(Count.self))
-    }
+    func findAll() -> [Count]
     
     /// CounterIDに紐づくDB上の全てのCountを取得
     ///
     /// - Parameter counterID: カウンターID
     /// - Returns: CounterIDに紐づくDB上の全てのCount
-    func findByCounterID(counterID: String) -> [Count] {
-        return realm.objects(Count.self).filter { count -> Bool in
-            count.counterID == counterID
-        }
-    }
+    func findByCounterID(counterID: String) -> [Count]
     
     /// 新規にCountを作成
     ///
@@ -37,6 +27,36 @@ final class CountStore {
     ///   - date: カウントのアクションを起こした日
     ///   - type: カウントのアクションのタイプ
     /// - Returns: 作成したCount
+    func create(counter: Counter, date: Date, type: CountType) -> Result<Count, Error>
+    
+    /// CounterIDに紐づく最後に作成したモデルを削除
+    ///
+    /// - Parameter counterID: カウンターID
+    /// - Returns: 削除したCount
+    func deleteLast(counterID: String) -> Result<Count, Error>
+    
+    /// CounterIDに紐づく全てのCountモデルを削除
+    ///
+    /// - Parameter counterID: カウンターID
+    /// - Returns: 結果
+    func deleteAllByCounterID(counterID: String) -> Result<Void, Error>
+}
+
+/// CountモデルのCRUD処理を行うクラス
+final class CountStore: CountStoreProtocol {
+    static let shared = CountStore()
+    private let realm = RealmManager.shared.realm
+    
+    func findAll() -> [Count] {
+        return Array(realm.objects(Count.self))
+    }
+    
+    func findByCounterID(counterID: String) -> [Count] {
+        return realm.objects(Count.self).filter { count -> Bool in
+            count.counterID == counterID
+        }
+    }
+    
     func create(counter: Counter, date: Date, type: CountType) -> Result<Count, Error> {
         let count = Count()
         count.counterID = counter.id
@@ -53,10 +73,6 @@ final class CountStore {
         return .success(count)
     }
     
-    /// CounterIDに紐づく最後に作成したモデルを削除
-    ///
-    /// - Parameter counterID: カウンターID
-    /// - Returns: 削除したCount
     func deleteLast(counterID: String) -> Result<Count, Error> {
         let objects: [Count] = realm.objects(Count.self).filter { count -> Bool in
             return count.counterID == counterID
@@ -74,11 +90,7 @@ final class CountStore {
         }
         return .success(deleteTarget)
     }
-    
-    /// CounterIDに紐づく全てのCountモデルを削除
-    ///
-    /// - Parameter counterID: カウンターID
-    /// - Returns: 結果
+
     func deleteAllByCounterID(counterID: String) -> Result<Void, Error> {
         let objects: [Count] = realm.objects(Count.self).filter { count -> Bool in
             return count.counterID == counterID
