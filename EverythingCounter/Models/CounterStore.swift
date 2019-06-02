@@ -6,23 +6,42 @@
 //  Copyright © 2019 ry-itto. All rights reserved.
 //
 
-/// CounterのDB情報にアクセス, 操作するクラス
-final class CounterStore {
-    
-    static let shared = CounterStore()
-    private let realm = RealmManager.shared.realm
-    
+protocol CounterStoreProtocol {
     /// DB上のCounterを全て取得
     ///
     /// - Returns: 全てのCounter
-    func findAll() -> [Counter] {
-        return Array(realm.objects(Counter.self))
-    }
+    func findAll() -> [Counter]
     
     /// 新規にCounterを作成
     ///
     /// - Parameter title: Counterのタイトル
     /// - Returns: 作成したCounter
+    func create(title: String) -> Counter
+    
+    /// Counterのタイトルを更新
+    ///
+    /// - Parameters:
+    ///   - counter: 更新対象のCounter
+    ///   - title: タイトル
+    /// - Returns: 更新後のCounter
+    func update(counter: Counter, title: String?, value: Int?) -> Counter
+    
+    /// Counterを削除
+    ///
+    /// - Parameter counter: 削除対象のCounter
+    func delete(counter: Counter)
+}
+
+/// CounterのDB情報にアクセス, 操作するクラス
+final class CounterStore: CounterStoreProtocol {
+    
+    static let shared = CounterStore()
+    private let realm = RealmManager.shared.realm
+    
+    func findAll() -> [Counter] {
+        return Array(realm.objects(Counter.self))
+    }
+    
     func create(title: String) -> Counter {
         let counter = Counter()
         counter.title = title
@@ -36,12 +55,6 @@ final class CounterStore {
         return counter
     }
     
-    /// Counterのタイトルを更新
-    ///
-    /// - Parameters:
-    ///   - counter: 更新対象のCounter
-    ///   - title: タイトル
-    /// - Returns: 更新後のCounter
     func update(counter: Counter, title: String?, value: Int?) -> Counter {
         do {
             try realm.write {
@@ -58,9 +71,6 @@ final class CounterStore {
         return counter
     }
     
-    /// Counterを削除
-    ///
-    /// - Parameter counter: 削除対象のCounter
     func delete(counter: Counter) {
         do {
             try realm.write {
