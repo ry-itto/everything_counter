@@ -39,18 +39,19 @@ final class CounterViewDataSource: NSObject, UITableViewDataSource, UITableViewD
         return cell
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        switch editingStyle {
-        case .delete:
-            let deleteItem = items[indexPath.row]
-            items.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteButton: UITableViewRowAction = UITableViewRowAction(style: .normal, title: "削除") { [weak self] (action, index) -> Void in
+            guard let self = self else { return }
+            let deleteItem = self.items[indexPath.row]
+            self.items.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .top)
             Observable.just(CounterViewReactor.Action.deleteCounter(counter: deleteItem))
-                .bind(to: reactor.action)
-                .disposed(by: disposeBag)
-        default:
-            break
+                .bind(to: self.reactor.action)
+                .disposed(by: self.disposeBag)
         }
+        deleteButton.backgroundColor = UIColor.red
+        
+        return [deleteButton]
     }
 
     @available(iOS 11, *)
