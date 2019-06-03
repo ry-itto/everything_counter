@@ -1,4 +1,5 @@
 # なんでもカウンター
+[![Build Status](https://app.bitrise.io/app/fc29ef486f0304b5/status.svg?token=4Osq9CtTsZnCqMpNxIAs6w)](https://app.bitrise.io/app/fc29ef486f0304b5)<br>
 名前の通りなんでもカウントできて保存できるアプリ。
  講義を休んだ回数とかカウントできたらいいなって
  
