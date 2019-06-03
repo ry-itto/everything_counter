@@ -15,7 +15,6 @@
 		BF2D380322A3C49D00C1E44B /* CountStoreStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D380222A3C49D00C1E44B /* CountStoreStub.swift */; };
 		BF2D380522A3C62400C1E44B /* CounterStoreStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D380422A3C62400C1E44B /* CounterStoreStub.swift */; };
 		BF2D380F22A4404800C1E44B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF2D380E22A4404800C1E44B /* Settings.bundle */; };
-		BF2D381122A4414400C1E44B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF2D381022A4414400C1E44B /* Settings.bundle */; };
 		BF31D16E229CF6270023A7CD /* CalendarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF31D16D229CF6270023A7CD /* CalendarExtension.swift */; };
 		BF501ADA229285E500727721 /* CreateCounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF501AD8229285E500727721 /* CreateCounterViewController.swift */; };
 		BF501ADB229285E500727721 /* CreateCounterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF501AD9229285E500727721 /* CreateCounterViewController.xib */; };
@@ -81,7 +80,6 @@
 		BF2D380222A3C49D00C1E44B /* CountStoreStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountStoreStub.swift; sourceTree = "<group>"; };
 		BF2D380422A3C62400C1E44B /* CounterStoreStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterStoreStub.swift; sourceTree = "<group>"; };
 		BF2D380E22A4404800C1E44B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		BF2D381022A4414400C1E44B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		BF31D16D229CF6270023A7CD /* CalendarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtension.swift; sourceTree = "<group>"; };
 		BF501AD8229285E500727721 /* CreateCounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCounterViewController.swift; sourceTree = "<group>"; };
 		BF501AD9229285E500727721 /* CreateCounterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCounterViewController.xib; sourceTree = "<group>"; };
@@ -274,7 +272,6 @@
 		BF6BA4FC22655F1C00D28D79 /* EverythingCounterUITests */ = {
 			isa = PBXGroup;
 			children = (
-				BF2D381022A4414400C1E44B /* Settings.bundle */,
 				BF6BA4FD22655F1C00D28D79 /* EverythingCounterUITests.swift */,
 				BF6BA4FF22655F1C00D28D79 /* Info.plist */,
 			);
@@ -504,7 +501,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF2D381122A4414400C1E44B /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
