@@ -20,6 +20,10 @@ target 'EverythingCounter' do
   target 'EverythingCounterUITests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'ReactorKit'
+    pod 'RxRealm'
+    pod 'RxCocoa', '~> 4.0'
+    pod 'RxKeyboard'
   end
 
 end
