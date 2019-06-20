@@ -49,6 +49,9 @@ final class CreateCounterViewController: UIViewController, StoryboardView {
             }).disposed(by: disposeBag)
         
         saveButton.rx.tap
+            .filter { [weak self] in
+                self?.inputTitleField.text.map { !$0.isEmpty } ?? false
+            }
             .flatMap { [weak self] in
                 self?.inputTitleField.text.map(Observable.just) ?? .empty()
             }.map { Reactor.Action.create(counterName: $0) }
