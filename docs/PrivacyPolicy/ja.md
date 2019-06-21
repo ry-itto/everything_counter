@@ -7,4 +7,4 @@
 クラッシュレポートを共有したくない場合は「設定」アプリから共有を無効にすることができます。
 
 ## お問い合わせ・ご要望等
-お問い合わせ・ご要望に関しましてははこちら[@ry_itto](https://twitter.com/ry_itto)のDM、もしくは開発リポジトリのissue(https://github.com/ry-itto/everything_counter/issues)へお願いします。
+お問い合わせ・ご要望に関しましてははこちら[@ry_itto](https://twitter.com/ry_itto)のDM、もしくは開発リポジトリのissue(https://github.com/ry-itto/everything_counter/issues) へお願いします。
