@@ -50,7 +50,7 @@ final class CreateCounterViewController: UIViewController, StoryboardView {
         
         saveButton.rx.tap
             .filter { [weak self] in
-                self?.inputTitleField.text.map { !$0.isEmpty } ?? false
+                self?.inputTitleField.text.map { !$0.trimmingCharacters(in: [" "]).isEmpty } ?? false
             }
             .flatMap { [weak self] in
                 self?.inputTitleField.text.map(Observable.just) ?? .empty()
