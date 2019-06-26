@@ -49,7 +49,7 @@ final class CreateCounterViewController: UIViewController, StoryboardView {
             }).disposed(by: disposeBag)
         
         saveButton.rx.tap
-            .filter { [weak self]  _ in
+            .filter { [weak self] in
                 self?.inputTitleField.text.map { !$0.trimmingCharacters(in: [" "]).isEmpty } ?? false
             }
             .flatMap { [weak self] in
