@@ -6,8 +6,8 @@
 //  Copyright © 2019 ry-itto. All rights reserved.
 //
 
-import RxSwift
 import ReactorKit
+import RxSwift
 
 final class CounterViewReactor: Reactor {
 

@@ -6,10 +6,10 @@
 //  Copyright © 2019 ry-itto. All rights reserved.
 //
 
-import UIKit
 import ReactorKit
-import RxSwift
 import RxCocoa
+import RxSwift
+import UIKit
 
 class CounterCell: UITableViewCell, View {
     static let cellIdentifier = "CounterCell"

@@ -6,8 +6,8 @@
 //  Copyright © 2019 ry-itto. All rights reserved.
 //
 
-import RxSwift
 import RxCocoa
+import RxSwift
 
 final class CounterViewDataSource: NSObject,
     UITableViewDataSource, UITableViewDelegate, RxTableViewDataSourceType, SectionedViewDataSourceType {

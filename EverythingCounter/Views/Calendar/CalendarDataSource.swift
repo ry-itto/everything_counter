@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import UIKit
-import RxSwift
 import RxCocoa
+import RxSwift
+import UIKit
 
 final class CalendarDataSource: UICollectionViewFlowLayout, UICollectionViewDataSource, RxCollectionViewDataSourceType {
     typealias Element = [Day]

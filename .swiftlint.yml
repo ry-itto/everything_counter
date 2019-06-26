@@ -5,6 +5,9 @@ opt_in_rules: # some rules are only opt-in
   - conditional_returns_on_newline
   - explicit_init
   - missing_docs
+  - overridden_super_call
+  - prohibited_super_call
+  - sorted_imports
   # Find all the available rules by running:
   # swiftlint rules
 included: # paths to include during linting. `--path` is ignored if present.
