@@ -36,6 +36,8 @@ final class CounterViewDataSource: NSObject, UITableViewDataSource, UITableViewD
         let item = items[indexPath.row]
         cell.reactor = CounterCellReactor(counter: item)
         
+        cell.accessoryType = .disclosureIndicator
+        
         return cell
     }
     
