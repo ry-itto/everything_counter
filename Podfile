@@ -11,6 +11,7 @@ target 'EverythingCounter' do
   pod 'RxRealm'
   pod 'RxKeyboard'
   pod 'LicensePlist'
+  pod 'SwiftLint'
 
   target 'EverythingCounterTests' do
     inherit! :search_paths

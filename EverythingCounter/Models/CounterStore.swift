@@ -11,13 +11,13 @@ protocol CounterStoreProtocol {
     ///
     /// - Returns: 全てのCounter
     func findAll() -> [Counter]
-    
+
     /// 新規にCounterを作成
     ///
     /// - Parameter title: Counterのタイトル
     /// - Returns: 作成したCounter
     func create(title: String) -> Counter
-    
+
     /// Counterのタイトルを更新
     ///
     /// - Parameters:
@@ -25,7 +25,7 @@ protocol CounterStoreProtocol {
     ///   - title: タイトル
     /// - Returns: 更新後のCounter
     func update(counter: Counter, title: String?, value: Int?) -> Counter
-    
+
     /// Counterを削除
     ///
     /// - Parameter counter: 削除対象のCounter
@@ -34,14 +34,14 @@ protocol CounterStoreProtocol {
 
 /// CounterのDB情報にアクセス, 操作するクラス
 final class CounterStore: CounterStoreProtocol {
-    
+
     static let shared = CounterStore()
     private let realm = RealmManager.shared.realm
-    
+
     func findAll() -> [Counter] {
         return Array(realm.objects(Counter.self))
     }
-    
+
     func create(title: String) -> Counter {
         let counter = Counter()
         counter.title = title
@@ -49,12 +49,12 @@ final class CounterStore: CounterStoreProtocol {
             try realm.write {
                 realm.add(counter)
             }
-        } catch (let e) {
-            print("\(#file)#\(#line) \"\(e.localizedDescription)\"")
+        } catch let err {
+            print("\(#file)#\(#line) \"\(err.localizedDescription)\"")
         }
         return counter
     }
-    
+
     func update(counter: Counter, title: String?, value: Int?) -> Counter {
         do {
             try realm.write {
@@ -65,19 +65,19 @@ final class CounterStore: CounterStoreProtocol {
                     counter.value = value
                 }
             }
-        } catch (let e) {
-            print("\(#file)#\(#line) \"\(e.localizedDescription)\"")
+        } catch let err {
+            print("\(#file)#\(#line) \"\(err.localizedDescription)\"")
         }
         return counter
     }
-    
+
     func delete(counter: Counter) {
         do {
             try realm.write {
                 realm.delete(counter)
             }
-        } catch (let e) {
-            print("\(#file)#\(#line) \"\(e.localizedDescription)\"")
+        } catch let err {
+            print("\(#file)#\(#line) \"\(err.localizedDescription)\"")
         }
     }
 }

@@ -9,22 +9,22 @@
 import UIKit
 
 extension UIColor {
-    
+
     convenience init(rgb: Int) {
-        let r = CGFloat((rgb & 0xFF0000) >> 16) / 255.0
-        let g = CGFloat((rgb & 0x00FF00) >>  8) / 255.0
-        let b = CGFloat( rgb & 0x0000FF       ) / 255.0
-        self.init(red: r, green: g, blue: b, alpha: 1.0)
+        let red = CGFloat((rgb & 0xFF0000) >> 16) / 255.0
+        let green = CGFloat((rgb & 0x00FF00) >>  8) / 255.0
+        let blue = CGFloat( rgb & 0x0000FF       ) / 255.0
+        self.init(red: red, green: green, blue: blue, alpha: 1.0)
     }
-    
+
     convenience init(rgba: Int) {
-        let r: CGFloat = CGFloat((rgba & 0xFF000000) >> 24) / 255.0
-        let g: CGFloat = CGFloat((rgba & 0x00FF0000) >> 16) / 255.0
-        let b: CGFloat = CGFloat((rgba & 0x0000FF00) >>  8) / 255.0
-        let a: CGFloat = CGFloat( rgba & 0x000000FF       ) / 255.0
-        self.init(red: r, green: g, blue: b, alpha: a)
+        let red: CGFloat = CGFloat((rgba & 0xFF000000) >> 24) / 255.0
+        let green: CGFloat = CGFloat((rgba & 0x00FF0000) >> 16) / 255.0
+        let blue: CGFloat = CGFloat((rgba & 0x0000FF00) >>  8) / 255.0
+        let alpha: CGFloat = CGFloat( rgba & 0x000000FF       ) / 255.0
+        self.init(red: red, green: green, blue: blue, alpha: alpha)
     }
-    
+
     /// NipponColors.com の色格納列挙型
     /// http://nipponcolors.com/
     ///
@@ -32,7 +32,7 @@ extension UIColor {
     enum Nippon {
         case byakugun
         case shinsyu
-        
+
         func color() -> UIColor {
             switch self {
             case .byakugun:

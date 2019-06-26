@@ -16,6 +16,7 @@ PODS:
     - RealmSwift (~> 3.0)
     - RxSwift (~> 4.0)
   - RxSwift (4.5.0)
+  - SwiftLint (0.33.0)
 
 DEPENDENCIES:
   - LicensePlist
@@ -23,6 +24,7 @@ DEPENDENCIES:
   - RxCocoa (~> 4.0)
   - RxKeyboard
   - RxRealm
+  - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -34,6 +36,7 @@ SPEC REPOS:
     - RxKeyboard
     - RxRealm
     - RxSwift
+    - SwiftLint
 
 SPEC CHECKSUMS:
   LicensePlist: e5f8f2e3465620e53ec4c669955a5a7d0692b9cb
@@ -44,7 +47,8 @@ SPEC CHECKSUMS:
   RxKeyboard: 4f782303f499f41577b41c96c6a9a5d7acd51a47
   RxRealm: 5379eddd74f8d617ca7681d1f8d144af25b432b0
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  SwiftLint: fed9c66336e41fc74dc48a73678380718f0c8b0e
 
-PODFILE CHECKSUM: d102d6163f7ac1f933d21c4e1ec573c81cb81032
+PODFILE CHECKSUM: 10b4189997bbbca6ccd4b2e32152c83aefb25a7a
 
 COCOAPODS: 1.7.0.rc.2

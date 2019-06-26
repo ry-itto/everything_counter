@@ -14,7 +14,7 @@ struct Day {
     let dayOfWeekStr: String
     let day: Int
     let isCountedDay: Bool
-    
+
     /// Dayが今日のものかどうか判定する
     ///
     /// - Returns: 真偽値
@@ -24,7 +24,7 @@ struct Day {
             return false
         }
         let today = Calendar.current.component(.day, from: Date())
-        
+
         return today == day
     }
 }
@@ -40,22 +40,22 @@ protocol CalendarServiceProtocol {
 }
 
 final class CalendarService: CalendarServiceProtocol {
-    
+
     private let store: CountStoreProtocol
-    
+
     init(_ store: CountStoreProtocol = CountStore.shared) {
         self.store = store
     }
-    
+
     func generateCalendar(year: Int, month: Int, counterID: String) -> [Day] {
         var calendar = Calendar.current
         let dayOfWeekSymbols = calendar.weekDaySymbolsJa()
         /// 対象月を取得
         let targetDate = calendar.date(from: DateComponents(year: year, month: month))!
-        
+
         /// 月の日数を取得
         guard let days = calendar.range(of: .day, in: .month, for: targetDate) else { return [] }
-        
+
         let firstWeekDay = calendar.firstWeekDayOfMonth(for: targetDate) - 1
         var weekDay = firstWeekDay
         /// カウントされた日付を取得.
@@ -63,7 +63,7 @@ final class CalendarService: CalendarServiceProtocol {
             .map { $0.countDate }
             .filter { calendar.component(.month, from: $0) == month }
             .map { calendar.component(.day, from: $0) }
-        
+
         return days.map { day -> Day in
             defer {
                 weekDay += 1
@@ -75,7 +75,7 @@ final class CalendarService: CalendarServiceProtocol {
                        isCountedDay: countDays.contains(day))
         }
     }
-    
+
     /// 全てのカウントした日を取得
     ///
     /// - Parameter counterID: カウンターID

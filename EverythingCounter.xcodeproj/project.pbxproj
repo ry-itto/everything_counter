@@ -225,9 +225,9 @@
 				BF6BA4DC22655F1B00D28D79 /* EverythingCounter */,
 				BF6BA4F122655F1C00D28D79 /* EverythingCounterTests */,
 				BF6BA4FC22655F1C00D28D79 /* EverythingCounterUITests */,
-				BF6BA4DB22655F1B00D28D79 /* Products */,
-				61633F44AC1CCC81829F415E /* Pods */,
 				AD0263CE9A0530A804C2218B /* Frameworks */,
+				61633F44AC1CCC81829F415E /* Pods */,
+				BF6BA4DB22655F1B00D28D79 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -382,6 +382,7 @@
 				BF6BA4D722655F1B00D28D79 /* Frameworks */,
 				BF6BA4D822655F1B00D28D79 /* Resources */,
 				4F550153539002C35100317F /* [CP] Embed Pods Frameworks */,
+				BF76BE6C22C33E8A0095A659 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -606,6 +607,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EverythingCounter/Pods-EverythingCounter-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		BF76BE6C22C33E8A0095A659 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n    ${PODS_ROOT}/SwiftLint/swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

@@ -14,7 +14,7 @@ import RxCocoa
 class CounterCell: UITableViewCell, View {
     static let cellIdentifier = "CounterCell"
     static let rowHeight: CGFloat = 70
-    
+
     var disposeBag = DisposeBag()
 
     @IBOutlet weak var titleLabel: UILabel!
@@ -41,20 +41,20 @@ class CounterCell: UITableViewCell, View {
         }
     }
     @IBOutlet weak var valueLabel: UILabel!
-    
-    //MARK:- reactorがセットされたタイミングで呼ばれる
+
+    // MARK: - reactorがセットされたタイミングで呼ばれる
     func bind(reactor: CounterCellReactor) {
         // Action
         increaseButton.rx.tap
             .map { Reactor.Action.increase }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
-        
+
         decreaseButton.rx.tap
             .map { Reactor.Action.decrease }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
-        
+
         // State
         // title
         reactor.state
@@ -62,7 +62,7 @@ class CounterCell: UITableViewCell, View {
             .distinctUntilChanged()
             .bind(to: titleLabel.rx.text)
             .disposed(by: disposeBag)
-        
+
         // value
         reactor.state
             .map { $0.value }

@@ -13,7 +13,7 @@ final class Counter: Object {
     @objc dynamic var id: String = UUID().uuidString
     @objc dynamic var title: String = ""
     @objc dynamic var value: Int = 0
-    
+
     override static func primaryKey() -> String? {
         return "id"
     }

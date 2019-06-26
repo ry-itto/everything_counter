@@ -13,11 +13,11 @@ import RxKeyboard
 import ReactorKit
 
 final class CreateCounterViewController: UIViewController, StoryboardView {
-    
+
     private let viewMargin: CGFloat = 30
-    
+
     weak var semiModalPresentationController: SemiModalPresentationController?
-    
+
     @IBOutlet weak var inputTitleField: UITextField! {
         didSet {
             inputTitleField.borderStyle = .none
@@ -27,27 +27,27 @@ final class CreateCounterViewController: UIViewController, StoryboardView {
     @IBOutlet weak var saveButton: UIButton!
     var disposeBag = DisposeBag()
     var onDismissed: (() -> Void)?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         semiModalPresentationController = self.presentationController as? SemiModalPresentationController
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         semiModalPresentationController?.setModalViewHeight(newHeight: 200, animated: false)
     }
-    
+
     func bind(reactor: CreateCounterViewReactor) {
         RxKeyboard.instance.frame
-            .drive(Binder(self) { me, frame in
+            .drive(Binder(self) { createCounterVC, frame in
                 let height = frame.height
-                    + me.inputTitleField.frame.height
-                    + me.saveButton.frame.height
-                    + me.viewMargin
-                me.semiModalPresentationController?.setModalViewHeight(newHeight: height, animated: true)
+                    + createCounterVC.inputTitleField.frame.height
+                    + createCounterVC.saveButton.frame.height
+                    + createCounterVC.viewMargin
+                createCounterVC.semiModalPresentationController?.setModalViewHeight(newHeight: height, animated: true)
             }).disposed(by: disposeBag)
-        
+
         saveButton.rx.tap
             .filter { [weak self] in
                 self?.inputTitleField.text.map { !$0.trimmingCharacters(in: [" "]).isEmpty } ?? false
@@ -57,12 +57,13 @@ final class CreateCounterViewController: UIViewController, StoryboardView {
             }.map { Reactor.Action.create(counterName: $0) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
-        
+
         // reactor state
         reactor.state
             .filter { $0.isCreated }
-            .bind(to: Binder(self) { me, _ in
-                me.presentingViewController?.dismiss(animated: true, completion: me.onDismissed)
+            .bind(to: Binder(self) { createCounterVC, _ in
+                createCounterVC.presentingViewController?
+                    .dismiss(animated: true, completion: createCounterVC.onDismissed)
             }).disposed(by: disposeBag)
     }
 }

@@ -30,7 +30,7 @@ final class Count: Object {
     /// カウンターの値が変わる種別
     /// enum CountType に種別が定義されています
     @objc dynamic var type: Int = CountType.increase.rawValue
-    
+
     override static func primaryKey() -> String {
         return "id"
     }

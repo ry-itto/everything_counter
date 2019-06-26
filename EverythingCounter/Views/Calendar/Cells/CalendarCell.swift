@@ -19,7 +19,7 @@ final class CalendarCell: UICollectionViewCell {
             countedView.isHidden = true
         }
     }
-    
+
     override func prepareForReuse() {
         super.prepareForReuse()
         // セル情報の初期化

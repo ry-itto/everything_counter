@@ -17,23 +17,23 @@ enum CalendarChangeType {
 final class CalendarReactor: Reactor {
     private let service: CalendarServiceProtocol
     var initialState: CalendarReactor.State
-    
+
     enum Action {
         case changeToPreviousMonth
         case changeToNextMonth
     }
-    
+
     enum Mutation {
         case updateCalendar(type: CalendarChangeType)
     }
-    
+
     struct State {
         let counterID: String
         var currentYear: Int
         var currentMonth: Int
         var days: [Day]
     }
-    
+
     init(_ service: CalendarServiceProtocol = CalendarService(),
          counterID: String) {
         let today = Date()
@@ -47,7 +47,7 @@ final class CalendarReactor: Reactor {
                 counterID: counterID))
         self.service = service
     }
-    
+
     func mutate(action: CalendarReactor.Action) -> Observable<CalendarReactor.Mutation> {
         switch action {
         case .changeToPreviousMonth:
@@ -56,7 +56,7 @@ final class CalendarReactor: Reactor {
             return .just(.updateCalendar(type: .next))
         }
     }
-    
+
     func reduce(state: CalendarReactor.State, mutation: CalendarReactor.Mutation) -> CalendarReactor.State {
         var state = state
         switch mutation {
@@ -67,8 +67,8 @@ final class CalendarReactor: Reactor {
             case .previous:
                 state.currentMonth -= 1
             }
-            
-            switch state.currentMonth{
+
+            switch state.currentMonth {
             case 0:
                 state.currentMonth = 12
                 state.currentYear -= 1

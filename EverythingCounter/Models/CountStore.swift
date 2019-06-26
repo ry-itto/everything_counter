@@ -13,13 +13,12 @@ protocol CountStoreProtocol {
     ///
     /// - Returns: DB上の全てのCount
     func findAll() -> [Count]
-    
+
     /// CounterIDに紐づくDB上の全てのCountを取得
     ///
     /// - Parameter counterID: カウンターID
     /// - Returns: CounterIDに紐づくDB上の全てのCount
     func findByCounterID(counterID: String) -> [Count]
-    
     /// 新規にCountを作成
     ///
     /// - Parameters:
@@ -28,13 +27,11 @@ protocol CountStoreProtocol {
     ///   - type: カウントのアクションのタイプ
     /// - Returns: 作成したCount
     func create(counter: Counter, date: Date, type: CountType) -> Result<Count, Error>
-    
     /// CounterIDに紐づく最後に作成したモデルを削除
     ///
     /// - Parameter counterID: カウンターID
     /// - Returns: 削除したCount
     func deleteLast(counterID: String) -> Result<Count, Error>
-    
     /// CounterIDに紐づく全てのCountモデルを削除
     ///
     /// - Parameter counterID: カウンターID
@@ -46,17 +43,14 @@ protocol CountStoreProtocol {
 final class CountStore: CountStoreProtocol {
     static let shared = CountStore()
     private let realm = RealmManager.shared.realm
-    
     func findAll() -> [Count] {
         return Array(realm.objects(Count.self))
     }
-    
     func findByCounterID(counterID: String) -> [Count] {
         return realm.objects(Count.self).filter { count -> Bool in
             count.counterID == counterID
         }
     }
-    
     func create(counter: Counter, date: Date, type: CountType) -> Result<Count, Error> {
         let count = Count()
         count.counterID = counter.id
@@ -66,13 +60,12 @@ final class CountStore: CountStoreProtocol {
             try realm.write {
                 realm.add(count)
             }
-        } catch let e {
-            print("\(#file)#\(#line) \"\(e.localizedDescription)\"")
-            return .failure(e)
+        } catch let err {
+            print("\(#file)#\(#line) \"\(err.localizedDescription)\"")
+            return .failure(err)
         }
         return .success(count)
     }
-    
     func deleteLast(counterID: String) -> Result<Count, Error> {
         let objects: [Count] = realm.objects(Count.self).filter { count -> Bool in
             return count.counterID == counterID
@@ -84,9 +77,9 @@ final class CountStore: CountStoreProtocol {
             try realm.write {
                 realm.delete(deleteTarget)
             }
-        } catch let e {
-            print("\(#file)#\(#line) \"\(e.localizedDescription)\"")
-            return .failure(e)
+        } catch let err {
+            print("\(#file)#\(#line) \"\(err.localizedDescription)\"")
+            return .failure(err)
         }
         return .success(deleteTarget)
     }
@@ -99,9 +92,9 @@ final class CountStore: CountStoreProtocol {
             try realm.write {
                 realm.delete(objects)
             }
-        } catch let e {
-            print("\(#file)#\(#line) \"\(e.localizedDescription)\"")
-            return .failure(e)
+        } catch let err {
+            print("\(#file)#\(#line) \"\(err.localizedDescription)\"")
+            return .failure(err)
         }
         return .success(())
     }
