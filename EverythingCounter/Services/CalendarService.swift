@@ -54,7 +54,9 @@ final class CalendarService: CalendarServiceProtocol {
         let targetDate = calendar.date(from: DateComponents(year: year, month: month))!
 
         /// 月の日数を取得
-        guard let days = calendar.range(of: .day, in: .month, for: targetDate) else { return [] }
+        guard let days = calendar.range(of: .day, in: .month, for: targetDate) else {
+            return []
+        }
 
         let firstWeekDay = calendar.firstWeekDayOfMonth(for: targetDate) - 1
         var weekDay = firstWeekDay

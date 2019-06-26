@@ -31,7 +31,9 @@ class SemiModalPresentationController: UIPresentationController {
     private var modalViewHeight: CGFloat = 0
 
     func setModalViewHeight(newHeight: CGFloat, animated: Bool) {
-        guard let presentedView = presentedView else { return }
+        guard let presentedView = presentedView else {
+            return
+        }
         self.modalViewHeight = newHeight
         let frame = frameOfPresentedViewInContainerView
 
@@ -76,7 +78,9 @@ class SemiModalPresentationController: UIPresentationController {
 
     /// 表示直前
     override func presentationTransitionWillBegin() {
-        guard let containerView = self.containerView else {return}
+        guard let containerView = self.containerView else {
+            return
+        }
 
         setupOverlay(toContainerView: containerView)
         setupPresentedView(presentedView: self.presentedView!)
