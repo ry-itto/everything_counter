@@ -10,13 +10,14 @@ import Foundation
 import RealmSwift
 
 final class RealmManager {
-    
     static let shared: RealmManager = RealmManager()
-    
     let realm: Realm
-    
     private init() {
-        self.realm = try! Realm()
+        do {
+            self.realm = try Realm()
+        } catch let err {
+            fatalError(err.localizedDescription)
+        }
         print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
 }

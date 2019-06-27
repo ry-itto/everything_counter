@@ -6,33 +6,33 @@
 //  Copyright © 2019 ry-itto. All rights reserved.
 //
 
-import RxSwift
 import ReactorKit
+import RxSwift
 
 final class CounterViewReactor: Reactor {
-    
+
     private let service: CounterServiceProtocol
-    
+
     var initialState: CounterViewReactor.State
-    
+
     enum Action {
         case reloadData
         case deleteCounter(counter: Counter)
     }
-    
+
     enum Mutation {
         case reloadData
     }
-    
+
     struct State {
         var counters: [Counter]
     }
-    
+
     init(_ service: CounterServiceProtocol = CounterService()) {
         self.initialState = State(counters: service.findAll())
         self.service = service
     }
-    
+
     func mutate(action: CounterViewReactor.Action) -> Observable<CounterViewReactor.Mutation> {
         switch action {
         case .reloadData:
@@ -42,7 +42,7 @@ final class CounterViewReactor: Reactor {
             return .empty()
         }
     }
-    
+
     func reduce(state: CounterViewReactor.State, mutation: CounterViewReactor.Mutation) -> CounterViewReactor.State {
         var state = state
         switch mutation {

@@ -6,10 +6,10 @@
 //  Copyright © 2019 ry-itto. All rights reserved.
 //
 
-import UIKit
-import RxSwift
-import RxCocoa
 import ReactorKit
+import RxCocoa
+import RxSwift
+import UIKit
 
 final class CalendarViewController: UIViewController, StoryboardView {
     var disposeBag = DisposeBag()
@@ -37,29 +37,29 @@ final class CalendarViewController: UIViewController, StoryboardView {
         }
     }
     @IBOutlet weak var closeButton: UIButton!
-    
+
     func bind(reactor: CalendarReactor) {
         reactor.state
             .map { "\($0.currentYear)年\($0.currentMonth)月" }
             .bind(to: calendarNavigation.rx.title)
             .disposed(by: disposeBag)
-        
+
         let dataSource = CalendarDataSource()
         reactor.state
             .map { $0.days }
             .bind(to: collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
-        
+
         closeButton.rx.tap
-            .bind(to: Binder(self) { me, _ in
-                me.presentingViewController?.dismiss(animated: true)
+            .bind(to: Binder(self) { calendarVC, _ in
+                calendarVC.presentingViewController?.dismiss(animated: true)
             }).disposed(by: disposeBag)
-        
+
         previousMonthButton.rx.tap
             .map { Reactor.Action.changeToPreviousMonth }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
-        
+
         nextMonthButton.rx.tap
             .map { Reactor.Action.changeToNextMonth }
             .bind(to: reactor.action)

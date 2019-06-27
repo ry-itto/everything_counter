@@ -6,13 +6,13 @@
 //  Copyright © 2019 ry-itto. All rights reserved.
 //
 
-import UIKit
-import RxSwift
-import RxCocoa
 import ReactorKit
+import RxCocoa
+import RxSwift
+import UIKit
 
 final class CounterViewController: UIViewController, StoryboardView {
-    
+
     @IBOutlet weak var headerView: UIView! {
         didSet {
             // 影の設定
@@ -24,7 +24,8 @@ final class CounterViewController: UIViewController, StoryboardView {
     }
     @IBOutlet weak var tableView: UITableView! {
         didSet {
-            tableView.register(UINib(nibName: "CounterCell", bundle: nil), forCellReuseIdentifier: CounterCell.cellIdentifier)
+            tableView.register(UINib(nibName: "CounterCell", bundle: nil),
+                               forCellReuseIdentifier: CounterCell.cellIdentifier)
             tableView.rowHeight = CounterCell.rowHeight
             tableView.tableFooterView = UIView()
 //            tableView.allowsSelection = false
@@ -42,10 +43,10 @@ final class CounterViewController: UIViewController, StoryboardView {
         }
     }
     var disposeBag = DisposeBag()
-    
-    //MARK:- reactorがセットされたタイミングで呼ばれる
+
+    // MARK: - reactorがセットされたタイミングで呼ばれる
     func bind(reactor: CounterViewReactor) {
-        
+
         let dataSource = CounterViewDataSource(reactor)
         _ = tableView.rx.setDelegate(dataSource)
         /// reactor.state
@@ -54,10 +55,10 @@ final class CounterViewController: UIViewController, StoryboardView {
             .distinctUntilChanged()
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
-        
+
         /// bind this view
         addCounterButton.rx.tap
-            .bind(to: Binder(self) { me, _ in
+            .bind(to: Binder(self) { counterVC, _ in
                 let createCounterVC = CreateCounterViewController()
                 createCounterVC.reactor = CreateCounterViewReactor()
                 createCounterVC.onDismissed = {
@@ -66,19 +67,19 @@ final class CounterViewController: UIViewController, StoryboardView {
                         .bind(to: reactor.action)
                         .disposed(by: createCounterVC.disposeBag)
                 }
-                me.presentSemiModal(createCounterVC, animated: true, completion: nil)
+                counterVC.presentSemiModal(createCounterVC, animated: true, completion: nil)
             }).disposed(by: disposeBag)
-        
+
         tableView.rx.modelSelected(Counter.self)
-            .bind(to: Binder(self) { me, counter in
-                let vc = CalendarViewController()
-                vc.reactor = CalendarReactor(counterID: counter.id)
-                me.present(vc, animated: true)
+            .bind(to: Binder(self) { counterVC, counter in
+                let calendarVC = CalendarViewController()
+                calendarVC.reactor = CalendarReactor(counterID: counter.id)
+                counterVC.present(calendarVC, animated: true)
             }).disposed(by: disposeBag)
-        
+
         tableView.rx.itemSelected
-            .bind(to: Binder(self) { me, indexPath in
-                me.tableView.deselectRow(at: indexPath, animated: true)
+            .bind(to: Binder(self) { counterVC, indexPath in
+                counterVC.tableView.deselectRow(at: indexPath, animated: true)
             }).disposed(by: disposeBag)
     }
 }
