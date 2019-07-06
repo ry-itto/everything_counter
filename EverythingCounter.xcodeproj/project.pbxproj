@@ -16,9 +16,9 @@
 		BF2D380522A3C62400C1E44B /* CounterStoreStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D380422A3C62400C1E44B /* CounterStoreStub.swift */; };
 		BF2D380F22A4404800C1E44B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF2D380E22A4404800C1E44B /* Settings.bundle */; };
 		BF31D16E229CF6270023A7CD /* CalendarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF31D16D229CF6270023A7CD /* CalendarExtension.swift */; };
-		BF501ADA229285E500727721 /* CreateCounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF501AD8229285E500727721 /* CreateCounterViewController.swift */; };
-		BF501ADB229285E500727721 /* CreateCounterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF501AD9229285E500727721 /* CreateCounterViewController.xib */; };
-		BF501ADD2292895900727721 /* CreateCounterViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF501ADC2292895900727721 /* CreateCounterViewReactor.swift */; };
+		BF501ADA229285E500727721 /* InputCounterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF501AD8229285E500727721 /* InputCounterInfoViewController.swift */; };
+		BF501ADB229285E500727721 /* InputCounterInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF501AD9229285E500727721 /* InputCounterInfoViewController.xib */; };
+		BF501ADD2292895900727721 /* InputCounterInfoReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF501ADC2292895900727721 /* InputCounterInfoReactor.swift */; };
 		BF501AE122928C8100727721 /* SemiModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF501AE022928C8100727721 /* SemiModalPresentationController.swift */; };
 		BF501AE42292A02100727721 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF501AE32292A02100727721 /* UIViewControllerExtension.swift */; };
 		BF501AE62293CA1F00727721 /* CounterViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF501AE52293CA1F00727721 /* CounterViewDataSource.swift */; };
@@ -81,9 +81,9 @@
 		BF2D380422A3C62400C1E44B /* CounterStoreStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterStoreStub.swift; sourceTree = "<group>"; };
 		BF2D380E22A4404800C1E44B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		BF31D16D229CF6270023A7CD /* CalendarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtension.swift; sourceTree = "<group>"; };
-		BF501AD8229285E500727721 /* CreateCounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCounterViewController.swift; sourceTree = "<group>"; };
-		BF501AD9229285E500727721 /* CreateCounterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCounterViewController.xib; sourceTree = "<group>"; };
-		BF501ADC2292895900727721 /* CreateCounterViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCounterViewReactor.swift; sourceTree = "<group>"; };
+		BF501AD8229285E500727721 /* InputCounterInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCounterInfoViewController.swift; sourceTree = "<group>"; };
+		BF501AD9229285E500727721 /* InputCounterInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputCounterInfoViewController.xib; sourceTree = "<group>"; };
+		BF501ADC2292895900727721 /* InputCounterInfoReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCounterInfoReactor.swift; sourceTree = "<group>"; };
 		BF501AE022928C8100727721 /* SemiModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalPresentationController.swift; sourceTree = "<group>"; };
 		BF501AE32292A02100727721 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		BF501AE52293CA1F00727721 /* CounterViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewDataSource.swift; sourceTree = "<group>"; };
@@ -322,9 +322,9 @@
 		BFF7076B229B54E100F23E33 /* CreateCounter */ = {
 			isa = PBXGroup;
 			children = (
-				BF501AD8229285E500727721 /* CreateCounterViewController.swift */,
-				BF501AD9229285E500727721 /* CreateCounterViewController.xib */,
-				BF501ADC2292895900727721 /* CreateCounterViewReactor.swift */,
+				BF501AD8229285E500727721 /* InputCounterInfoViewController.swift */,
+				BF501AD9229285E500727721 /* InputCounterInfoViewController.xib */,
+				BF501ADC2292895900727721 /* InputCounterInfoReactor.swift */,
 			);
 			path = CreateCounter;
 			sourceTree = "<group>";
@@ -482,7 +482,7 @@
 			files = (
 				BF2D380F22A4404800C1E44B /* Settings.bundle in Resources */,
 				BFF70774229B5CB100F23E33 /* CalendarViewController.xib in Resources */,
-				BF501ADB229285E500727721 /* CreateCounterViewController.xib in Resources */,
+				BF501ADB229285E500727721 /* InputCounterInfoViewController.xib in Resources */,
 				BFCD4BA6228F3804006EDBA5 /* CounterCell.xib in Resources */,
 				BFF7077B229B5D3C00F23E33 /* CalendarCell.xib in Resources */,
 				BFCD4B9E228F34B2006EDBA5 /* CounterViewController.xib in Resources */,
@@ -633,7 +633,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFF7076A229B51E400F23E33 /* CountStore.swift in Sources */,
-				BF501ADD2292895900727721 /* CreateCounterViewReactor.swift in Sources */,
+				BF501ADD2292895900727721 /* InputCounterInfoReactor.swift in Sources */,
 				BFF7077F229B630700F23E33 /* CalendarReactor.swift in Sources */,
 				BFCD4BA5228F3804006EDBA5 /* CounterCell.swift in Sources */,
 				BF501AE82294746900727721 /* UIColorExtension.swift in Sources */,
@@ -651,7 +651,7 @@
 				BF501AE62293CA1F00727721 /* CounterViewDataSource.swift in Sources */,
 				BF31D16E229CF6270023A7CD /* CalendarExtension.swift in Sources */,
 				BFCD4BA8228F381C006EDBA5 /* CounterCellReactor.swift in Sources */,
-				BF501ADA229285E500727721 /* CreateCounterViewController.swift in Sources */,
+				BF501ADA229285E500727721 /* InputCounterInfoViewController.swift in Sources */,
 				BFF7077D229B619B00F23E33 /* CalendarDataSource.swift in Sources */,
 				BF501AE122928C8100727721 /* SemiModalPresentationController.swift in Sources */,
 				BFF70768229AD96700F23E33 /* Count.swift in Sources */,
