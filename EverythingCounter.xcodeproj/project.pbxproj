@@ -283,7 +283,7 @@
 			children = (
 				BFF7076D229B551800F23E33 /* Calendar */,
 				BFF7076C229B54EA00F23E33 /* Counter */,
-				BFF7076B229B54E100F23E33 /* CreateCounter */,
+				BFF7076B229B54E100F23E33 /* InputCounter */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -319,14 +319,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		BFF7076B229B54E100F23E33 /* CreateCounter */ = {
+		BFF7076B229B54E100F23E33 /* InputCounter */ = {
 			isa = PBXGroup;
 			children = (
 				BF501AD8229285E500727721 /* InputCounterInfoViewController.swift */,
 				BF501AD9229285E500727721 /* InputCounterInfoViewController.xib */,
 				BF501ADC2292895900727721 /* InputCounterInfoReactor.swift */,
 			);
-			path = CreateCounter;
+			path = InputCounter;
 			sourceTree = "<group>";
 		};
 		BFF7076C229B54EA00F23E33 /* Counter */ = {
