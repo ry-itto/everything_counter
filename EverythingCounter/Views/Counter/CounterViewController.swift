@@ -65,7 +65,6 @@ final class CounterViewController: UIViewController, StoryboardView {
         /// reactor.state
         reactor.state
             .map { $0.counters }
-            .debug()
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
 
