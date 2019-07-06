@@ -14,13 +14,15 @@ final class CounterViewDataSource: NSObject,
 
     private let disposeBag = DisposeBag()
     private let reactor: CounterViewReactor
+    private let longPressAction: (Counter) -> Void
 
     typealias Element = [Counter]
 
     var items: [Counter] = []
 
-    init(_ reactor: CounterViewReactor) {
+    init(_ reactor: CounterViewReactor, longPressAction: @escaping (Counter) -> Void) {
         self.reactor = reactor
+        self.longPressAction = longPressAction
     }
 
     // MARK: - UITableViewDataSource
@@ -33,21 +35,29 @@ final class CounterViewDataSource: NSObject,
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CounterCell.cellIdentifier,
-                                                       for: indexPath) as? CounterCell else {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: CounterCell.cellIdentifier,
+            for: indexPath) as? CounterCell
+        else {
             return UITableViewCell()
         }
         let item = items[indexPath.row]
         cell.reactor = CounterCellReactor(counter: item)
-
         cell.accessoryType = .disclosureIndicator
+
+        let longPressGesture = UILongPressGestureRecognizer()
+        longPressGesture.minimumPressDuration = 1
+        longPressGesture.rx.event
+            .bind(to: Binder(self) { dataSource, _ in
+                dataSource.longPressAction(item)
+            }).disposed(by: disposeBag)
+        cell.addGestureRecognizer(longPressGesture)
 
         return cell
     }
 
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let deleteButton: UITableViewRowAction = UITableViewRowAction(style: .normal,
-                                                                      title: "削除") { [weak self] (action, _) -> Void in
+        let deleteButton = UITableViewRowAction(style: .normal, title: "削除") { [weak self] (action, _) -> Void in
             guard let self = self else {
                 return
             }

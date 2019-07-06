@@ -47,20 +47,32 @@ final class CounterViewController: UIViewController, StoryboardView {
     // MARK: - reactorがセットされたタイミングで呼ばれる
     func bind(reactor: CounterViewReactor) {
 
-        let dataSource = CounterViewDataSource(reactor)
+        let longPressAction: (Counter) -> Void = { [weak self] counter in
+            let editCounterVC = InputCounterInfoViewController(mode: .edit(counter))
+            editCounterVC.reactor = InputCounterInfoReactor()
+            editCounterVC.onDismissed = {
+                editCounterVC.resignFirstResponder()
+                Observable.just(Reactor.Action.reloadData)
+                    .bind(to: reactor.action)
+                    .disposed(by: editCounterVC.disposeBag)
+            }
+            self?.presentSemiModal(editCounterVC, animated: true, completion: nil)
+        }
+
+        let dataSource = CounterViewDataSource(reactor, longPressAction: longPressAction)
         _ = tableView.rx.setDelegate(dataSource)
+
         /// reactor.state
         reactor.state
             .map { $0.counters }
-            .distinctUntilChanged()
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
 
         /// bind this view
         addCounterButton.rx.tap
             .bind(to: Binder(self) { counterVC, _ in
-                let createCounterVC = CreateCounterViewController()
-                createCounterVC.reactor = CreateCounterViewReactor()
+                let createCounterVC = InputCounterInfoViewController(mode: .create)
+                createCounterVC.reactor = InputCounterInfoReactor()
                 createCounterVC.onDismissed = {
                     createCounterVC.resignFirstResponder()
                     Observable.just(Reactor.Action.reloadData)

@@ -1,5 +1,5 @@
 //
-//  CreateCounterViewReactor.swift
+//  InputCounterInfoReactor.swift
 //  EverythingCounter
 //
 //  Created by 伊藤凌也 on 2019/05/20.
@@ -9,14 +9,15 @@
 import ReactorKit
 import RxSwift
 
-final class CreateCounterViewReactor: Reactor {
+final class InputCounterInfoReactor: Reactor {
 
     private let service: CounterServiceProtocol
 
-    var initialState: CreateCounterViewReactor.State
+    var initialState: InputCounterInfoReactor.State
 
     enum Action {
         case create(counterName: String)
+        case edit(counter: Counter, counterName: String)
     }
 
     enum Mutation {
@@ -25,28 +26,31 @@ final class CreateCounterViewReactor: Reactor {
 
     struct State {
         var counterName: String
-        var isCreated: Bool
+        var isEnded: Bool
     }
 
     init(_ service: CounterServiceProtocol = CounterService()) {
-        self.initialState = State(counterName: "", isCreated: false)
+        self.initialState = State(counterName: "", isEnded: false)
         self.service = service
     }
 
-    func mutate(action: CreateCounterViewReactor.Action) -> Observable<CreateCounterViewReactor.Mutation> {
+    func mutate(action: InputCounterInfoReactor.Action) -> Observable<InputCounterInfoReactor.Mutation> {
         switch action {
         case .create(let counterName):
             service.addCounter(title: counterName)
             return .just(.closeModal)
+        case .edit(let counter, let counterName):
+            _ = service.update(counter, title: counterName, value: nil, type: nil)
+            return .just(.closeModal)
         }
     }
 
-    func reduce(state: CreateCounterViewReactor.State,
-                mutation: CreateCounterViewReactor.Mutation) -> CreateCounterViewReactor.State {
+    func reduce(state: InputCounterInfoReactor.State,
+                mutation: InputCounterInfoReactor.Mutation) -> InputCounterInfoReactor.State {
         var state = state
         switch mutation {
         case .closeModal:
-            state.isCreated = true
+            state.isEnded = true
             return state
         }
     }
