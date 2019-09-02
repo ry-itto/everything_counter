@@ -44,13 +44,13 @@ class CalendarServiceTest: XCTestCase {
     /// カウントされた日にフラグが立っていること
     func testGenerateCalendar_SuccessCounted() {
         // データ作成
-        let today = Date()
-        let year = Calendar.current.component(.year, from: today)
-        let month = Calendar.current.component(.month, from: today)
-        let day = Calendar.current.component(.day, from: today)
+        let year = 2019
+        let month = 8
+        let day = 1
+        let date = Calendar.current.date(from: DateComponents(year: year, month: month, day: day))
         let counterID = UUID().uuidString
         let count = Count()
-        count.countDate = today
+        count.countDate = date!
         count.type = CountType.increase.rawValue
         count.counterID = counterID
         
@@ -59,7 +59,7 @@ class CalendarServiceTest: XCTestCase {
         let result = service.generateCalendar(year: year, month: month, counterID: counterID)
         
         // 検証
-        XCTAssertTrue(result[day - 1].isCountedDay)
-        XCTAssertFalse(result[day - 2 == 0 ? day + 1 : day - 2].isCountedDay)
+        XCTAssertTrue(result[0].isCountedDay)
+        XCTAssertFalse(result[1].isCountedDay)
     }
 }
