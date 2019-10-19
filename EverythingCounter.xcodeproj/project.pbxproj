@@ -10,6 +10,10 @@
 		0000E4AF25D7F83B76E8F428 /* Pods_EverythingCounterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B271430EC4F2732BE6DBD07 /* Pods_EverythingCounterTests.framework */; };
 		174FAD1B804FCBD4782CD0E0 /* Pods_EverythingCounter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E7FF9BAF6CD69471379E7 /* Pods_EverythingCounter.framework */; };
 		5E5F77AB9BA4761D6788516D /* Pods_EverythingCounterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009C1D861BCF634512CB0015 /* Pods_EverythingCounterUITests.framework */; };
+		BF09B131235B7B6F0026EA2C /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF09B130235B7B6F0026EA2C /* NotificationCenter.framework */; };
+		BF09B134235B7B6F0026EA2C /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF09B133235B7B6F0026EA2C /* TodayViewController.swift */; };
+		BF09B137235B7B6F0026EA2C /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF09B135235B7B6F0026EA2C /* MainInterface.storyboard */; };
+		BF09B13C235B7B6F0026EA2C /* Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BF09B12F235B7B6F0026EA2C /* Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BF2D37FE22A2D07F00C1E44B /* CalendarServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D37FD22A2D07F00C1E44B /* CalendarServiceTest.swift */; };
 		BF2D380122A3B68000C1E44B /* CounterServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D380022A3B68000C1E44B /* CounterServiceTest.swift */; };
 		BF2D380322A3C49D00C1E44B /* CountStoreStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D380222A3C49D00C1E44B /* CountStoreStub.swift */; };
@@ -51,6 +55,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		BF09B139235B7B6F0026EA2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF6BA4D222655F1B00D28D79 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF09B12E235B7B6F0026EA2C;
+			remoteInfo = EveryThingCounterWidget;
+		};
 		BF6BA4EF22655F1C00D28D79 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BF6BA4D222655F1B00D28D79 /* Project object */;
@@ -67,6 +78,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		BF09B13B235B7B6F0026EA2C /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				BF09B13C235B7B6F0026EA2C /* Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		009C1D861BCF634512CB0015 /* Pods_EverythingCounterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverythingCounterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		153D94E246900FC6356C5268 /* Pods-EverythingCounterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounterUITests.release.xcconfig"; path = "Target Support Files/Pods-EverythingCounterUITests/Pods-EverythingCounterUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -75,6 +100,11 @@
 		61A1B67667F1969062FD6526 /* Pods-EverythingCounter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounter.release.xcconfig"; path = "Target Support Files/Pods-EverythingCounter/Pods-EverythingCounter.release.xcconfig"; sourceTree = "<group>"; };
 		85C5DB91A597275D4ADD83E1 /* Pods-EverythingCounter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounter.debug.xcconfig"; path = "Target Support Files/Pods-EverythingCounter/Pods-EverythingCounter.debug.xcconfig"; sourceTree = "<group>"; };
 		8B271430EC4F2732BE6DBD07 /* Pods_EverythingCounterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverythingCounterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF09B12F235B7B6F0026EA2C /* Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Widget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF09B130235B7B6F0026EA2C /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		BF09B133235B7B6F0026EA2C /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		BF09B136235B7B6F0026EA2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		BF09B138235B7B6F0026EA2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF2D37FD22A2D07F00C1E44B /* CalendarServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarServiceTest.swift; sourceTree = "<group>"; };
 		BF2D380022A3B68000C1E44B /* CounterServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterServiceTest.swift; sourceTree = "<group>"; };
 		BF2D380222A3C49D00C1E44B /* CountStoreStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountStoreStub.swift; sourceTree = "<group>"; };
@@ -124,6 +154,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BF09B12C235B7B6F0026EA2C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF09B131235B7B6F0026EA2C /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BF6BA4D722655F1B00D28D79 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -170,8 +208,19 @@
 				E96E7FF9BAF6CD69471379E7 /* Pods_EverythingCounter.framework */,
 				8B271430EC4F2732BE6DBD07 /* Pods_EverythingCounterTests.framework */,
 				009C1D861BCF634512CB0015 /* Pods_EverythingCounterUITests.framework */,
+				BF09B130235B7B6F0026EA2C /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF09B132235B7B6F0026EA2C /* EveryThingCounterWidget */ = {
+			isa = PBXGroup;
+			children = (
+				BF09B133235B7B6F0026EA2C /* TodayViewController.swift */,
+				BF09B135235B7B6F0026EA2C /* MainInterface.storyboard */,
+				BF09B138235B7B6F0026EA2C /* Info.plist */,
+			);
+			path = EveryThingCounterWidget;
 			sourceTree = "<group>";
 		};
 		BF2D37FC22A2D05E00C1E44B /* Services */ = {
@@ -225,6 +274,7 @@
 				BF6BA4DC22655F1B00D28D79 /* EverythingCounter */,
 				BF6BA4F122655F1C00D28D79 /* EverythingCounterTests */,
 				BF6BA4FC22655F1C00D28D79 /* EverythingCounterUITests */,
+				BF09B132235B7B6F0026EA2C /* EveryThingCounterWidget */,
 				AD0263CE9A0530A804C2218B /* Frameworks */,
 				61633F44AC1CCC81829F415E /* Pods */,
 				BF6BA4DB22655F1B00D28D79 /* Products */,
@@ -237,6 +287,7 @@
 				BF6BA4DA22655F1B00D28D79 /* EverythingCounter.app */,
 				BF6BA4EE22655F1C00D28D79 /* EverythingCounterTests.xctest */,
 				BF6BA4F922655F1C00D28D79 /* EverythingCounterUITests.xctest */,
+				BF09B12F235B7B6F0026EA2C /* Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -373,6 +424,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BF09B12E235B7B6F0026EA2C /* EveryThingCounterWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF09B13F235B7B6F0026EA2C /* Build configuration list for PBXNativeTarget "EveryThingCounterWidget" */;
+			buildPhases = (
+				BF09B12B235B7B6F0026EA2C /* Sources */,
+				BF09B12C235B7B6F0026EA2C /* Frameworks */,
+				BF09B12D235B7B6F0026EA2C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EveryThingCounterWidget;
+			productName = EveryThingCounterWidget;
+			productReference = BF09B12F235B7B6F0026EA2C /* Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		BF6BA4D922655F1B00D28D79 /* EverythingCounter */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF6BA50222655F1C00D28D79 /* Build configuration list for PBXNativeTarget "EverythingCounter" */;
@@ -383,10 +451,12 @@
 				BF6BA4D822655F1B00D28D79 /* Resources */,
 				4F550153539002C35100317F /* [CP] Embed Pods Frameworks */,
 				BF76BE6C22C33E8A0095A659 /* ShellScript */,
+				BF09B13B235B7B6F0026EA2C /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BF09B13A235B7B6F0026EA2C /* PBXTargetDependency */,
 			);
 			name = EverythingCounter;
 			productName = EverythingCounter;
@@ -438,10 +508,13 @@
 		BF6BA4D222655F1B00D28D79 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "ry-itto";
 				TargetAttributes = {
+					BF09B12E235B7B6F0026EA2C = {
+						CreatedOnToolsVersion = 11.0;
+					};
 					BF6BA4D922655F1B00D28D79 = {
 						CreatedOnToolsVersion = 10.2;
 					};
@@ -471,11 +544,20 @@
 				BF6BA4D922655F1B00D28D79 /* EverythingCounter */,
 				BF6BA4ED22655F1C00D28D79 /* EverythingCounterTests */,
 				BF6BA4F822655F1C00D28D79 /* EverythingCounterUITests */,
+				BF09B12E235B7B6F0026EA2C /* EveryThingCounterWidget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BF09B12D235B7B6F0026EA2C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF09B137235B7B6F0026EA2C /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BF6BA4D822655F1B00D28D79 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -628,6 +710,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BF09B12B235B7B6F0026EA2C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF09B134235B7B6F0026EA2C /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BF6BA4D622655F1B00D28D79 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -682,6 +772,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		BF09B13A235B7B6F0026EA2C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF09B12E235B7B6F0026EA2C /* EveryThingCounterWidget */;
+			targetProxy = BF09B139235B7B6F0026EA2C /* PBXContainerItemProxy */;
+		};
 		BF6BA4F022655F1C00D28D79 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BF6BA4D922655F1B00D28D79 /* EverythingCounter */;
@@ -695,6 +790,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		BF09B135235B7B6F0026EA2C /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF09B136235B7B6F0026EA2C /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		BF6BA4E622655F1C00D28D79 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -706,6 +809,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		BF09B13D235B7B6F0026EA2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DFY27HWN2G;
+				INFOPLIST_FILE = EveryThingCounterWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ry-itto.EverythingCounter.Widget";
+				PRODUCT_NAME = Widget;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BF09B13E235B7B6F0026EA2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DFY27HWN2G;
+				INFOPLIST_FILE = EveryThingCounterWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ry-itto.EverythingCounter.Widget";
+				PRODUCT_NAME = Widget;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		BF6BA50022655F1C00D28D79 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -955,6 +1098,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BF09B13F235B7B6F0026EA2C /* Build configuration list for PBXNativeTarget "EveryThingCounterWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF09B13D235B7B6F0026EA2C /* Debug */,
+				BF09B13E235B7B6F0026EA2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BF6BA4D522655F1B00D28D79 /* Build configuration list for PBXProject "EverythingCounter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
