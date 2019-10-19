@@ -27,4 +27,8 @@ target 'EverythingCounter' do
     pod 'RxKeyboard'
   end
 
+  target 'EveryThingCounterWidget' do
+    pod 'RealmSwift'
+  end
+
 end

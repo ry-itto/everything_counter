@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0000E4AF25D7F83B76E8F428 /* Pods_EverythingCounterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B271430EC4F2732BE6DBD07 /* Pods_EverythingCounterTests.framework */; };
 		174FAD1B804FCBD4782CD0E0 /* Pods_EverythingCounter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E7FF9BAF6CD69471379E7 /* Pods_EverythingCounter.framework */; };
+		27A61897805E4C4251F72297 /* Pods_EverythingCounter_EveryThingCounterWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE73582F9176757EA18E8D1C /* Pods_EverythingCounter_EveryThingCounterWidget.framework */; };
 		5E5F77AB9BA4761D6788516D /* Pods_EverythingCounterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009C1D861BCF634512CB0015 /* Pods_EverythingCounterUITests.framework */; };
 		BF09B131235B7B6F0026EA2C /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF09B130235B7B6F0026EA2C /* NotificationCenter.framework */; };
 		BF09B134235B7B6F0026EA2C /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF09B133235B7B6F0026EA2C /* TodayViewController.swift */; };
@@ -95,11 +96,13 @@
 /* Begin PBXFileReference section */
 		009C1D861BCF634512CB0015 /* Pods_EverythingCounterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverythingCounterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		153D94E246900FC6356C5268 /* Pods-EverythingCounterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounterUITests.release.xcconfig"; path = "Target Support Files/Pods-EverythingCounterUITests/Pods-EverythingCounterUITests.release.xcconfig"; sourceTree = "<group>"; };
+		15571D60BFDE03B05E213C2C /* Pods-EverythingCounter-EveryThingCounterWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounter-EveryThingCounterWidget.debug.xcconfig"; path = "Target Support Files/Pods-EverythingCounter-EveryThingCounterWidget/Pods-EverythingCounter-EveryThingCounterWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		4515400A32F6207A93A1B4E5 /* Pods-EverythingCounterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounterUITests.debug.xcconfig"; path = "Target Support Files/Pods-EverythingCounterUITests/Pods-EverythingCounterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5C2970F104FDB62D9156D18C /* Pods-EverythingCounterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounterTests.debug.xcconfig"; path = "Target Support Files/Pods-EverythingCounterTests/Pods-EverythingCounterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		61A1B67667F1969062FD6526 /* Pods-EverythingCounter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounter.release.xcconfig"; path = "Target Support Files/Pods-EverythingCounter/Pods-EverythingCounter.release.xcconfig"; sourceTree = "<group>"; };
 		85C5DB91A597275D4ADD83E1 /* Pods-EverythingCounter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounter.debug.xcconfig"; path = "Target Support Files/Pods-EverythingCounter/Pods-EverythingCounter.debug.xcconfig"; sourceTree = "<group>"; };
 		8B271430EC4F2732BE6DBD07 /* Pods_EverythingCounterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverythingCounterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B102A73BAED81B810D9BA443 /* Pods-EverythingCounter-EveryThingCounterWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounter-EveryThingCounterWidget.release.xcconfig"; path = "Target Support Files/Pods-EverythingCounter-EveryThingCounterWidget/Pods-EverythingCounter-EveryThingCounterWidget.release.xcconfig"; sourceTree = "<group>"; };
 		BF09B12F235B7B6F0026EA2C /* Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Widget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF09B130235B7B6F0026EA2C /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		BF09B133235B7B6F0026EA2C /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +154,7 @@
 		BFF70780229B7E4C00F23E33 /* CalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarService.swift; sourceTree = "<group>"; };
 		E96E7FF9BAF6CD69471379E7 /* Pods_EverythingCounter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverythingCounter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9F90FF12909BA2F540A248D /* Pods-EverythingCounterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounterTests.release.xcconfig"; path = "Target Support Files/Pods-EverythingCounterTests/Pods-EverythingCounterTests.release.xcconfig"; sourceTree = "<group>"; };
+		FE73582F9176757EA18E8D1C /* Pods_EverythingCounter_EveryThingCounterWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverythingCounter_EveryThingCounterWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF09B131235B7B6F0026EA2C /* NotificationCenter.framework in Frameworks */,
+				27A61897805E4C4251F72297 /* Pods_EverythingCounter_EveryThingCounterWidget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +203,8 @@
 				E9F90FF12909BA2F540A248D /* Pods-EverythingCounterTests.release.xcconfig */,
 				4515400A32F6207A93A1B4E5 /* Pods-EverythingCounterUITests.debug.xcconfig */,
 				153D94E246900FC6356C5268 /* Pods-EverythingCounterUITests.release.xcconfig */,
+				15571D60BFDE03B05E213C2C /* Pods-EverythingCounter-EveryThingCounterWidget.debug.xcconfig */,
+				B102A73BAED81B810D9BA443 /* Pods-EverythingCounter-EveryThingCounterWidget.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -209,6 +216,7 @@
 				8B271430EC4F2732BE6DBD07 /* Pods_EverythingCounterTests.framework */,
 				009C1D861BCF634512CB0015 /* Pods_EverythingCounterUITests.framework */,
 				BF09B130235B7B6F0026EA2C /* NotificationCenter.framework */,
+				FE73582F9176757EA18E8D1C /* Pods_EverythingCounter_EveryThingCounterWidget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -428,6 +436,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF09B13F235B7B6F0026EA2C /* Build configuration list for PBXNativeTarget "EveryThingCounterWidget" */;
 			buildPhases = (
+				96B56133553ACFE0F3D5E304 /* [CP] Check Pods Manifest.lock */,
 				BF09B12B235B7B6F0026EA2C /* Sources */,
 				BF09B12C235B7B6F0026EA2C /* Frameworks */,
 				BF09B12D235B7B6F0026EA2C /* Resources */,
@@ -690,6 +699,28 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EverythingCounter/Pods-EverythingCounter-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		96B56133553ACFE0F3D5E304 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EverythingCounter-EveryThingCounterWidget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		BF76BE6C22C33E8A0095A659 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -811,6 +842,7 @@
 /* Begin XCBuildConfiguration section */
 		BF09B13D235B7B6F0026EA2C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15571D60BFDE03B05E213C2C /* Pods-EverythingCounter-EveryThingCounterWidget.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -831,6 +863,7 @@
 		};
 		BF09B13E235B7B6F0026EA2C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B102A73BAED81B810D9BA443 /* Pods-EverythingCounter-EveryThingCounterWidget.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;

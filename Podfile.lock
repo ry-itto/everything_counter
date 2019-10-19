@@ -21,6 +21,7 @@ PODS:
 DEPENDENCIES:
   - LicensePlist
   - ReactorKit
+  - RealmSwift
   - RxCocoa (~> 4.0)
   - RxKeyboard
   - RxRealm
@@ -50,6 +51,6 @@ SPEC CHECKSUMS:
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SwiftLint: fed9c66336e41fc74dc48a73678380718f0c8b0e
 
-PODFILE CHECKSUM: ab565b32ad6b5c9987cc241f027f76cfe2dca457
+PODFILE CHECKSUM: a6e9d7a25f3c74f60e9ed60bed98e66a90a6c653
 
 COCOAPODS: 1.8.3
