@@ -108,6 +108,8 @@
 		BF09B133235B7B6F0026EA2C /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		BF09B136235B7B6F0026EA2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		BF09B138235B7B6F0026EA2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF09B140235B7F2A0026EA2C /* EverythingCounter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EverythingCounter.entitlements; sourceTree = "<group>"; };
+		BF09B141235B7F600026EA2C /* Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widget.entitlements; sourceTree = "<group>"; };
 		BF2D37FD22A2D07F00C1E44B /* CalendarServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarServiceTest.swift; sourceTree = "<group>"; };
 		BF2D380022A3B68000C1E44B /* CounterServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterServiceTest.swift; sourceTree = "<group>"; };
 		BF2D380222A3C49D00C1E44B /* CountStoreStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountStoreStub.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 		BF09B132235B7B6F0026EA2C /* EveryThingCounterWidget */ = {
 			isa = PBXGroup;
 			children = (
+				BF09B141235B7F600026EA2C /* Widget.entitlements */,
 				BF09B133235B7B6F0026EA2C /* TodayViewController.swift */,
 				BF09B135235B7B6F0026EA2C /* MainInterface.storyboard */,
 				BF09B138235B7B6F0026EA2C /* Info.plist */,
@@ -303,6 +306,7 @@
 		BF6BA4DC22655F1B00D28D79 /* EverythingCounter */ = {
 			isa = PBXGroup;
 			children = (
+				BF09B140235B7F2A0026EA2C /* EverythingCounter.entitlements */,
 				BF6BA4DD22655F1B00D28D79 /* AppDelegate.swift */,
 				BF6BA4E422655F1C00D28D79 /* Assets.xcassets */,
 				BF501AE22292A00900727721 /* Extensions */,
@@ -844,6 +848,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 15571D60BFDE03B05E213C2C /* Pods-EverythingCounter-EveryThingCounterWidget.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = EveryThingCounterWidget/Widget.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DFY27HWN2G;
@@ -865,6 +870,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B102A73BAED81B810D9BA443 /* Pods-EverythingCounter-EveryThingCounterWidget.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = EveryThingCounterWidget/Widget.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DFY27HWN2G;
@@ -1004,6 +1010,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EverythingCounter/EverythingCounter.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DFY27HWN2G;
@@ -1026,6 +1033,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EverythingCounter/EverythingCounter.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DFY27HWN2G;
