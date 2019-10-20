@@ -7,7 +7,7 @@ target 'EverythingCounter' do
 
   # Pods for EverythingCounter
   pod 'ReactorKit'
-  pod 'RxCocoa', '~> 4.0'
+  pod 'RxCocoa'
   pod 'RxRealm'
   pod 'RxKeyboard'
   pod 'LicensePlist'
@@ -23,7 +23,7 @@ target 'EverythingCounter' do
     # Pods for testing
     pod 'ReactorKit'
     pod 'RxRealm'
-    pod 'RxCocoa', '~> 4.0'
+    pod 'RxCocoa'
     pod 'RxKeyboard'
   end
 
