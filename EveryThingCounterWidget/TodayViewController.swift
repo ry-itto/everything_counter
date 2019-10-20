@@ -8,14 +8,23 @@
 
 import UIKit
 import NotificationCenter
+import RealmSwift
 
 class TodayViewController: UIViewController, NCWidgetProviding {
         
     @IBOutlet weak var tableView: UITableView!
+    private var realm: Realm?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        var config = Realm.Configuration()
+        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.ry-itto.everything_counter")!
+        config.fileURL = url.appendingPathComponent("db.realm")
+        do {
+            realm = try Realm(configuration: config)
+        } catch let e {
+            fatalError(e.localizedDescription)
+        }
     }
         
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {

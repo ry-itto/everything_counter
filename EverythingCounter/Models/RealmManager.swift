@@ -13,8 +13,11 @@ final class RealmManager {
     static let shared: RealmManager = RealmManager()
     let realm: Realm
     private init() {
+        var config = Realm.Configuration()
+        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.ry-itto.everything_counter")
+        config.fileURL = url?.appendingPathComponent("db.realm")
         do {
-            self.realm = try Realm()
+            self.realm = try Realm(configuration: config)
         } catch let err {
             fatalError(err.localizedDescription)
         }
