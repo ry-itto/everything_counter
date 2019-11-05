@@ -51,7 +51,7 @@ final class CalendarDataSource: UICollectionViewFlowLayout, UICollectionViewData
         }
 
         // セルに外枠をつける
-        cell.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.5).cgColor
+        cell.layer.borderColor = UIColor.lightGray.cgColor
         cell.layer.borderWidth = 0.5
 
         cell.dayLabel.text = "\(dayModel.day)"
