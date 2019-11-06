@@ -28,6 +28,8 @@ final class CounterViewController: UIViewController, StoryboardView {
                                forCellReuseIdentifier: CounterCell.cellIdentifier)
             tableView.rowHeight = CounterCell.rowHeight
             tableView.tableFooterView = UIView()
+            let footerHeight = UIScreen.main.bounds.height - addCounterButton.frame.minY
+            tableView.tableFooterView?.frame.size.height = footerHeight
 //            tableView.allowsSelection = false
         }
     }
