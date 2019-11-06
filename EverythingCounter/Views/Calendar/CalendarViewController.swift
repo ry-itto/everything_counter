@@ -28,7 +28,12 @@ final class CalendarViewController: UIViewController, StoryboardView {
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             collectionView.register(UINib(nibName: "CalendarCell", bundle: nil), forCellWithReuseIdentifier: "cell")
-            collectionView.collectionViewLayout = createLayout()
+            let layout = UICollectionViewFlowLayout()
+            let itemWidth = UIScreen.main.bounds.width / 7
+            layout.itemSize = CGSize(width: itemWidth, height: itemWidth * 1.5)
+            layout.minimumInteritemSpacing = 0
+            layout.minimumLineSpacing = 0
+            collectionView.collectionViewLayout = layout
         }
     }
     @IBOutlet weak var closeButton: UIButton!
@@ -59,18 +64,5 @@ final class CalendarViewController: UIViewController, StoryboardView {
             .map { Reactor.Action.changeToNextMonth }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
-    }
-
-    private func createLayout() -> UICollectionViewLayout {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0 / 7),
-                                              heightDimension: .fractionalHeight(1.0))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                               heightDimension: .fractionalWidth(0.2))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-        let section = NSCollectionLayoutSection(group: group)
-
-        let layout = UICollectionViewCompositionalLayout(section: section)
-        return layout
     }
 }
