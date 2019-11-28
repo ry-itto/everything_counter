@@ -55,7 +55,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ZgW-EE-ndC" firstAttribute="centerX" secondItem="Oho-XC-eyK" secondAttribute="centerX" id="1UZ-6v-9Zm"/>
                             <constraint firstItem="ZgW-EE-ndC" firstAttribute="centerY" secondItem="Oho-XC-eyK" secondAttribute="centerY" id="Bx0-eP-ayY"/>
@@ -67,7 +67,7 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="Oho-XC-eyK" firstAttribute="leading" secondItem="Ila-QA-cQH" secondAttribute="trailing" constant="10" id="7K4-nz-Gpb"/>
                     <constraint firstAttribute="trailing" secondItem="Oho-XC-eyK" secondAttribute="trailing" id="Ctl-6T-8d5"/>
