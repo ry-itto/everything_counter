@@ -24,8 +24,13 @@ final class CalendarCell: UICollectionViewCell {
         super.prepareForReuse()
         // セル情報の初期化
         dayLabel.text = ""
-        dayLabel.backgroundColor = .white
-        dayLabel.textColor = .darkGray
+        if #available(iOS 13.0, *) {
+            dayLabel.backgroundColor = .systemBackground
+            dayLabel.textColor = .label
+        } else {
+            dayLabel.backgroundColor = .white
+            dayLabel.textColor = .darkGray
+        }
         countedView.isHidden = true
         self.layer.borderWidth = 0
     }

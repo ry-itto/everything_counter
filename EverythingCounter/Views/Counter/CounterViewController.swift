@@ -30,7 +30,6 @@ final class CounterViewController: UIViewController, StoryboardView {
             tableView.tableFooterView = UIView()
             let footerHeight = UIScreen.main.bounds.height - addCounterButton.frame.minY
             tableView.tableFooterView?.frame.size.height = footerHeight
-            tableView.backgroundColor = .white
 //            tableView.allowsSelection = false
         }
     }
