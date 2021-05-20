@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1120"
+   LastUpgradeVersion = "1250"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BF6BA4D922655F1B00D28D79"
+               BlueprintIdentifier = "E8C5FBBF2656BAFC0091CFD2"
                BuildableName = "EverythingCounter.app"
                BlueprintName = "EverythingCounter"
                ReferencedContainer = "container:EverythingCounter.xcodeproj">
@@ -28,26 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BF6BA4ED22655F1C00D28D79"
-               BuildableName = "EverythingCounterTests.xctest"
-               BlueprintName = "EverythingCounterTests"
-               ReferencedContainer = "container:EverythingCounter.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BF6BA4F822655F1C00D28D79"
-               BuildableName = "EverythingCounterUITests.xctest"
-               BlueprintName = "EverythingCounterUITests"
-               ReferencedContainer = "container:EverythingCounter.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -64,7 +44,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BF6BA4D922655F1B00D28D79"
+            BlueprintIdentifier = "E8C5FBBF2656BAFC0091CFD2"
             BuildableName = "EverythingCounter.app"
             BlueprintName = "EverythingCounter"
             ReferencedContainer = "container:EverythingCounter.xcodeproj">
@@ -81,7 +61,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BF6BA4D922655F1B00D28D79"
+            BlueprintIdentifier = "E8C5FBBF2656BAFC0091CFD2"
             BuildableName = "EverythingCounter.app"
             BlueprintName = "EverythingCounter"
             ReferencedContainer = "container:EverythingCounter.xcodeproj">
