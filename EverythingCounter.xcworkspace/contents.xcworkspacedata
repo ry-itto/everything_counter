@@ -8,7 +8,7 @@
        location = "group:EverythingCounterLegacy/EverythingCounterLegacy.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:AppPackage">
+      location = "group:">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

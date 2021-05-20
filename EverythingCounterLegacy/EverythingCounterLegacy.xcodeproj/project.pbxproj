@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		464B39E14667DCA2F55182D4 /* Pods_EverythingCounterLegacyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C37F0180278F061C94218F /* Pods_EverythingCounterLegacyTests.framework */; };
-		9179C64C5BA7F840A2578162 /* Pods_EverythingCounterLegacyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F22EA65213E2772393339D16 /* Pods_EverythingCounterLegacyUITests.framework */; };
 		BF2D380F22A4404800C1E44B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF2D380E22A4404800C1E44B /* Settings.bundle */; };
 		BF31D16E229CF6270023A7CD /* CalendarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF31D16D229CF6270023A7CD /* CalendarExtension.swift */; };
 		BF501ADA229285E500727721 /* InputCounterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF501AD8229285E500727721 /* InputCounterInfoViewController.swift */; };
@@ -44,23 +42,6 @@
 		DDD98A0448587F368B2B2CA4 /* Pods_EverythingCounterLegacy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC2E8731C2CDAB2B2D25B07 /* Pods_EverythingCounterLegacy.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		BF6BA4EF22655F1C00D28D79 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BF6BA4D222655F1B00D28D79 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BF6BA4D922655F1B00D28D79;
-			remoteInfo = EverythingCounter;
-		};
-		BF6BA4FA22655F1C00D28D79 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BF6BA4D222655F1B00D28D79 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BF6BA4D922655F1B00D28D79;
-			remoteInfo = EverythingCounter;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		153D94E246900FC6356C5268 /* Pods-EverythingCounterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounterUITests.release.xcconfig"; path = "Target Support Files/Pods-EverythingCounterUITests/Pods-EverythingCounterUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3EC2E8731C2CDAB2B2D25B07 /* Pods_EverythingCounterLegacy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverythingCounterLegacy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,8 +67,6 @@
 		BF6BA4E422655F1C00D28D79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF6BA4E722655F1C00D28D79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF6BA4E922655F1C00D28D79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF6BA4EE22655F1C00D28D79 /* EverythingCounterLegacyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EverythingCounterLegacyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF6BA4F922655F1C00D28D79 /* EverythingCounterLegacyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EverythingCounterLegacyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFCADD4F229194DB00828A57 /* CounterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterService.swift; sourceTree = "<group>"; };
 		BFCD4B9B228F34B2006EDBA5 /* CounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
 		BFCD4B9C228F34B2006EDBA5 /* CounterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CounterViewController.xib; sourceTree = "<group>"; };
@@ -121,22 +100,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDD98A0448587F368B2B2CA4 /* Pods_EverythingCounterLegacy.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF6BA4EB22655F1C00D28D79 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				464B39E14667DCA2F55182D4 /* Pods_EverythingCounterLegacyTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF6BA4F622655F1C00D28D79 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9179C64C5BA7F840A2578162 /* Pods_EverythingCounterLegacyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,8 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				BF6BA4DA22655F1B00D28D79 /* EverythingCounterLegacy.app */,
-				BF6BA4EE22655F1C00D28D79 /* EverythingCounterLegacyTests.xctest */,
-				BF6BA4F922655F1C00D28D79 /* EverythingCounterLegacyUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -351,45 +312,6 @@
 			productReference = BF6BA4DA22655F1B00D28D79 /* EverythingCounterLegacy.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BF6BA4ED22655F1C00D28D79 /* EverythingCounterLegacyTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BF6BA50522655F1C00D28D79 /* Build configuration list for PBXNativeTarget "EverythingCounterLegacyTests" */;
-			buildPhases = (
-				1B3BFB06C6A72DAAFB8A2226 /* [CP] Check Pods Manifest.lock */,
-				BF6BA4EA22655F1C00D28D79 /* Sources */,
-				BF6BA4EB22655F1C00D28D79 /* Frameworks */,
-				BF6BA4EC22655F1C00D28D79 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BF6BA4F022655F1C00D28D79 /* PBXTargetDependency */,
-			);
-			name = EverythingCounterLegacyTests;
-			productName = EverythingCounterTests;
-			productReference = BF6BA4EE22655F1C00D28D79 /* EverythingCounterLegacyTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		BF6BA4F822655F1C00D28D79 /* EverythingCounterLegacyUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BF6BA50822655F1C00D28D79 /* Build configuration list for PBXNativeTarget "EverythingCounterLegacyUITests" */;
-			buildPhases = (
-				31621CB66482F8F7B571A6BD /* [CP] Check Pods Manifest.lock */,
-				BF6BA4F522655F1C00D28D79 /* Sources */,
-				BF6BA4F622655F1C00D28D79 /* Frameworks */,
-				BF6BA4F722655F1C00D28D79 /* Resources */,
-				100FC82833D318FE31B3376D /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BF6BA4FB22655F1C00D28D79 /* PBXTargetDependency */,
-			);
-			name = EverythingCounterLegacyUITests;
-			productName = EverythingCounterUITests;
-			productReference = BF6BA4F922655F1C00D28D79 /* EverythingCounterLegacyUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -402,14 +324,6 @@
 				TargetAttributes = {
 					BF6BA4D922655F1B00D28D79 = {
 						CreatedOnToolsVersion = 10.2;
-					};
-					BF6BA4ED22655F1C00D28D79 = {
-						CreatedOnToolsVersion = 10.2;
-						TestTargetID = BF6BA4D922655F1B00D28D79;
-					};
-					BF6BA4F822655F1C00D28D79 = {
-						CreatedOnToolsVersion = 10.2;
-						TestTargetID = BF6BA4D922655F1B00D28D79;
 					};
 				};
 			};
@@ -427,8 +341,6 @@
 			projectRoot = "";
 			targets = (
 				BF6BA4D922655F1B00D28D79 /* EverythingCounterLegacy */,
-				BF6BA4ED22655F1C00D28D79 /* EverythingCounterLegacyTests */,
-				BF6BA4F822655F1C00D28D79 /* EverythingCounterLegacyUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -446,20 +358,6 @@
 				BFCD4B9E228F34B2006EDBA5 /* CounterViewController.xib in Resources */,
 				BF6BA4E822655F1C00D28D79 /* LaunchScreen.storyboard in Resources */,
 				BF6BA4E522655F1C00D28D79 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF6BA4EC22655F1C00D28D79 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF6BA4F722655F1C00D28D79 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,67 +380,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-EverythingCounterLegacy-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		100FC82833D318FE31B3376D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EverythingCounterLegacyUITests/Pods-EverythingCounterLegacyUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EverythingCounterLegacyUITests/Pods-EverythingCounterLegacyUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EverythingCounterLegacyUITests/Pods-EverythingCounterLegacyUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1B3BFB06C6A72DAAFB8A2226 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EverythingCounterLegacyTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		31621CB66482F8F7B571A6BD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EverythingCounterLegacyUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -617,34 +454,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF6BA4EA22655F1C00D28D79 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF6BA4F522655F1C00D28D79 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		BF6BA4F022655F1C00D28D79 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BF6BA4D922655F1B00D28D79 /* EverythingCounterLegacy */;
-			targetProxy = BF6BA4EF22655F1C00D28D79 /* PBXContainerItemProxy */;
-		};
-		BF6BA4FB22655F1C00D28D79 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BF6BA4D922655F1B00D28D79 /* EverythingCounterLegacy */;
-			targetProxy = BF6BA4FA22655F1C00D28D79 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BF6BA4E622655F1C00D28D79 /* LaunchScreen.storyboard */ = {
@@ -820,92 +630,6 @@
 			};
 			name = Release;
 		};
-		BF6BA50622655F1C00D28D79 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CB13FD4C764FEBDD81AC0532 /* Pods-EverythingCounterLegacyTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DFY27HWN2G;
-				INFOPLIST_FILE = EverythingCounterTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ry-itto.EverythingCounterTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EverythingCounterLegacy.app/EverythingCounterLegacy";
-			};
-			name = Debug;
-		};
-		BF6BA50722655F1C00D28D79 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6D47D0A02F479A58009B4D72 /* Pods-EverythingCounterLegacyTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DFY27HWN2G;
-				INFOPLIST_FILE = EverythingCounterTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ry-itto.EverythingCounterTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EverythingCounterLegacy.app/EverythingCounterLegacy";
-			};
-			name = Release;
-		};
-		BF6BA50922655F1C00D28D79 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CD84A671C7F82D7C26F6ED50 /* Pods-EverythingCounterLegacyUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DFY27HWN2G;
-				INFOPLIST_FILE = EverythingCounterUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ry-itto.EverythingCounterUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = EverythingCounter;
-			};
-			name = Debug;
-		};
-		BF6BA50A22655F1C00D28D79 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3C56BE46D51BA4A8F5F2898 /* Pods-EverythingCounterLegacyUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DFY27HWN2G;
-				INFOPLIST_FILE = EverythingCounterUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ry-itto.EverythingCounterUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = EverythingCounter;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -923,24 +647,6 @@
 			buildConfigurations = (
 				BF6BA50322655F1C00D28D79 /* Debug */,
 				BF6BA50422655F1C00D28D79 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BF6BA50522655F1C00D28D79 /* Build configuration list for PBXNativeTarget "EverythingCounterLegacyTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BF6BA50622655F1C00D28D79 /* Debug */,
-				BF6BA50722655F1C00D28D79 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BF6BA50822655F1C00D28D79 /* Build configuration list for PBXNativeTarget "EverythingCounterLegacyUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BF6BA50922655F1C00D28D79 /* Debug */,
-				BF6BA50A22655F1C00D28D79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
