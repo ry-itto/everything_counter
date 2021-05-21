@@ -2,13 +2,16 @@
 <Workspace
    version = "1.0">
    <FileRef
-       location = "group:EverythingCounter/EverythingCounter.xcodeproj">
+      location = "group:EverythingCounter/EverythingCounter.xcodeproj">
    </FileRef>
    <FileRef
-       location = "group:EverythingCounterLegacy/EverythingCounterLegacy.xcodeproj">
+      location = "group:EverythingCounterLegacy/EverythingCounterLegacy.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:">
+   </FileRef>
+   <FileRef
+      location = "group:Tools">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

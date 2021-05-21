@@ -5,21 +5,27 @@ import PackageDescription
 let package = Package(
     name: "AppPackage",
     platforms: [
-        .iOS(.v14)
+        .iOS(.v14),
     ],
     products: [
         .library(
             name: "AppFeature",
-            targets: ["AppFeature"]),
+            targets: ["AppFeature"]
+        ),
     ],
     dependencies: [
+        .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.18.0"),
     ],
     targets: [
         .target(
             name: "AppFeature",
-            dependencies: []),
+            dependencies: [
+                .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+            ]
+        ),
         .testTarget(
             name: "AppFeatureTests",
-            dependencies: ["AppFeature"]),
+            dependencies: ["AppFeature"]
+        ),
     ]
 )

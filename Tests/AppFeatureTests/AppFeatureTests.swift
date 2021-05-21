@@ -1,5 +1,4 @@
-    import XCTest
-    @testable import AppFeature
+@testable import AppFeature
+import XCTest
 
-    final class AppPackageTests: XCTestCase {
-    }
+final class AppPackageTests: XCTestCase {}
