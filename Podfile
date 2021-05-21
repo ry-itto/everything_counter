@@ -15,18 +15,4 @@ target 'EverythingCounterLegacy' do
   pod 'LicensePlist'
   pod 'SwiftLint'
 
-  target 'EverythingCounterLegacyTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'EverythingCounterLegacyUITests' do
-    inherit! :search_paths
-    # Pods for testing
-    pod 'ReactorKit'
-    pod 'RxRealm'
-    pod 'RxCocoa'
-    pod 'RxKeyboard'
-  end
-
 end
