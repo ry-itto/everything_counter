@@ -18,6 +18,13 @@
         "identifier" : "AppFeatureTests",
         "name" : "AppFeatureTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..",
+        "identifier" : "CounterFeatureTests",
+        "name" : "CounterFeatureTests"
+      }
     }
   ],
   "version" : 1

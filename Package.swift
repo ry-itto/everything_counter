@@ -36,5 +36,9 @@ let package = Package(
             name: "AppFeatureTests",
             dependencies: ["AppFeature"]
         ),
+        .testTarget(
+            name: "CounterFeatureTests",
+            dependencies: ["CounterFeature"]
+        )
     ]
 )
