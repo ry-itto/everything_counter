@@ -5,7 +5,19 @@ import SwiftUI
 struct EverythingCounterApp: App {
     var body: some Scene {
         WindowGroup {
-            AppView()
+            AppView(
+                store: .init(
+                    initialState: .init(),
+                    reducer: appReducer,
+                    environment: .main
+                )
+            )
         }
+    }
+}
+
+extension AppEnvironment {
+    static var main: Self {
+        AppEnvironment()
     }
 }

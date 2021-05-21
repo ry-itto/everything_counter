@@ -13,11 +13,14 @@ let package = Package(
             targets: ["AppFeature"]),
     ],
     dependencies: [
+        .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.18.0"),
     ],
     targets: [
         .target(
             name: "AppFeature",
-            dependencies: []),
+            dependencies: [
+                .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+            ]),
         .testTarget(
             name: "AppFeatureTests",
             dependencies: ["AppFeature"]),
