@@ -83,6 +83,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E8C5FBCF2656BAFD0091CFD2 /* Build configuration list for PBXNativeTarget "EverythingCounter" */;
 			buildPhases = (
+				E872D03C26580C8B0090C72F /* ShellScript */,
 				E8C5FBBC2656BAFC0091CFD2 /* Sources */,
 				E8C5FBBD2656BAFC0091CFD2 /* Frameworks */,
 				E8C5FBBE2656BAFC0091CFD2 /* Resources */,
@@ -142,6 +143,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E872D03C26580C8B0090C72F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$SRCROOT/../scripts/lint.sh\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E8C5FBBC2656BAFC0091CFD2 /* Sources */ = {

@@ -1,0 +1,6 @@
+--exclude \
+  .build, \
+  .swiftpm, \
+  Package.swift, \
+  Pods, \
+  EverythingCounterLegacy
