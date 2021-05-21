@@ -11,9 +11,50 @@ public struct CounterListView: View {
     public var body: some View {
         WithViewStore(store) { viewStore in
             LazyVStack {
-                ForEach(viewStore.counters, id: \.self) { counter in
-                    Text(counter)
+                ForEach(viewStore.counters) { counter in
+                    HStack {
+                        Text(counter.title)
+                            .font(.system(size: 18))
+                        Spacer()
+                        Button(
+                            action: {},
+                            label: {
+                                Image(systemName: "minus")
+                                    .resizable()
+                                    .renderingMode(.template)
+                                    .scaledToFit()
+                                    .foregroundColor(.white)
+                                    .padding(.all, 8)
+                                    .frame(width: 24, height: 24)
+                                    .background(Color.blue)
+                                    .clipShape(Circle())
+                            }
+                        )
+                        .scaledToFit()
+                        Spacer()
+                        Text("\(counter.value)")
+                            .font(.system(size: 18))
+                        Spacer()
+                        Button(
+                            action: {},
+                            label: {
+                                Image(systemName: "plus")
+                                    .resizable()
+                                    .renderingMode(.template)
+                                    .scaledToFit()
+                                    .foregroundColor(.white)
+                                    .padding(.all, 8)
+                                    .frame(width: 24, height: 24)
+                                    .background(Color.blue)
+                                    .clipShape(Circle())
+                            }
+                        )
+                    }
+                    .padding(.horizontal, 24)
+                    Divider()
                 }
+            }.onAppear {
+                viewStore.send(.refresh)
             }
         }
     }
