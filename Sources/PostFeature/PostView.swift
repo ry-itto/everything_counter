@@ -31,8 +31,14 @@ public struct PostView: View {
     }
 }
 
-public struct SwiftUIView_Previews: PreviewProvider {
+public struct PostView_Previews: PreviewProvider {
     public static var previews: some View {
-        PostView()
+        PostView(
+            store: .init(
+                initialState: .init(),
+                reducer: postReducer,
+                environment: .init()
+            )
+        )
     }
 }

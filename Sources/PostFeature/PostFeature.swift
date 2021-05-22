@@ -18,7 +18,7 @@ public struct PostEnvironment {
     public init() {}
 }
 
-public let counterListCellReducer = Reducer<PostState, PostAction, PostEnvironment> { _, action, _ in
+public let postReducer = Reducer<PostState, PostAction, PostEnvironment> { _, action, _ in
     switch action {
     case .post:
         return .none

@@ -21,6 +21,7 @@ let package = Package(
             name: "AppFeature",
             dependencies: [
                 .target(name: "CounterFeature"),
+                .target(name: "PostFeature"),
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
             ]
         ),
