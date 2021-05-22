@@ -25,6 +25,13 @@
         "identifier" : "CounterFeatureTests",
         "name" : "CounterFeatureTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "PostFeatureTests",
+        "name" : "PostFeatureTests"
+      }
     }
   ],
   "version" : 1

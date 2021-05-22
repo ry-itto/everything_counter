@@ -47,6 +47,10 @@ let package = Package(
         .testTarget(
             name: "CounterFeatureTests",
             dependencies: ["CounterFeature"]
-        )
+        ),
+        .testTarget(
+            name: "PostFeatureTests",
+            dependencies: ["PostFeature"]
+        ),
     ]
 )
