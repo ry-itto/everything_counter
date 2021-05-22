@@ -13,7 +13,7 @@ public struct CounterListCellState: Equatable, Identifiable {
     }
 }
 
-public enum CounterListCellAction {
+public enum CounterListCellAction: Equatable {
     case countUp
     case countDown
 }

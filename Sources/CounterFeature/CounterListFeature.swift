@@ -9,7 +9,7 @@ public struct CounterListState: Equatable {
     }
 }
 
-public enum CounterListAction {
+public enum CounterListAction: Equatable {
     case refresh
     case cell(id: String, action: CounterListCellAction)
 }

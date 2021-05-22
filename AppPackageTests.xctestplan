@@ -21,7 +21,7 @@
     },
     {
       "target" : {
-        "containerPath" : "container:..",
+        "containerPath" : "container:",
         "identifier" : "CounterFeatureTests",
         "name" : "CounterFeatureTests"
       }
