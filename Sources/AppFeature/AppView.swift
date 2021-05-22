@@ -1,4 +1,5 @@
 import ComposableArchitecture
+import CounterFeature
 import SwiftUI
 
 public struct AppView: View {
@@ -10,7 +11,12 @@ public struct AppView: View {
 
     public var body: some View {
         WithViewStore(store) { _ in
-            Text("Hello, World!")
+            CounterListView(
+                store: store.scope(
+                    state: \.counterListState,
+                    action: AppAction.counterList
+                )
+            )
         }
     }
 }
