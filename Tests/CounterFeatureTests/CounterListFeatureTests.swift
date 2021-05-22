@@ -12,11 +12,14 @@ final class CounterListFeatureTests: XCTestCase {
         )
 
         store.send(.refresh, { state in
-            state.counters = [
-                .init(id: "1", title: "Task 1", value: 0),
-                .init(id: "2", title: "Task 2", value: 1),
-                .init(id: "3", title: "Task 3", value: 2),
-            ]
+            state.counters = IdentifiedArrayOf(
+                [
+                    .init(id: "1", title: "Task 1", value: 0),
+                    .init(id: "2", title: "Task 2", value: 1),
+                    .init(id: "3", title: "Task 3", value: 2),
+                ]
+                .map(CounterListCellState.init(counter:))
+            )
         })
     }
 }
