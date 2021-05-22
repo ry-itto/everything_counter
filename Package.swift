@@ -32,6 +32,13 @@ let package = Package(
             ]
         ),
         .target(name: "Model"),
+        .target(
+            name: "PostFeature",
+            dependencies: [
+                .target(name: "Model"),
+                .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+            ]
+        ),
         .testTarget(
             name: "AppFeatureTests",
             dependencies: ["AppFeature"]
