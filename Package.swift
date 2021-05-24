@@ -14,6 +14,7 @@ let package = Package(
         ),
     ],
     dependencies: [
+        .package(name: "Realm", url: "https://github.com/realm/realm-cocoa.git", from: "10.7.6"),
         .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.18.0"),
     ],
     targets: [
@@ -32,12 +33,25 @@ let package = Package(
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
             ]
         ),
+        .target(
+            name: "DB",
+            dependencies: [
+                .product(name: "RealmSwift", package: "Realm"),
+            ]
+        ),
         .target(name: "Model"),
         .target(
             name: "PostFeature",
             dependencies: [
                 .target(name: "Model"),
+                .target(name: "Repository"),
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+            ]
+        ),
+        .target(
+            name: "Repository",
+            dependencies: [
+                .target(name: "DB"),
             ]
         ),
         .testTarget(
