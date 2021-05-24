@@ -13,13 +13,13 @@ public struct RealmDB {
         }
     }
 
-    func objects<T: Object>(
+    public func objects<T: Object>(
         where condition: (T) -> Bool = { _ in true }
     ) -> [T] {
         Array(realm.objects(T.self).filter(condition))
     }
 
-    func add<T: Object>(model: T) -> Result<T, Error> {
+    public func add<T: Object>(model: T) -> Result<T, Error> {
         do {
             try realm.write {
                 realm.add(model)
@@ -30,7 +30,7 @@ public struct RealmDB {
         return .success(model)
     }
 
-    func update<T: Object>(model: T, update: (inout T) -> Void) -> Result<T, Error> {
+    public func update<T: Object>(model: T, update: (inout T) -> Void) -> Result<T, Error> {
         var model = model
         do {
             try realm.write {
@@ -42,7 +42,7 @@ public struct RealmDB {
         return .success(model)
     }
 
-    func delete<T: Object>(model: T) -> Result<T, Error> {
+    public func delete<T: Object>(model: T) -> Result<T, Error> {
         do {
             try realm.write {
                 realm.delete(model)
@@ -53,7 +53,7 @@ public struct RealmDB {
         return .success(model)
     }
 
-    func deleteAll<T: Object>(
+    public func deleteAll<T: Object>(
         _ modelType: T.Type,
         where condition: (T) -> Bool = { _ in true }
     ) -> Result<Void, Error> {

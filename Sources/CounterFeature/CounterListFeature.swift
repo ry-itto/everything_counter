@@ -26,7 +26,7 @@ public let counterListReducer = Reducer<CounterListState, CounterListAction, Cou
             .init()
         }
     ),
-    .init { state, action, environment in
+    .init { state, action, _ in
         switch action {
         case .refresh:
             state.counters = IdentifiedArray(

@@ -33,12 +33,6 @@ let package = Package(
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
             ]
         ),
-        .target(
-            name: "DB",
-            dependencies: [
-                .product(name: "RealmSwift", package: "Realm"),
-            ]
-        ),
         .target(name: "Model"),
         .target(
             name: "PostFeature",
@@ -49,9 +43,23 @@ let package = Package(
             ]
         ),
         .target(
+            name: "RealmDB",
+            dependencies: [
+                .product(name: "RealmSwift", package: "Realm"),
+            ]
+        ),
+        .target(
+            name: "RealmModel",
+            dependencies: [
+                .product(name: "RealmSwift", package: "Realm"),
+            ]
+        ),
+        .target(
             name: "Repository",
             dependencies: [
-                .target(name: "DB"),
+                .target(name: "Model"),
+                .target(name: "RealmDB"),
+                .target(name: "RealmModel")
             ]
         ),
         .testTarget(

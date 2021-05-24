@@ -11,7 +11,7 @@ final class CounterListFeatureTests: XCTestCase {
             environment: .init()
         )
 
-        store.send(.refresh, { state in
+        store.send(.refresh) { state in
             state.counters = IdentifiedArrayOf(
                 [
                     .init(id: "1", title: "Task 1", value: 0),
@@ -20,7 +20,6 @@ final class CounterListFeatureTests: XCTestCase {
                 ]
                 .map(CounterListCellState.init(counter:))
             )
-        })
+        }
     }
 }
-

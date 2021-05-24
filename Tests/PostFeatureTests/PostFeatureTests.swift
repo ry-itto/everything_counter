@@ -13,8 +13,8 @@ final class PostFeatureTests: XCTestCase {
             environment: .init()
         )
 
-        store.send(.binding(.set(\.title, "title1")), { state in
+        store.send(.binding(.set(\.title, "title1"))) { state in
             state.title = "title1"
-        })
+        }
     }
 }

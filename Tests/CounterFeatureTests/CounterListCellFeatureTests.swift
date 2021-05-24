@@ -17,13 +17,12 @@ final class CounterListCellFeatureTests: XCTestCase {
             environment: .init()
         )
 
-        store.send(.countUp, { state in
+        store.send(.countUp) { state in
             state.counter.value = 1
-        })
+        }
 
-        store.send(.countDown, { state in
+        store.send(.countDown) { state in
             state.counter.value = 0
-        })
+        }
     }
 }
-
