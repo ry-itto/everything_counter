@@ -15,9 +15,3 @@ struct EverythingCounterApp: App {
         }
     }
 }
-
-extension AppEnvironment {
-    static var main: Self {
-        AppEnvironment.main
-    }
-}
