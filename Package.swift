@@ -35,6 +35,13 @@ let package = Package(
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
             ]
         ),
+        .target(
+            name: "Mock",
+            dependencies: [
+                .target(name: "Model"),
+                .target(name: "Repository"),
+            ]
+        ),
         .target(name: "Model"),
         .target(
             name: "PostFeature",
@@ -66,15 +73,24 @@ let package = Package(
         ),
         .testTarget(
             name: "AppFeatureTests",
-            dependencies: ["AppFeature"]
+            dependencies: [
+                "AppFeature",
+                "Mock",
+            ]
         ),
         .testTarget(
             name: "CounterFeatureTests",
-            dependencies: ["CounterFeature"]
+            dependencies: [
+                "CounterFeature",
+                "Mock",
+            ]
         ),
         .testTarget(
             name: "PostFeatureTests",
-            dependencies: ["PostFeature"]
+            dependencies: [
+                "PostFeature",
+                "Mock",
+            ]
         ),
     ]
 )
