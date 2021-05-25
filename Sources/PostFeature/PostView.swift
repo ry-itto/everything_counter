@@ -30,15 +30,3 @@ public struct PostView: View {
         }
     }
 }
-
-public struct PostView_Previews: PreviewProvider {
-    public static var previews: some View {
-        PostView(
-            store: .init(
-                initialState: .init(),
-                reducer: postReducer,
-                environment: .init()
-            )
-        )
-    }
-}

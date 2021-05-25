@@ -1,6 +1,7 @@
 import ComposableArchitecture
 import CounterFeature
 import PostFeature
+import Repository
 
 public struct AppState: Equatable {
     public var counterListState: CounterListState
@@ -28,7 +29,16 @@ public enum AppAction {
 }
 
 public struct AppEnvironment {
-    public init() {}
+    public let counterRepository: CounterRepository
+    public let mainQueue: AnySchedulerOf<DispatchQueue>
+
+    public init(
+        counterRepository: CounterRepository,
+        mainQueue: AnySchedulerOf<DispatchQueue>
+    ) {
+        self.counterRepository = counterRepository
+        self.mainQueue = mainQueue
+    }
 }
 
 public let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
@@ -42,8 +52,11 @@ public let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
     postReducer.optional().pullback(
         state: \.postState,
         action: /AppAction.post,
-        environment: { _ in
-            .init()
+        environment: { environment in
+            .init(
+                counterRepository: environment.counterRepository,
+                mainQueue: environment.mainQueue
+            )
         }
     ),
     .init { state, action, _ in

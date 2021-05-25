@@ -23,6 +23,7 @@ let package = Package(
             dependencies: [
                 .target(name: "CounterFeature"),
                 .target(name: "PostFeature"),
+                .target(name: "Repository"),
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
             ]
         ),
