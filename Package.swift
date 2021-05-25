@@ -14,6 +14,7 @@ let package = Package(
         ),
     ],
     dependencies: [
+        .package(name: "Realm", url: "https://github.com/realm/realm-cocoa.git", from: "10.7.6"),
         .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.18.0"),
     ],
     targets: [
@@ -21,6 +22,8 @@ let package = Package(
             name: "AppFeature",
             dependencies: [
                 .target(name: "CounterFeature"),
+                .target(name: "PostFeature"),
+                .target(name: "Repository"),
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
             ]
         ),
@@ -28,17 +31,66 @@ let package = Package(
             name: "CounterFeature",
             dependencies: [
                 .target(name: "Model"),
+                .target(name: "Repository"),
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
             ]
         ),
+        .target(
+            name: "Mock",
+            dependencies: [
+                .target(name: "Model"),
+                .target(name: "Repository"),
+            ]
+        ),
         .target(name: "Model"),
+        .target(
+            name: "PostFeature",
+            dependencies: [
+                .target(name: "Model"),
+                .target(name: "Repository"),
+                .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+            ]
+        ),
+        .target(
+            name: "RealmDB",
+            dependencies: [
+                .product(name: "RealmSwift", package: "Realm"),
+            ]
+        ),
+        .target(
+            name: "RealmModel",
+            dependencies: [
+                .product(name: "RealmSwift", package: "Realm"),
+            ]
+        ),
+        .target(
+            name: "Repository",
+            dependencies: [
+                .target(name: "Model"),
+                .target(name: "RealmDB"),
+                .target(name: "RealmModel")
+            ]
+        ),
         .testTarget(
             name: "AppFeatureTests",
-            dependencies: ["AppFeature"]
+            dependencies: [
+                "AppFeature",
+                "Mock",
+            ]
         ),
         .testTarget(
             name: "CounterFeatureTests",
-            dependencies: ["CounterFeature"]
-        )
+            dependencies: [
+                "CounterFeature",
+                "Mock",
+            ]
+        ),
+        .testTarget(
+            name: "PostFeatureTests",
+            dependencies: [
+                "PostFeature",
+                "Mock",
+            ]
+        ),
     ]
 )

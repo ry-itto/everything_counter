@@ -1,5 +1,6 @@
 import ComposableArchitecture
 import Model
+import Repository
 
 public struct CounterListCellState: Equatable, Identifiable {
     public var counter: Counter
@@ -16,19 +17,46 @@ public struct CounterListCellState: Equatable, Identifiable {
 public enum CounterListCellAction: Equatable {
     case countUp
     case countDown
+    case countResponse(Result<Counter, DBError>)
 }
 
 public struct CounterListCellEnvironment {
-    public init() {}
+    public let counterRepository: CounterRepository
+    public let mainQueue: AnySchedulerOf<DispatchQueue>
+
+    public init(
+        counterRepository: CounterRepository,
+        mainQueue: AnySchedulerOf<DispatchQueue>
+    ) {
+        self.counterRepository = counterRepository
+        self.mainQueue = mainQueue
+    }
 }
 
-public let counterListCellReducer = Reducer<CounterListCellState, CounterListCellAction, CounterListCellEnvironment> { state, action, _ in
+public let counterListCellReducer = Reducer<CounterListCellState, CounterListCellAction, CounterListCellEnvironment> { state, action, environment in
     switch action {
     case .countUp:
-        state.counter.value += 1
-        return .none
+        return environment.counterRepository.update(
+            counter: state.counter,
+            title: nil,
+            value: state.counter.value + 1
+        )
+        .receive(on: environment.mainQueue)
+        .catchToEffect()
+        .map(CounterListCellAction.countResponse)
     case .countDown:
-        state.counter.value -= 1
+        return environment.counterRepository.update(
+            counter: state.counter,
+            title: nil,
+            value: state.counter.value - 1
+        )
+        .receive(on: environment.mainQueue)
+        .catchToEffect()
+        .map(CounterListCellAction.countResponse)
+    case let .countResponse(.success(counter)):
+        state.counter = counter
+        return .none
+    case .countResponse(.failure):
         return .none
     }
 }
