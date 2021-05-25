@@ -11,12 +11,8 @@ public struct PostState: Equatable {
 }
 
 public enum PostAction: Equatable {
-    public static func == (_: PostAction, _: PostAction) -> Bool {
-        true
-    }
-
     case post
-    case postResponse(Result<Counter, Error>)
+    case postResponse(Result<Counter, DBError>)
     case binding(BindingAction<PostState>)
 }
 

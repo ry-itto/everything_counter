@@ -30,17 +30,3 @@ public struct CounterListCellView: View {
         }
     }
 }
-
-public struct CounterListCellView_Previews: PreviewProvider {
-    public static var previews: some View {
-        CounterListCellView(
-            store: .init(
-                initialState: .init(
-                    counter: .init(id: "1", title: "Title", value: 0)
-                ),
-                reducer: counterListCellReducer,
-                environment: .init()
-            )
-        )
-    }
-}

@@ -45,8 +45,11 @@ public let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
     counterListReducer.pullback(
         state: \.counterListState,
         action: /AppAction.counterList,
-        environment: { _ in
-            .init()
+        environment: { environment in
+            .init(
+                counterRepository: environment.counterRepository,
+                mainQueue: environment.mainQueue
+            )
         }
     ),
     postReducer.optional().pullback(
