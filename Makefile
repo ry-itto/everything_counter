@@ -1,3 +1,4 @@
+SHELL=/bin/bash -o pipefail
 SWIFT_BUILD=swift build -c release --package-path Tools
 SWIFT_BUILD_PRODUCT=swift build -c release --package-path Tools --product
 SWIFT_RUN=swift run -c release --package-path Tools
@@ -29,11 +30,11 @@ package-build-swiftlint:
 # Carthage
 .PHONY: carthage-bootstrap
 carthage-bootstrap:
-	carthage bootstrap --use-xcframeworks --cache-builds
+	carthage bootstrap --use-xcframeworks --cache-builds --platform iOS
 
 .PHONY: carthage-update
 carthage-update:
-	carthage update --use-xcframeworks --cache-builds
+	carthage update --use-xcframeworks --cache-builds --platform iOS
 
 # SwiftFormat
 .PHONY: run-swiftformat
