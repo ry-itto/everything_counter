@@ -7,12 +7,21 @@ jobs:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
+    - name: Cache Carthage
+      uses: actions/cache@v2
+      with:
+        path: Carthage
+        key: ${{ runner.os }}-carthage-${{ hashFiles('**/Cartfile.resolved') }}
+        restore-keys: |
+          ${{ runner.os }}-carthage-
     - uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.6
         bundler-cache: true
     - name: Select Xcode 12.4
       run: sudo xcode-select -s /Applications/Xcode_12.4.app
+    - name: Carthage Bootstrap
+      run: make carthage-bootstrap
     - name: Run tests
       run: make test
       
