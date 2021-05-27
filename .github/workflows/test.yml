@@ -13,8 +13,6 @@ jobs:
         bundler-cache: true
     - name: Select Xcode 12.4
       run: sudo xcode-select -s /Applications/Xcode_12.4.app
-    - name: Carthage Bootstrap
-      run: make carthage-bootstrap
     - name: Run tests
       run: make test
       
