@@ -31,6 +31,10 @@ package-build-swiftlint:
 carthage-bootstrap:
 	carthage bootstrap --use-xcframeworks --cache-builds
 
+.PHONY: carthage-update
+carthage-update:
+	carthage update --use-xcframeworks --cache-builds
+
 # SwiftFormat
 .PHONY: run-swiftformat
 run-swiftformat:
