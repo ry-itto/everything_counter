@@ -2,7 +2,8 @@
 
 import PackageDescription
 
-let package = Package(
+// MARK: - Application Package
+var package = Package(
     name: "AppPackage",
     platforms: [
         .iOS(.v14),
@@ -14,7 +15,6 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(name: "Realm", url: "https://github.com/realm/realm-cocoa.git", from: "10.7.6"),
         .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.18.0"),
     ],
     targets: [
@@ -54,13 +54,15 @@ let package = Package(
         .target(
             name: "RealmDB",
             dependencies: [
-                .product(name: "RealmSwift", package: "Realm"),
+                .target(name: "Realm"),
+                .target(name: "RealmSwift"),
             ]
         ),
         .target(
             name: "RealmModel",
             dependencies: [
-                .product(name: "RealmSwift", package: "Realm"),
+                .target(name: "Realm"),
+                .target(name: "RealmSwift"),
             ]
         ),
         .target(
@@ -94,3 +96,10 @@ let package = Package(
         ),
     ]
 )
+
+// MARK: - Package Dependencies
+let carthageBuildDir = "./Carthage/Build"
+package.targets.append(contentsOf: [
+    .binaryTarget(name: "Realm", path: "\(carthageBuildDir)/Realm.xcframework"),
+    .binaryTarget(name: "RealmSwift", path: "\(carthageBuildDir)/RealmSwift.xcframework"),
+])
