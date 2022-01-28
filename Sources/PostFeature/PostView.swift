@@ -2,6 +2,7 @@ import ComposableArchitecture
 import SwiftUI
 
 public struct PostView: View {
+    @Environment(\.presentationMode) var presentationMode
     let store: Store<PostState, PostAction>
 
     public init(store: Store<PostState, PostAction>) {
@@ -9,23 +10,24 @@ public struct PostView: View {
     }
 
     public var body: some View {
-        WithViewStore(store) { viewStore in
-            VStack {
-                HStack {
-                    Spacer()
-                    Button {
-                        viewStore.send(.post)
-                    } label: {
-                        Text("登録")
+        NavigationView {
+            WithViewStore(store) { viewStore in
+                Form {
+                    Section(header: Text("カウンター情報")) {
+                        TextField(
+                            "新しいカウンター名",
+                            text: viewStore.binding(
+                                keyPath: \.title,
+                                send: PostAction.binding
+                            )
+                        )
                     }
                 }
-                TextField(
-                    "新しいカウンター名",
-                    text: viewStore.binding(
-                        keyPath: \.title,
-                        send: PostAction.binding
-                    )
-                )
+                .navigationTitle("新規カウンター作成")
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationBarItems(trailing: Button("登録") {
+                    viewStore.send(.post)
+                })
             }
         }
     }

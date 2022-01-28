@@ -72,7 +72,11 @@ public let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
             return .none
         case .counterList:
             return .none
-        case .post:
+        case let .post(.postResponse(.success(counter))):
+            state.counterListState.counters.append(.init(counter: counter))
+            state.postState = nil
+            return .none
+        default:
             return .none
         }
     }
