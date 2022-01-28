@@ -15,7 +15,7 @@ let package = Package(
     ],
     dependencies: [
         .package(name: "Realm", url: "https://github.com/realm/realm-cocoa.git", from: "10.7.6"),
-        .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.18.0"),
+        .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.33.1"),
     ],
     targets: [
         .target(
