@@ -1,0 +1,657 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF2D380F22A4404800C1E44B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF2D380E22A4404800C1E44B /* Settings.bundle */; };
+		BF31D16E229CF6270023A7CD /* CalendarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF31D16D229CF6270023A7CD /* CalendarExtension.swift */; };
+		BF501ADA229285E500727721 /* InputCounterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF501AD8229285E500727721 /* InputCounterInfoViewController.swift */; };
+		BF501ADB229285E500727721 /* InputCounterInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF501AD9229285E500727721 /* InputCounterInfoViewController.xib */; };
+		BF501ADD2292895900727721 /* InputCounterInfoReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF501ADC2292895900727721 /* InputCounterInfoReactor.swift */; };
+		BF501AE122928C8100727721 /* SemiModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF501AE022928C8100727721 /* SemiModalPresentationController.swift */; };
+		BF501AE42292A02100727721 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF501AE32292A02100727721 /* UIViewControllerExtension.swift */; };
+		BF501AE62293CA1F00727721 /* CounterViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF501AE52293CA1F00727721 /* CounterViewDataSource.swift */; };
+		BF501AE82294746900727721 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF501AE72294746900727721 /* UIColorExtension.swift */; };
+		BF6BA4DE22655F1B00D28D79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6BA4DD22655F1B00D28D79 /* AppDelegate.swift */; };
+		BF6BA4E522655F1C00D28D79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF6BA4E422655F1C00D28D79 /* Assets.xcassets */; };
+		BF6BA4E822655F1C00D28D79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6BA4E622655F1C00D28D79 /* LaunchScreen.storyboard */; };
+		BFCADD50229194DB00828A57 /* CounterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCADD4F229194DB00828A57 /* CounterService.swift */; };
+		BFCD4B9D228F34B2006EDBA5 /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD4B9B228F34B2006EDBA5 /* CounterViewController.swift */; };
+		BFCD4B9E228F34B2006EDBA5 /* CounterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFCD4B9C228F34B2006EDBA5 /* CounterViewController.xib */; };
+		BFCD4BA5228F3804006EDBA5 /* CounterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD4BA3228F3804006EDBA5 /* CounterCell.swift */; };
+		BFCD4BA6228F3804006EDBA5 /* CounterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFCD4BA4228F3804006EDBA5 /* CounterCell.xib */; };
+		BFCD4BA8228F381C006EDBA5 /* CounterCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD4BA7228F381C006EDBA5 /* CounterCellReactor.swift */; };
+		BFCD4BAA228F44FE006EDBA5 /* CounterViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD4BA9228F44FE006EDBA5 /* CounterViewReactor.swift */; };
+		BFCD4BAC228F90DE006EDBA5 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD4BAB228F90DE006EDBA5 /* Counter.swift */; };
+		BFCD4BAF228F9275006EDBA5 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD4BAE228F9275006EDBA5 /* RealmManager.swift */; };
+		BFCD4BB1228F93D1006EDBA5 /* CounterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD4BB0228F93D1006EDBA5 /* CounterStore.swift */; };
+		BFF70768229AD96700F23E33 /* Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF70767229AD96700F23E33 /* Count.swift */; };
+		BFF7076A229B51E400F23E33 /* CountStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF70769229B51E400F23E33 /* CountStore.swift */; };
+		BFF70770229B579E00F23E33 /* RealmError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF7076F229B579E00F23E33 /* RealmError.swift */; };
+		BFF70772229B5C9A00F23E33 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF70771229B5C9A00F23E33 /* CalendarViewController.swift */; };
+		BFF70774229B5CB100F23E33 /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF70773229B5CB100F23E33 /* CalendarViewController.xib */; };
+		BFF7077A229B5D3C00F23E33 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF70778229B5D3C00F23E33 /* CalendarCell.swift */; };
+		BFF7077B229B5D3C00F23E33 /* CalendarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF70779229B5D3C00F23E33 /* CalendarCell.xib */; };
+		BFF7077D229B619B00F23E33 /* CalendarDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF7077C229B619B00F23E33 /* CalendarDataSource.swift */; };
+		BFF7077F229B630700F23E33 /* CalendarReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF7077E229B630700F23E33 /* CalendarReactor.swift */; };
+		BFF70781229B7E4C00F23E33 /* CalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF70780229B7E4C00F23E33 /* CalendarService.swift */; };
+		DDD98A0448587F368B2B2CA4 /* Pods_EverythingCounterLegacy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC2E8731C2CDAB2B2D25B07 /* Pods_EverythingCounterLegacy.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		153D94E246900FC6356C5268 /* Pods-EverythingCounterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounterUITests.release.xcconfig"; path = "Target Support Files/Pods-EverythingCounterUITests/Pods-EverythingCounterUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3EC2E8731C2CDAB2B2D25B07 /* Pods_EverythingCounterLegacy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverythingCounterLegacy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4515400A32F6207A93A1B4E5 /* Pods-EverythingCounterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounterUITests.debug.xcconfig"; path = "Target Support Files/Pods-EverythingCounterUITests/Pods-EverythingCounterUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4EB60B8CA7BF30A351C6BFF5 /* Pods-EverythingCounterLegacy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounterLegacy.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-EverythingCounterLegacy/Pods-EverythingCounterLegacy.debug.xcconfig"; sourceTree = "<group>"; };
+		5C2970F104FDB62D9156D18C /* Pods-EverythingCounterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounterTests.debug.xcconfig"; path = "Target Support Files/Pods-EverythingCounterTests/Pods-EverythingCounterTests.debug.xcconfig"; sourceTree = "<group>"; };
+		61A1B67667F1969062FD6526 /* Pods-EverythingCounter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounter.release.xcconfig"; path = "Target Support Files/Pods-EverythingCounter/Pods-EverythingCounter.release.xcconfig"; sourceTree = "<group>"; };
+		69C37F0180278F061C94218F /* Pods_EverythingCounterLegacyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverythingCounterLegacyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D47D0A02F479A58009B4D72 /* Pods-EverythingCounterLegacyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounterLegacyTests.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-EverythingCounterLegacyTests/Pods-EverythingCounterLegacyTests.release.xcconfig"; sourceTree = "<group>"; };
+		85C5DB91A597275D4ADD83E1 /* Pods-EverythingCounter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounter.debug.xcconfig"; path = "Target Support Files/Pods-EverythingCounter/Pods-EverythingCounter.debug.xcconfig"; sourceTree = "<group>"; };
+		B3C56BE46D51BA4A8F5F2898 /* Pods-EverythingCounterLegacyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounterLegacyUITests.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-EverythingCounterLegacyUITests/Pods-EverythingCounterLegacyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BF2D380E22A4404800C1E44B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		BF31D16D229CF6270023A7CD /* CalendarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtension.swift; sourceTree = "<group>"; };
+		BF501AD8229285E500727721 /* InputCounterInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCounterInfoViewController.swift; sourceTree = "<group>"; };
+		BF501AD9229285E500727721 /* InputCounterInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputCounterInfoViewController.xib; sourceTree = "<group>"; };
+		BF501ADC2292895900727721 /* InputCounterInfoReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCounterInfoReactor.swift; sourceTree = "<group>"; };
+		BF501AE022928C8100727721 /* SemiModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalPresentationController.swift; sourceTree = "<group>"; };
+		BF501AE32292A02100727721 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		BF501AE52293CA1F00727721 /* CounterViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewDataSource.swift; sourceTree = "<group>"; };
+		BF501AE72294746900727721 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		BF6BA4DA22655F1B00D28D79 /* EverythingCounterLegacy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverythingCounterLegacy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF6BA4DD22655F1B00D28D79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BF6BA4E422655F1C00D28D79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF6BA4E722655F1C00D28D79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BF6BA4E922655F1C00D28D79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFCADD4F229194DB00828A57 /* CounterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterService.swift; sourceTree = "<group>"; };
+		BFCD4B9B228F34B2006EDBA5 /* CounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
+		BFCD4B9C228F34B2006EDBA5 /* CounterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CounterViewController.xib; sourceTree = "<group>"; };
+		BFCD4BA3228F3804006EDBA5 /* CounterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterCell.swift; sourceTree = "<group>"; };
+		BFCD4BA4228F3804006EDBA5 /* CounterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CounterCell.xib; sourceTree = "<group>"; };
+		BFCD4BA7228F381C006EDBA5 /* CounterCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterCellReactor.swift; sourceTree = "<group>"; };
+		BFCD4BA9228F44FE006EDBA5 /* CounterViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewReactor.swift; sourceTree = "<group>"; };
+		BFCD4BAB228F90DE006EDBA5 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
+		BFCD4BAE228F9275006EDBA5 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		BFCD4BB0228F93D1006EDBA5 /* CounterStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterStore.swift; sourceTree = "<group>"; };
+		BFF70767229AD96700F23E33 /* Count.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Count.swift; sourceTree = "<group>"; };
+		BFF70769229B51E400F23E33 /* CountStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountStore.swift; sourceTree = "<group>"; };
+		BFF7076F229B579E00F23E33 /* RealmError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmError.swift; sourceTree = "<group>"; };
+		BFF70771229B5C9A00F23E33 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		BFF70773229B5CB100F23E33 /* CalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
+		BFF70778229B5D3C00F23E33 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		BFF70779229B5D3C00F23E33 /* CalendarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarCell.xib; sourceTree = "<group>"; };
+		BFF7077C229B619B00F23E33 /* CalendarDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDataSource.swift; sourceTree = "<group>"; };
+		BFF7077E229B630700F23E33 /* CalendarReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarReactor.swift; sourceTree = "<group>"; };
+		BFF70780229B7E4C00F23E33 /* CalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarService.swift; sourceTree = "<group>"; };
+		CB13FD4C764FEBDD81AC0532 /* Pods-EverythingCounterLegacyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounterLegacyTests.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-EverythingCounterLegacyTests/Pods-EverythingCounterLegacyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CD84A671C7F82D7C26F6ED50 /* Pods-EverythingCounterLegacyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounterLegacyUITests.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-EverythingCounterLegacyUITests/Pods-EverythingCounterLegacyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E9F90FF12909BA2F540A248D /* Pods-EverythingCounterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounterTests.release.xcconfig"; path = "Target Support Files/Pods-EverythingCounterTests/Pods-EverythingCounterTests.release.xcconfig"; sourceTree = "<group>"; };
+		F22EA65213E2772393339D16 /* Pods_EverythingCounterLegacyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverythingCounterLegacyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCA095F8D976663CC44E353B /* Pods-EverythingCounterLegacy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverythingCounterLegacy.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-EverythingCounterLegacy/Pods-EverythingCounterLegacy.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF6BA4D722655F1B00D28D79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDD98A0448587F368B2B2CA4 /* Pods_EverythingCounterLegacy.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		61633F44AC1CCC81829F415E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				85C5DB91A597275D4ADD83E1 /* Pods-EverythingCounter.debug.xcconfig */,
+				61A1B67667F1969062FD6526 /* Pods-EverythingCounter.release.xcconfig */,
+				5C2970F104FDB62D9156D18C /* Pods-EverythingCounterTests.debug.xcconfig */,
+				E9F90FF12909BA2F540A248D /* Pods-EverythingCounterTests.release.xcconfig */,
+				4515400A32F6207A93A1B4E5 /* Pods-EverythingCounterUITests.debug.xcconfig */,
+				153D94E246900FC6356C5268 /* Pods-EverythingCounterUITests.release.xcconfig */,
+				4EB60B8CA7BF30A351C6BFF5 /* Pods-EverythingCounterLegacy.debug.xcconfig */,
+				FCA095F8D976663CC44E353B /* Pods-EverythingCounterLegacy.release.xcconfig */,
+				CB13FD4C764FEBDD81AC0532 /* Pods-EverythingCounterLegacyTests.debug.xcconfig */,
+				6D47D0A02F479A58009B4D72 /* Pods-EverythingCounterLegacyTests.release.xcconfig */,
+				CD84A671C7F82D7C26F6ED50 /* Pods-EverythingCounterLegacyUITests.debug.xcconfig */,
+				B3C56BE46D51BA4A8F5F2898 /* Pods-EverythingCounterLegacyUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AD0263CE9A0530A804C2218B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3EC2E8731C2CDAB2B2D25B07 /* Pods_EverythingCounterLegacy.framework */,
+				69C37F0180278F061C94218F /* Pods_EverythingCounterLegacyTests.framework */,
+				F22EA65213E2772393339D16 /* Pods_EverythingCounterLegacyUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF501ADE22928C3C00727721 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				BFF7076E229B578B00F23E33 /* Error */,
+				BF501ADF22928C4E00727721 /* SemiModal */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		BF501ADF22928C4E00727721 /* SemiModal */ = {
+			isa = PBXGroup;
+			children = (
+				BF501AE022928C8100727721 /* SemiModalPresentationController.swift */,
+			);
+			path = SemiModal;
+			sourceTree = "<group>";
+		};
+		BF501AE22292A00900727721 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BF31D16D229CF6270023A7CD /* CalendarExtension.swift */,
+				BF501AE72294746900727721 /* UIColorExtension.swift */,
+				BF501AE32292A02100727721 /* UIViewControllerExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BF6BA4D122655F1B00D28D79 = {
+			isa = PBXGroup;
+			children = (
+				BF6BA4DC22655F1B00D28D79 /* EverythingCounterLegacy */,
+				AD0263CE9A0530A804C2218B /* Frameworks */,
+				61633F44AC1CCC81829F415E /* Pods */,
+				BF6BA4DB22655F1B00D28D79 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BF6BA4DB22655F1B00D28D79 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF6BA4DA22655F1B00D28D79 /* EverythingCounterLegacy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF6BA4DC22655F1B00D28D79 /* EverythingCounterLegacy */ = {
+			isa = PBXGroup;
+			children = (
+				BF6BA4DD22655F1B00D28D79 /* AppDelegate.swift */,
+				BF6BA4E422655F1C00D28D79 /* Assets.xcassets */,
+				BF501AE22292A00900727721 /* Extensions */,
+				BF6BA4E922655F1C00D28D79 /* Info.plist */,
+				BF6BA4E622655F1C00D28D79 /* LaunchScreen.storyboard */,
+				BFCD4B9A228E82BF006EDBA5 /* Models */,
+				BFCD4BAD228F9209006EDBA5 /* Services */,
+				BF501ADE22928C3C00727721 /* Util */,
+				BFCD4B99228E82B8006EDBA5 /* Views */,
+				BF2D380E22A4404800C1E44B /* Settings.bundle */,
+			);
+			path = EverythingCounterLegacy;
+			sourceTree = "<group>";
+		};
+		BFCD4B99228E82B8006EDBA5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BFF7076D229B551800F23E33 /* Calendar */,
+				BFF7076C229B54EA00F23E33 /* Counter */,
+				BFF7076B229B54E100F23E33 /* InputCounter */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BFCD4B9A228E82BF006EDBA5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BFF70767229AD96700F23E33 /* Count.swift */,
+				BFCD4BAB228F90DE006EDBA5 /* Counter.swift */,
+				BFCD4BB0228F93D1006EDBA5 /* CounterStore.swift */,
+				BFF70769229B51E400F23E33 /* CountStore.swift */,
+				BFCD4BAE228F9275006EDBA5 /* RealmManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BFCD4BA2228F37E6006EDBA5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BFCD4BA3228F3804006EDBA5 /* CounterCell.swift */,
+				BFCD4BA4228F3804006EDBA5 /* CounterCell.xib */,
+				BFCD4BA7228F381C006EDBA5 /* CounterCellReactor.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		BFCD4BAD228F9209006EDBA5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BFF70780229B7E4C00F23E33 /* CalendarService.swift */,
+				BFCADD4F229194DB00828A57 /* CounterService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BFF7076B229B54E100F23E33 /* InputCounter */ = {
+			isa = PBXGroup;
+			children = (
+				BF501AD8229285E500727721 /* InputCounterInfoViewController.swift */,
+				BF501AD9229285E500727721 /* InputCounterInfoViewController.xib */,
+				BF501ADC2292895900727721 /* InputCounterInfoReactor.swift */,
+			);
+			path = InputCounter;
+			sourceTree = "<group>";
+		};
+		BFF7076C229B54EA00F23E33 /* Counter */ = {
+			isa = PBXGroup;
+			children = (
+				BFCD4BA2228F37E6006EDBA5 /* Cells */,
+				BFCD4B9B228F34B2006EDBA5 /* CounterViewController.swift */,
+				BFCD4B9C228F34B2006EDBA5 /* CounterViewController.xib */,
+				BF501AE52293CA1F00727721 /* CounterViewDataSource.swift */,
+				BFCD4BA9228F44FE006EDBA5 /* CounterViewReactor.swift */,
+			);
+			path = Counter;
+			sourceTree = "<group>";
+		};
+		BFF7076D229B551800F23E33 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				BFF7077C229B619B00F23E33 /* CalendarDataSource.swift */,
+				BFF7077E229B630700F23E33 /* CalendarReactor.swift */,
+				BFF70771229B5C9A00F23E33 /* CalendarViewController.swift */,
+				BFF70773229B5CB100F23E33 /* CalendarViewController.xib */,
+				BFF70775229B5D0100F23E33 /* Cells */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		BFF7076E229B578B00F23E33 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				BFF7076F229B579E00F23E33 /* RealmError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		BFF70775229B5D0100F23E33 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BFF70778229B5D3C00F23E33 /* CalendarCell.swift */,
+				BFF70779229B5D3C00F23E33 /* CalendarCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BF6BA4D922655F1B00D28D79 /* EverythingCounterLegacy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF6BA50222655F1C00D28D79 /* Build configuration list for PBXNativeTarget "EverythingCounterLegacy" */;
+			buildPhases = (
+				0EAF4F8C297BA7DAE8A34755 /* [CP] Check Pods Manifest.lock */,
+				BF6BA4D622655F1B00D28D79 /* Sources */,
+				BF6BA4D722655F1B00D28D79 /* Frameworks */,
+				BF6BA4D822655F1B00D28D79 /* Resources */,
+				4F550153539002C35100317F /* [CP] Embed Pods Frameworks */,
+				BF76BE6C22C33E8A0095A659 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EverythingCounterLegacy;
+			productName = EverythingCounter;
+			productReference = BF6BA4DA22655F1B00D28D79 /* EverythingCounterLegacy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF6BA4D222655F1B00D28D79 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "ry-itto";
+				TargetAttributes = {
+					BF6BA4D922655F1B00D28D79 = {
+						CreatedOnToolsVersion = 10.2;
+					};
+				};
+			};
+			buildConfigurationList = BF6BA4D522655F1B00D28D79 /* Build configuration list for PBXProject "EverythingCounterLegacy" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BF6BA4D122655F1B00D28D79;
+			productRefGroup = BF6BA4DB22655F1B00D28D79 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF6BA4D922655F1B00D28D79 /* EverythingCounterLegacy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF6BA4D822655F1B00D28D79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF2D380F22A4404800C1E44B /* Settings.bundle in Resources */,
+				BFF70774229B5CB100F23E33 /* CalendarViewController.xib in Resources */,
+				BF501ADB229285E500727721 /* InputCounterInfoViewController.xib in Resources */,
+				BFCD4BA6228F3804006EDBA5 /* CounterCell.xib in Resources */,
+				BFF7077B229B5D3C00F23E33 /* CalendarCell.xib in Resources */,
+				BFCD4B9E228F34B2006EDBA5 /* CounterViewController.xib in Resources */,
+				BF6BA4E822655F1C00D28D79 /* LaunchScreen.storyboard in Resources */,
+				BF6BA4E522655F1C00D28D79 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0EAF4F8C297BA7DAE8A34755 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EverythingCounterLegacy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F550153539002C35100317F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EverythingCounterLegacy/Pods-EverythingCounterLegacy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EverythingCounterLegacy/Pods-EverythingCounterLegacy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EverythingCounterLegacy/Pods-EverythingCounterLegacy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF76BE6C22C33E8A0095A659 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n    ${PODS_ROOT}/SwiftLint/swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF6BA4D622655F1B00D28D79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFF7076A229B51E400F23E33 /* CountStore.swift in Sources */,
+				BF501ADD2292895900727721 /* InputCounterInfoReactor.swift in Sources */,
+				BFF7077F229B630700F23E33 /* CalendarReactor.swift in Sources */,
+				BFCD4BA5228F3804006EDBA5 /* CounterCell.swift in Sources */,
+				BF501AE82294746900727721 /* UIColorExtension.swift in Sources */,
+				BFF70770229B579E00F23E33 /* RealmError.swift in Sources */,
+				BFCD4BAA228F44FE006EDBA5 /* CounterViewReactor.swift in Sources */,
+				BFCD4BB1228F93D1006EDBA5 /* CounterStore.swift in Sources */,
+				BFF70781229B7E4C00F23E33 /* CalendarService.swift in Sources */,
+				BFCD4BAC228F90DE006EDBA5 /* Counter.swift in Sources */,
+				BF6BA4DE22655F1B00D28D79 /* AppDelegate.swift in Sources */,
+				BFCADD50229194DB00828A57 /* CounterService.swift in Sources */,
+				BFCD4B9D228F34B2006EDBA5 /* CounterViewController.swift in Sources */,
+				BFCD4BAF228F9275006EDBA5 /* RealmManager.swift in Sources */,
+				BFF70772229B5C9A00F23E33 /* CalendarViewController.swift in Sources */,
+				BF501AE42292A02100727721 /* UIViewControllerExtension.swift in Sources */,
+				BF501AE62293CA1F00727721 /* CounterViewDataSource.swift in Sources */,
+				BF31D16E229CF6270023A7CD /* CalendarExtension.swift in Sources */,
+				BFCD4BA8228F381C006EDBA5 /* CounterCellReactor.swift in Sources */,
+				BF501ADA229285E500727721 /* InputCounterInfoViewController.swift in Sources */,
+				BFF7077D229B619B00F23E33 /* CalendarDataSource.swift in Sources */,
+				BF501AE122928C8100727721 /* SemiModalPresentationController.swift in Sources */,
+				BFF70768229AD96700F23E33 /* Count.swift in Sources */,
+				BFF7077A229B5D3C00F23E33 /* CalendarCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BF6BA4E622655F1C00D28D79 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF6BA4E722655F1C00D28D79 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BF6BA50022655F1C00D28D79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BF6BA50122655F1C00D28D79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BF6BA50322655F1C00D28D79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EB60B8CA7BF30A351C6BFF5 /* Pods-EverythingCounterLegacy.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DFY27HWN2G;
+				INFOPLIST_FILE = EverythingCounter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "ry-itto.EverythingCounterLegacy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		BF6BA50422655F1C00D28D79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCA095F8D976663CC44E353B /* Pods-EverythingCounterLegacy.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DFY27HWN2G;
+				INFOPLIST_FILE = EverythingCounter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "ry-itto.EverythingCounterLegacy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF6BA4D522655F1B00D28D79 /* Build configuration list for PBXProject "EverythingCounterLegacy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF6BA50022655F1C00D28D79 /* Debug */,
+				BF6BA50122655F1C00D28D79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF6BA50222655F1C00D28D79 /* Build configuration list for PBXNativeTarget "EverythingCounterLegacy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF6BA50322655F1C00D28D79 /* Debug */,
+				BF6BA50422655F1C00D28D79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BF6BA4D222655F1B00D28D79 /* Project object */;
+}

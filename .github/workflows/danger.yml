@@ -1,0 +1,29 @@
+name: Danger
+
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.6
+        bundler-cache: true
+    - name: Cache Swift Package Tools
+      uses: actions/cache@v2
+      with:
+        path: Tools/.build
+        key: ${{ runner.os }}-spm-${{ hashFiles('Tools/Package.resolved') }}
+        restore-keys: |
+          ${{ runner.os }}-spm-
+    - name: Select Xcode 12.4
+      run: sudo xcode-select -s /Applications/Xcode_12.4.app
+    - name: Build SwiftLint
+      run: make package-build-swiftlint
+    - name: Run Danger
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: bundle exec danger
+      
