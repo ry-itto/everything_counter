@@ -10,18 +10,20 @@ public struct CounterListView: View {
 
     public var body: some View {
         WithViewStore(store) { viewStore in
-            LazyVStack {
-                ForEachStore(
-                    store.scope(
-                        state: \.counters,
-                        action: CounterListAction.cell(id:action:)
-                    )
-                ) { counterListCellStore in
-                    CounterListCellView(store: counterListCellStore)
-                    Divider()
+            ScrollView {
+                LazyVStack {
+                    ForEachStore(
+                        store.scope(
+                            state: \.counters,
+                            action: CounterListAction.cell(id:action:)
+                        )
+                    ) { counterListCellStore in
+                        CounterListCellView(store: counterListCellStore)
+                        Divider()
+                    }
+                }.onAppear {
+                    viewStore.send(.refresh)
                 }
-            }.onAppear {
-                viewStore.send(.refresh)
             }
         }
     }
